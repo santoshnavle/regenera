@@ -93,6 +93,10 @@ h1, h2, h3, .card-title{
   max-width: 100%;
 }
 
+.w-full{
+  width: 100%;
+}
+
 p {
   font-size: 16px;
   margin-top: 12px;
