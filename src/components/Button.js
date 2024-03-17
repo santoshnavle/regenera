@@ -11,6 +11,7 @@ export const LightGreenBtn = styled.button`
   border: none;
   line-height: 45px;
   height:45px;
+  font-size: 16px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -29,9 +30,12 @@ export const LightGreenBtn = styled.button`
   a {
     text-decoration: none;
     color: rgb(255 255 255);
-    font-size: 16px;
+    display: block;
   }
-`;
+  @media (max-width:${({ theme }) => theme.media.mobile}) {
+    font-size: 14px;
+  }
+`
 
 export const DarkGreenBtn = styled(LightGreenBtn)`
   background-color: ${({ theme }) => theme.colors.title_green};

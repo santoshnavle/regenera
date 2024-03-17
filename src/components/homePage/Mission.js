@@ -34,7 +34,26 @@ const Mission = () => {
                 }
             }
         }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            background: url('../images/bg-together-mobile.png') no-repeat center center;
+            background-size: cover;
+            min-height: 440px;
+            padding: 50px 20px 50px;
+             .mission-group{
+                gap: 12px;
+                .title-box{
+                    .small{
+                        font-size: 17px;
+                    }
+                    h3{
+                        font-size: 42px;
+                        line-height: 52px;
+                    }
+                }
 
+             }
+            
+        }
     `
 
     const PositiveImpact = styled.section`
@@ -73,6 +92,7 @@ const Mission = () => {
                     line-height: 27px;
                     color: ${({theme})=>theme.colors.light_green};
                     font-weight: 500;
+                    margin-top: 19px;
                 }
             }
         }
@@ -80,15 +100,43 @@ const Mission = () => {
         &::after{
             content: "";
             background: url('../images/hang-petal.png');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
             position: absolute;
             width: 207px;
             height: 286px;
-            background-size: 100% auto;
             right: -50px;
             top: -100px;
             z-index: 2;
         }
-
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            padding: 37px 45px 46px;
+            .impact-info{
+                .grid{
+                    gap:28px;
+                    .impact-group{
+                        .impact-info-numbers{
+                            gap: 4px;
+                            .total-numbers-info{
+                                font-size: 42px;
+                                line-height: 52px;
+                                span{
+                                    font-size: 17px;
+                                    line-height: 25px;
+                                }
+                            }
+                        }
+                        .green-info{
+                            margin-top: 24px;
+                        }
+                    }
+                }
+            }
+            &::after{
+                top: -65px;
+                width: 145px;
+            }
+        }
     `
 
     return(

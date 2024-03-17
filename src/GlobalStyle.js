@@ -170,7 +170,9 @@ li {
     font-size: 28px;
     line-height: 38px;
   }
-  
+  html, p{
+    font-size: 14px;
+  }
 }
 
 @media (max-width:${({ theme }) => theme.media.mobile}) {

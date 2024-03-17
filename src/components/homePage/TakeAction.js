@@ -62,7 +62,7 @@ const TakeAction = () => {
                         text= "Understand your environmental footprint and commit to take action for nature & climate."
                     />
                     <IconWithText
-                        icon = {"../images/icons/plan-choose-icon.svg"}  
+                        icon = {"../images/icons/hand-plant-icon.svg"}  
                         title="Improve your operational performance"
                         text= "Obtain advice on your path to Net Zero and connect with local people regenerating Nature."
                     />

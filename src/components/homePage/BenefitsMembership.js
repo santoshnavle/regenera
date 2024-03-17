@@ -53,10 +53,33 @@ const Membership = () => {
                         padding: 0 35px;
                     }
                 }
-                
             }
-            .img-box{
-
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            padding: 24px 20px 40px;
+            .two-cols{
+                flex-wrap: wrap;
+                gap: 34px;
+                .Benefits-info{
+                    max-width: 100%;
+                    .title-box{
+                        h3{
+                            font-size: 28px;
+                            line-height: 38px;
+                        }
+                    }
+                    .list-of-benefits{
+                        li{
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .img-box{
+                    margin: 0 auto;
+                    img{
+                        width: 100%;
+                    }
+                }
             }
         }
     `

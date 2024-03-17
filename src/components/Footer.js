@@ -84,7 +84,7 @@ const Footer = () => {
                     min-width: 196px;
                     padding: 0 10px 0 0;
                     box-sizing: border-box;
-                    gap: 24px 0;
+                    gap: 20px 0;
 
                     .footer-action-head{
                         line-height: 180%;
@@ -93,6 +93,11 @@ const Footer = () => {
                     }
                     .subscrib-head{
                         width: 276px;
+                    }
+                    form{
+                        .input-group{
+                            gap: 9px;
+                        }
                     }
                     .footer-links{
                         gap: 16px 0;
@@ -162,6 +167,90 @@ const Footer = () => {
                     }
                 }  
 
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            padding: 26px 20px 30px;
+            .footer-main{
+                padding-bottom: 24px;
+                 .company-info{
+                    max-width: 100%;
+                    gap: 24px;
+                    .logo-info {
+                        gap: 10px 0;
+                        img{
+                            width: 100%;
+                            max-width: 207px;
+                        }
+                        .power-info{
+                            p{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                    .follow-us-parent{
+                        font-size: 14px;
+                    }
+                }
+                .footer-actions-parent{
+                    font-size: 14px;
+                    flex-wrap: wrap;
+                    min-width: auto;
+                    gap: 24px;
+                    margin-top: 24px;
+                    .footer-actions{
+                        flex: 1 0 auto;
+                        gap: 12px;
+                        min-width: auto;
+                        form{
+                            .input-group{
+                                gap: 8px;
+                                flex-direction: row;
+                                input{
+                                    &:first-child{
+                                       flex: 1 0 40%
+                                    }
+                                }
+                            }
+                        }
+                        .footer-links{
+                            gap: 8px;
+                        }
+                        .subscrib-head{
+                            width: 276px;
+                        }
+                        &:first-child{
+                            min-width: 190px;
+                        }
+                        &:last-child{
+                            min-width: 100%;
+                        }
+                    }
+                }
+            }
+            .footer-copyright-parent{
+                height: auto;
+                padding-top: 24px;
+                .footer-copy-lists{
+                    flex-direction: column;
+                    gap: 24px;
+                    .footer-copy-links{  
+                        gap: 5px;
+                        font-size: 12px;
+                        flex-direction: column;
+                    }  
+                    .lang-foooter-link{
+                        font-weight: 600;
+                        gap: 20px;
+                        flex-direction: row;
+                        li{
+                            position: relative;
+                            &::after{
+                                left: 55px;
+                            }
+                        }
+                    } 
+                }
             }
         }
     `
@@ -291,17 +380,19 @@ const Footer = () => {
                         </div>
                         <FormContainer>
                             <Form onSubmit={handleSubmit} className="flex flex-col items-center">
-                                <Input
-                                type="name"
-                                placeholder="Name"
-                                />
+                                <div className="input-group w-full flex flex-col">
+                                    <Input
+                                    type="name"
+                                    placeholder="Name"
+                                    />
 
-                                <Input
-                                type="email"
-                                placeholder="Email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                />
+                                    <Input
+                                    type="email"
+                                    placeholder="Email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                </div>
                                 <div className="consent-check">
                                      <Checkbox
                                         icon={<Icon.FiCheck color="#174A41" size={16} />}

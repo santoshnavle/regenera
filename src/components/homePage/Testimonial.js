@@ -14,6 +14,23 @@ const Testimonials = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
+      
+        responsive: [
+        {
+            breakpoint: 1023,
+            settings: {
+            className: "center",
+            centerMode: true,
+            centerPadding: "60px",
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+            arrows:false,
+            }
+        },
+    ]
+        
     };
 
     const Testimonials = styled.section`
@@ -82,6 +99,32 @@ const Testimonials = () => {
                                 width: 100%;
                                 display: block;
                                 text-wrap: nowrap;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            padding: 24px 20px 60px;
+            .two-cols{
+                flex-wrap: wrap;
+                gap: 40px;
+                .testimonal-slider{
+                    order: 1;
+                    .slide-box{
+                        padding: 20px 16px 20px;
+                    }
+                    background-color: white;
+                }
+                .testimonal-information{
+                    order: 0;
+                    .parent-info{
+                        gap: 24px;
+                        .group-buttons-info{
+                            .group-btns{
+                                flex-direction: column;
+                                gap: 8px
                             }
                         }
                     }

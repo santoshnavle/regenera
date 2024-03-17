@@ -34,7 +34,7 @@ const WorkWith = () => {
             slidesToShow: 3,
             slidesToScroll: 3,
             infinite: true,
-            dots: false
+            dots: true,
             }
         },
     ]
@@ -55,6 +55,14 @@ const WorkWith = () => {
                     img{
                         filter: grayscale();
                     }
+                }
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            padding: 24px 0 20px;
+            .company-group{
+                .title-box{
+                    padding: 0 20px;
                 }
             }
         }
