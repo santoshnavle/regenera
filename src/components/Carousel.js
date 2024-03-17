@@ -2,6 +2,7 @@ import React from "react";
 import "../slick-slider-css/slick.min.css";
 import "../slick-slider-css/slick-theme.min.css";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 import { OrangeBtn } from "./Button";
 import styled from "styled-components";
 
@@ -23,6 +24,7 @@ const fadeSlide = () => {
       position: relative;
       img {
         max-width: 100%;
+        width: 100%;
       }
     }
     .signup-button-frame{
@@ -56,6 +58,45 @@ const fadeSlide = () => {
         line-height:160%;
       }
     }
+     @media (max-width:${({ theme }) => theme.media.tab}){
+        margin-top: 66px;
+        .signup-button-frame{
+          padding: 0 20px;
+          text-align: center;
+          top: auto;
+          bottom: -20px;
+          left: 50%;
+          transform: translate(-50%, 0%);
+          width: 100%;
+          .header-frame {
+            align-items: center;
+            .make-nature-your-business-container{
+              font-size: 42px;
+              line-height: 52px;
+            }
+            .we-help-organisations{
+              font-size: 16px;
+              line-height: 170%;
+            }
+            .sign-up-btn{
+              a{
+                display: block;
+              }
+            }
+          }
+        }
+        .shadow-slider{
+          position: relative;
+          &::after{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 420px;
+            background: linear-gradient(to bottom, rgba(0,50,36,0) 0%,rgba(0,50,36,0.39) 34%,rgba(0,50,36,0.41) 36%,rgba(0,50,36,1) 100%);
+            bottom: 0;
+          }
+        }
+    }
   `
 
   return (
@@ -74,19 +115,25 @@ const fadeSlide = () => {
               their landscapes. Together, we regenerate Nature and
               climate.
             </div>
-            <OrangeBtn class="button1">
-              <b class="sign-up1">Sign up</b>
+            <OrangeBtn class="sign-up-btn">
+              <Link to="#">Sign up</Link>
             </OrangeBtn>
             
           </div>
         </div>
         {/* slider content end */}
-        <Slider {...settings}>
+        <Slider {...settings} className="shadow-slider">
           <div className="slide-box">
-            <img src="./images/sliders/slider-image.png" />
+            <picture>
+              <source media="(max-width:700px)" srcset="./images/sliders/slider-1-mobile.png"/>
+              <img src="./images/sliders/slider-image.png" alt=""/>
+            </picture>
           </div>
           <div className="slide-box">
-            <img src="./images/sliders/slider-image.png" />
+            <picture>
+              <source media="(max-width:700px)" srcset="./images/sliders/slider-1-mobile.png"/>
+              <img src="./images/sliders/slider-image.png" alt=""/>
+            </picture>
           </div>
         </Slider>
       </div>

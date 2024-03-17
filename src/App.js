@@ -27,7 +27,7 @@ const App = () =>{
         "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;",
       shadowSupport: " rgba(0, 0, 0, 0.16) 0px 1px 4px",
     },
-    media: { mobile: "768px", tab: "998px" },
+    media: { mobile: "768px", tab: "1023px" },
   };
 
   return <>

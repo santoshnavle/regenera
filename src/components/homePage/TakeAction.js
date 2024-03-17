@@ -17,27 +17,43 @@ const TakeAction = () => {
             .title-box{
                 max-width: 630px;
                 margin: 0 auto;
-                position: relative;
-                .head-border{
-                    position: absolute;
-                   bottom: 39px;
-                    left: 10px;
+                .border-img-section{
+                    position: relative;
+                    .head-border{
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                    }
                 }
+                
             }
             .icon-text-container{
                 align-self: stretch;
                 gap: 20px;
             }
         }
-
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            padding: 56px 20px 42px;
+            .take-action-group{
+                gap: 32px;
+                .icon-text-container{
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 40px;
+                }
+            }
+        }
     `
 
     return(
         <TakeActionSection>
             <div className="take-action-group flex justify-start flex-col mx-auto">
                 <div className="title-box">
-                    <h1>Take action, boost your organisation's Nature and climate-positive journey.</h1>
-                    <img src="../images/title-border-line.svg" className="head-border"/>
+                    <h1>
+                    <span className="border-img-section">
+                        Take action,
+                        <img src="../images/title-border-line.svg" alt="border line" className="head-border"/>
+                    </span> boost your organisation's Nature and climate-positive journey.</h1>
                 </div>
                 <div className="icon-text-container flex justify-space-between flex-row items-start">
                     <IconWithText

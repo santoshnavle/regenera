@@ -99,7 +99,7 @@ const Testimonials = () => {
                         <div className="slide-box">
                            <div className="profile-info-parent flex flex-col">
                                 <div className="profile-img mx-auto">
-                                    <img src="../images/Martin.png"/>
+                                    <img alt="profile img" src="../images/Martin.png"/>
                                 </div>
                                 <div className="profile-info-quote flex flex-col">
                                     <div className="profile-quote">
@@ -115,7 +115,7 @@ const Testimonials = () => {
                         <div className="slide-box">
                            <div className="profile-info-parent flex flex-col">
                                 <div className="profile-img mx-auto">
-                                    <img src="../images/Martin.png"/>
+                                    <img src="../images/Martin.png" alt="profile img"/>
                                 </div>
                                 <div className="profile-info-quote flex flex-col">
                                     <div className="profile-quote">

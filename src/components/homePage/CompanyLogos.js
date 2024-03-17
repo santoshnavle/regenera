@@ -15,30 +15,30 @@ const WorkWith = () => {
         { id: 8, img: '../images/company-logo/certified-b-corp.png' },
     ]);
 
-      const settings = {
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 0,
-            speed: 8000,
-            pauseOnHover: true,
-            cssEase: 'linear',
-            arrows: false,
+    const settings = {
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 0,
+        speed: 8000,
+        pauseOnHover: true,
+        cssEase: 'linear',
+        arrows: false,
+        infinite: true,
+        centerMode: true,
+        variableWidth: true,
+        responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
             infinite: true,
-            centerMode: true,
-            variableWidth: true,
-            responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-                }
-            },
-        ]
-  };
+            dots: false
+            }
+        },
+    ]
+};
 
     const Alliances = styled.section`
         background: #F8FBF6;
@@ -70,7 +70,7 @@ const WorkWith = () => {
                     <Slider {...settings}>
                         {data.map((item) => (
                             <div key={item.id} className="co-logo">
-                                <img src={item.img}/>
+                                <img src={item.img} alt="company logos"/>
                             </div>
                         ))}
                     </Slider>

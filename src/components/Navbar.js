@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { LightGreenBtn } from "./Button";
 import DropdownMenu from "./DropDown";
-import { CgMenu, CgCloseR } from "react-icons/cg";
+import {CgCloseR } from "react-icons/cg";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   const Nav = styled.nav`
     .navbar-list{
-        gap: 100px;
+      gap: 100px;
     }
 
     .navbar-menu {
@@ -54,7 +54,7 @@ const Navbar = () => {
       display: none;
     }
 
-    @media (max-width: ${({ theme }) => theme.media.mobile}) {
+    @media (max-width: ${({ theme }) => theme.media.tab}) {
       .mobile-navbar-btn {
         display: inline-block;
         z-index: 999;
@@ -73,14 +73,17 @@ const Navbar = () => {
         position: absolute;
         top: 0;
         left: 0;
+        gap: 0;
         background-color: #fff;
-        justify-content: center;
+        justify-content: flex-start;
         align-content: center;
         flex-direction: column;
         text-align: center;
         transform: translateX(100%);
         visibility: hidden;
         opacity: 0;
+        padding-top: 65px;
+        overflow-y: auto;
 
         .navbar-menu{
           flex-direction: column;
@@ -100,10 +103,10 @@ const Navbar = () => {
 
       .active .mobile-nav-icon {
         display: none;
-        font-size: 4.2rem;
+        font-size: 2.2rem;
         position: absolute;
-        top: 3%;
-        right: 10%;
+        top: 20px;
+        right: 20px;
         color: ${({ theme }) => theme.colors.black};
         z-index: 9999;
       }
@@ -168,7 +171,7 @@ const Navbar = () => {
         </div>
         {/* //nav icon */}
         <div className="mobile-navbar-btn">
-          <CgMenu
+          <img src="./images/icons/mobile-nav.svg" alt="mobile-nav"
             name="menu-outline"
             className="mobile-nav-icon"
             onClick={() => setOpenMenu(true)}

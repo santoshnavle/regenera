@@ -185,7 +185,7 @@ const PartnersImpact = () => {
                         <div className="discover-card w-full">
                             <div className="card-img-btn">
                                 <div className="card-img">
-                                    <img src="../images/card-img.png" className="max-full"/>                            
+                                    <img src="../images/card-img.png" alt="" className="max-full"/>                            
                                 </div>
                                 <LightGreenBtn className="card-button">
                                     <Link to= "#">Discover more</Link>
@@ -201,7 +201,7 @@ const PartnersImpact = () => {
                                         {data.map((item) =>(
                                             <li className="flex items-center" key={item.id}>
                                                 <div className="icon-box flex items-center justify-center">
-                                                     <img src={item.img}/>
+                                                     <img src={item.img} alt=""/>
                                                 </div>
                                                 <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
                                             </li>
@@ -229,19 +229,19 @@ const PartnersImpact = () => {
                 <div className="peru-map">
                     <img src="../images/peru-map.svg" alt="peru map"/>
                     <Link to="#" className="top-one-location">
-                        <img src="../images/icons/location-pin.svg"/>
+                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
                     <Link to="#" className="active center-two-location">
-                        <img src="../images/icons/orange-location-pin.svg"/>
+                        <img src="../images/icons/orange-location-pin.svg" alt="selected location"/>
                     </Link>
                     <Link to="#" className="bottom-three-location">
-                        <img src="../images/icons/location-pin.svg"/>
+                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
                     <Link to="#" className="bottom-four-location">
-                        <img src="../images/icons/location-pin.svg"/>
+                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
                     <Link to="#" className="bottom-five-location">
-                        <img src="../images/icons/location-pin.svg"/>
+                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
                     <div className="click-info">
                         Click pins on the map to view our Landscapes

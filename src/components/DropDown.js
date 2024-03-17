@@ -5,7 +5,10 @@ import { IoIosArrowDown } from "react-icons/io";
 const DropdownContainer = styled.div`
   position: relative;
   display: inline-block;
-`;
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+    display: block;
+  }
+`
 
 const DropdownHeader = styled.div`
   cursor: pointer;
@@ -16,7 +19,7 @@ const DropdownHeader = styled.div`
   color: #004D37;
   transition: color 0.3s linear;
   width: 100%;
-`;
+`
 
 const DropdownListContainer = styled.div`
   position: absolute;
@@ -28,13 +31,18 @@ const DropdownListContainer = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 99;
-`;
+  @media (max-width: ${({ theme }) => theme.media.tab}) {
+   width: 100%;
+   position: relative;
+   top: 15px;
+  }
+`
 
 const DropdownList = styled.ul`
   padding: 10px 0;
   margin: 0;
   list-style: none;
-`;
+`
 
 const DropdownItem = styled.li`
   cursor: pointer;
@@ -66,7 +74,7 @@ const DropdownMenu = ({ options, defaultVal }) => {
 
   return (
     <DropdownContainer>
-      <DropdownHeader className="flex items-center" onClick={toggleDropdown}>
+      <DropdownHeader className="flex items-center justify-center" onClick={toggleDropdown}>
         {selectedOption || defaultVal}
         <IoIosArrowDown/>
       </DropdownHeader>

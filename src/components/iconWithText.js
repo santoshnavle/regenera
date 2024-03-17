@@ -37,11 +37,17 @@ const IconWithText = ({icon, title, text}) => {
                 padding: 0 5px;
             }
         }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            flex-wrap: wrap;
+            &::after{
+                content: none;
+            }
+        }
     `
 
     return (
         <IconTextFrame className="flex flex-col items-center justify-start">
-            <img src={icon} className="text-icon"/>
+            <img src={icon} alt="icon" className="text-icon"/>
             <div className="title-description flex-col items-center justify-start">
                 <div className="title">{title}</div>
                 <div className="description">{text}</div>

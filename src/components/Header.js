@@ -6,17 +6,26 @@ import styled from "styled-components";
 const Header = () => {
 
   const MainHeader = styled.header`
-  padding: 0 4.8rem;
-  height: 77px;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
+    padding: 0 4.8rem;
+    height: 77px;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
 
-  .logo {
-    height: auto;
-    max-width: 158px;
-  }
+    .logo {
+      height: auto;
+      max-width: 158px;
+    }
+    @media (max-width:${({ theme }) => theme.media.tab}){
+      padding: 0 20px;
+      height: 66px;
+      position: fixed;
+      width: 100%;
+      z-index: 9999;
+      top: 0;
+      background-color: white;
+    }
   `
 
   const [isSticky, setIsSticky] = useState(false);
@@ -38,7 +47,7 @@ const Header = () => {
   }, []);
   
   return (
-    <MainHeader className={`flex justify-space-between items-center ${isSticky ? 'sticky' : ''}`}>
+    <MainHeader className={`nav-header flex justify-space-between items-center ${isSticky ? 'sticky' : ''}`}>
       <NavLink to="/">
         <img src="./images/logo-regenera.png" alt="logo" className="logo" />
       </NavLink>

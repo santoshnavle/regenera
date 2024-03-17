@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {DarkGreenBtn, LightGreenBtn} from "../Button";
+import {LightGreenBtn} from "../Button";
 import styled from "styled-components";
 
 const Membership = () => {
