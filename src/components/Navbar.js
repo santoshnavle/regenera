@@ -61,7 +61,6 @@ const [openMenu, setOpenMenu] = useState(false);
             transition: color 0.3s linear;
             display: flex;
             align-items: center;
-            gap: 60px;
           }
 
           &:hover,
