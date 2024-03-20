@@ -334,9 +334,7 @@ const Footer = () => {
                             <Link to = "#">
                                 Send an e-mail
                             </Link>
-                            <Link to = "#">
-                                Send an e-mail TEST
-                            </Link>
+                            <div>Av. El Sol 627-B. Of. 404 Cusco, Perú</div>
                         </div>
                     </div>
                     <div className="footer-actions flex flex-col items-start justify-start">

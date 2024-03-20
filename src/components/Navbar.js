@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { LightGreenBtn } from "./Button";
-import DropdownMenu from "./DropDown";
+import MissionSubmenu from "./submenu/MissionSubmenu";
+import ContactSubmenu from "./submenu/ContactSubmenu";
+import LangSubmenu from "./submenu/LangSubmenu";
+import LoginSubmenu from "./submenu/LoginSubmenu";
 import {CgCloseR } from "react-icons/cg";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+const [openMenu, setOpenMenu] = useState(false);
   
-  const optionMission = ["As an organisation", "As a person", "As a land manager" ];
-  const optionsLanguage = ["EN", "SP"];
-  const defaultVal = ["Join the mission","Contact", "EN"];
 
+  
   const Nav = styled.nav`
     .navbar-list{
       gap: 100px;
@@ -22,21 +24,51 @@ const Navbar = () => {
       
       li {
         list-style: none;
-
+        position: relative;
+        .submenu{
+          display: none;
+          width: auto;
+          background: white;
+          position: absolute;
+          top: 34px;
+          padding: 10px 0;
+          box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
+          right: 0;
+          z-index: 2;
+          border-radius: 8px;
+          li{
+            a{
+              padding: 10px 20px;
+              display: block;
+              white-space: nowrap;
+              color: ${({ theme }) => theme.colors.title_green};
+              &:hover  {
+                  background-color: ${({ theme }) => theme.colors.bgnavlink_hover};
+                  ${({ theme }) => theme.colors.title_green};
+              }
+            }
+          }
+        }
         .navbar-link {
           &:link,
           &:visited {
             display: inline-block;
             text-decoration: none;
             font-size: 16px;
+            padding: 8px 0;
             font-weight: bold;
             color: ${({ theme }) => theme.colors.title_green};
             transition: color 0.3s linear;
+            display: flex;
+            align-items: center;
           }
 
           &:hover,
           &:active {
             color: ${({ theme }) => theme.colors.helper};
+            .submenu{
+              display: block;
+            }
           }
         }
       }
@@ -97,6 +129,18 @@ const Navbar = () => {
               background-color: ${({ theme }) => theme.colors.bgnavlink_hover};
               padding: 20px 0;
             }
+            a{
+              display: block !important;
+            }
+            .submenu{
+              position: relative;
+              top: 20px;
+              ul {
+                li{
+                  padding: 0;
+                }
+              }
+            }
           }
         }
       }
@@ -130,13 +174,17 @@ const Navbar = () => {
         <div className="navbar-list flex justify-space-between items-center">
           <ul className="navbar-menu nav-left flex items-center">
             <li className="mission-nav">
-              <DropdownMenu defaultVal={defaultVal[0]} options={optionMission}/>         
+              <NavLink
+                className="navbar-link" to="#">
+                  Join the mission <IoIosArrowDown/>
+                  <MissionSubmenu/>  
+              </NavLink>     
             </li>
             <li>
               <NavLink
-                className="navbar-link"
-                onClick={() => setOpenMenu(false)}
-                to="/about">
+                className="navbar-link" 
+                onClick={() => setOpenMenu(false)} 
+                to="/about"> 
                 About Regenera
               </NavLink>
             </li>
@@ -149,19 +197,27 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="contact-nav">
-              <DropdownMenu defaultVal={defaultVal[1]} options={optionsLanguage}/>         
+              <NavLink
+                className="navbar-link" to="">
+                  Contact <IoIosArrowDown/>
+                  <ContactSubmenu/>    
+              </NavLink>
+                    
             </li>
           </ul>
           <ul className="navbar-menu nav-right flex items-center">
             <li className="language-nav">
-              <DropdownMenu defaultVal={defaultVal[2]} options={optionsLanguage}/>         
+              <NavLink
+                className="navbar-link" to="">
+                  EN <IoIosArrowDown/>
+                  <LangSubmenu/>   
+              </NavLink>
             </li>
             <li>
               <NavLink
-                className="navbar-link"
-                onClick={() => setOpenMenu(false)}
-                to="/service">
-                Blog
+                className="navbar-link" to="/service">
+                Log in
+                <LoginSubmenu/>
               </NavLink>
             </li>
             <li>

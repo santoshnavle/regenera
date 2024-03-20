@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 import { LightGreenBtn } from "../Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import CustomSelect from "../selectDropdown";
 
 const PartnersImpact = () => {
 
@@ -32,6 +33,10 @@ const PartnersImpact = () => {
                     h3{
                         color: white;
                     }
+                    .custom-select-container{
+                        margin: 20px 0;
+                        display: none;
+                    }
                 }
                 .article-section{
                     gap: 24px;
@@ -61,6 +66,7 @@ const PartnersImpact = () => {
                             }
                             .card-info{
                                 line-height: 180%;
+                                margin-top: 0;
                             }
                             hr{
                                 background: #f6f6f6;
@@ -87,7 +93,13 @@ const PartnersImpact = () => {
                                 }
                                 
                             }
+                            .card-button-mobile{
+                                display: none;
+                            }
                         }
+                    }
+                    .discover-card.mobile-show{
+                        display: none;
                     }
                     .recent-actions{
                         h6{
@@ -172,6 +184,67 @@ const PartnersImpact = () => {
                 }
             }
         }
+
+        @media (max-width: ${({ theme }) => theme.media.tab}) {
+            padding: 20px 0 28px 0;
+            .peru-location-info{
+                .impact-list-info{
+                    max-width: none;
+                    gap: 0;
+                    .title-box{
+                        padding: 0 20px;
+                        .custom-select-container{
+                            display: block;
+                        }
+                    }
+                    .article-section{
+                        gap: 16px;
+                        padding-left:20px;
+                        padding-right: 20px;
+                        overflow-x: auto;
+                        .discover-card{
+                            min-width: 292px;
+                            max-width: 292px;
+                            .card-button{
+                                display: none;
+                            }
+                            .discover-card-info{
+                                padding: 20px 16px;
+                                border-radius: 8px;
+                                position: relative;
+                                top: -20px;
+                                .card-title{
+                                    margin-bottom: 4px;
+                                }
+                                hr{
+                                    margin: 16px 0;
+                                }
+                                .icon-with-numbers{
+                                    li{
+                                        &:last-child{
+                                            margin-bottom: 16px;
+                                        }
+                                    }
+                                    
+                                }
+                                .card-button-mobile{
+                                    display: block;
+                                }
+                            }
+                        }
+                        .discover-card.mobile-show{
+                            display: block;
+                        }
+                        .recent-actions{
+                            display: none;
+                        }
+                    }
+                }
+                .peru-map{
+                    display: none;
+                }
+            }
+        }
     `
 
     return(
@@ -180,12 +253,19 @@ const PartnersImpact = () => {
                 <div className="impact-list-info flex flex-col">
                     <div className="title-box">
                         <h3>Places in Peru where our Partners are <br/> already making a positive impact</h3>
+                        <div className="custom-select-container">
+                            <CustomSelect/>
+                        </div>
+                       
                     </div>
                     <div className="article-section flex justify-space-between">
                         <div className="discover-card w-full">
                             <div className="card-img-btn">
                                 <div className="card-img">
-                                    <img src="../images/card-img.png" alt="" className="max-full"/>                            
+                                    <picture>
+                                        <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
+                                        <img src="../images/card-img.png" className="w-full" alt=""/>
+                                    </picture>                         
                                 </div>
                                 <LightGreenBtn className="card-button">
                                     <Link to= "#">Discover more</Link>
@@ -196,7 +276,7 @@ const PartnersImpact = () => {
                                 <div className="card-title">Cañete Landscape</div>
                                 <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
                                 <hr/>
-                                <div className="icon-with-numbers">
+                                <div className="icon-with-numbers flex flex-col">
                                     <ul>
                                         {data.map((item) =>(
                                             <li className="flex items-center" key={item.id}>
@@ -207,9 +287,83 @@ const PartnersImpact = () => {
                                             </li>
                                         ))}
                                     </ul>
+                                    <LightGreenBtn className="card-button-mobile">
+                                        <Link to= "#">Discover more</Link>
+                                    </LightGreenBtn>
                                 </div>
                             </div>
                         </div>
+                        {/* mobile view discovery card start */}
+                        <div className="discover-card w-full mobile-show">
+                            <div className="card-img-btn">
+                                <div className="card-img">
+                                    <picture>
+                                        <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
+                                        <img src="../images/card-img.png" className="w-full" alt=""/>
+                                    </picture>                         
+                                </div>
+                                <LightGreenBtn className="card-button">
+                                    <Link to= "#">Discover more</Link>
+                                </LightGreenBtn>
+                            </div>
+                            
+                            <div className="discover-card-info mobile-show">
+                                <div className="card-title">Cañete Landscape</div>
+                                <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
+                                <hr/>
+                                <div className="icon-with-numbers flex flex-col">
+                                    <ul>
+                                        {data.map((item) =>(
+                                            <li className="flex items-center" key={item.id}>
+                                                <div className="icon-box flex items-center justify-center">
+                                                     <img src={item.img} alt=""/>
+                                                </div>
+                                                <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <LightGreenBtn className="card-button-mobile">
+                                        <Link to= "#">Discover more</Link>
+                                    </LightGreenBtn>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="discover-card w-full mobile-show">
+                            <div className="card-img-btn">
+                                <div className="card-img">
+                                    <picture>
+                                        <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
+                                        <img src="../images/card-img.png" className="w-full" alt=""/>
+                                    </picture>                         
+                                </div>
+                                <LightGreenBtn className="card-button">
+                                    <Link to= "#">Discover more</Link>
+                                </LightGreenBtn>
+                            </div>
+                            
+                            <div className="discover-card-info">
+                                <div className="card-title">Cañete Landscape</div>
+                                <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
+                                <hr/>
+                                <div className="icon-with-numbers flex flex-col">
+                                    <ul>
+                                        {data.map((item) =>(
+                                            <li className="flex items-center" key={item.id}>
+                                                <div className="icon-box flex items-center justify-center">
+                                                     <img src={item.img} alt=""/>
+                                                </div>
+                                                <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <LightGreenBtn className="card-button-mobile">
+                                        <Link to= "#">Discover more</Link>
+                                    </LightGreenBtn>
+                                </div>
+                            </div>
+                        </div>
+                        {/* mobile view discovery card ends*/}
                         <div className="recent-actions">
                             <h6>Recent actions:</h6>
                             <div className="list-recent-action flex flex-col">

@@ -21,10 +21,7 @@ export const LightGreenBtn = styled.button`
 
   &:hover,
   &:active {
-    box-shadow: 0 2rem 2rem 0 rgb(132 144 255 / 30%);
-    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
-    transform: scale(0.96);
-    background: ${({ theme }) => theme.colors.title_green}
+    background: #497d28;
   }
 
   a {
@@ -42,10 +39,7 @@ export const DarkGreenBtn = styled(LightGreenBtn)`
 
   &:hover,
   &:active {
-    box-shadow: 0 2rem 2rem 0 rgb(132 144 255 / 30%);
-    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
-    transform: scale(0.96);
-    background: ${({ theme }) => theme.colors.light_green}
+    background: #001c14;
   }
 `
 export const OrangeBtn = styled(LightGreenBtn)`
@@ -53,9 +47,6 @@ export const OrangeBtn = styled(LightGreenBtn)`
 
   &:hover,
   &:active {
-    box-shadow: 0 2rem 2rem 0 rgb(132 144 255 / 30%);
-    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
-    transform: scale(0.96);
-    background: ${({ theme }) => theme.colors.light_orange}
+    background: #c05303;
   }
 `

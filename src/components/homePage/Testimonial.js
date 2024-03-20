@@ -8,25 +8,26 @@ const Testimonials = () => {
 
     const settings = {
         dots: true,
-        fade: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
       
         responsive: [
         {
             breakpoint: 1023,
             settings: {
-            className: "center",
-            centerMode: true,
-            centerPadding: "60px",
             slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
+            slidesToScroll: 1,
+            centerMode: true,
+            arrows: false,
             dots: true,
-            arrows:false,
+            speed: 300,
+            centerPadding: '20px',
+            infinite: true,
+            autoplaySpeed: 5000,
+            autoplay: true
             }
         },
     ]
@@ -111,20 +112,52 @@ const Testimonials = () => {
                 flex-wrap: wrap;
                 gap: 40px;
                 .testimonal-slider{
+                    max-width: none;
                     order: 1;
-                    .slide-box{
-                        padding: 20px 16px 20px;
+                    box-shadow: none;
+                    .slick-slide{
+                        margin: 0 8px;
+                        .slick-center { 
+                            transform: scale(1.08);
+                        }
+                        .slide-box{
+                            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+                            padding: 20px 16px 20px;
+                            .profile-info-parent{
+                                display: inline-block;
+                                .profile-img{
+                                    margin-bottom: 8px;
+                                }
+                                .profile-info-quote{
+                                    display: inline-block;
+                                    .profile-quote{
+                                        margin-bottom: 4px;
+                                    }
+                                }
+                            }
+                        }
                     }
-                    background-color: white;
+                    
                 }
                 .testimonal-information{
                     order: 0;
+                    text-align: center;
+                    gap: 8px;
                     .parent-info{
                         gap: 24px;
                         .group-buttons-info{
                             .group-btns{
                                 flex-direction: column;
-                                gap: 8px
+                                gap: 8px;
+                                .action-btn{
+                                    margin: 0 auto;
+                                    &:first-child{
+                                        max-width: 211px;
+                                    }
+                                    &:last-child{
+                                        max-width: 197px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -143,6 +176,22 @@ const Testimonials = () => {
                            <div className="profile-info-parent flex flex-col">
                                 <div className="profile-img mx-auto">
                                     <img alt="profile img" src="../images/Martin.png"/>
+                                </div>
+                                <div className="profile-info-quote flex flex-col">
+                                    <div className="profile-quote">
+                                        “It is important for us to be Regenera members because we firmly believe that the nature-based solutions it offers are the best solution for our business and the planet.”
+                                    </div>
+                                    <div className="profile-name">
+                                        <strong>Martin Romero</strong> - General manager Explorandes
+                                    </div>
+                                </div>
+                           </div>
+                        </div>
+
+                        <div className="slide-box">
+                           <div className="profile-info-parent flex flex-col">
+                                <div className="profile-img mx-auto">
+                                    <img src="../images/Martin.png" alt="profile img"/>
                                 </div>
                                 <div className="profile-info-quote flex flex-col">
                                     <div className="profile-quote">

@@ -64,7 +64,7 @@ const fadeSlide = () => {
           padding: 0 20px;
           text-align: center;
           top: auto;
-          bottom: -20px;
+          bottom: 0;
           left: 50%;
           transform: translate(-50%, 0%);
           width: 100%;
@@ -83,17 +83,6 @@ const fadeSlide = () => {
                 display: block;
               }
             }
-          }
-        }
-        .shadow-slider{
-          position: relative;
-          &::after{
-            position: absolute;
-            content: "";
-            width: 100%;
-            height: 420px;
-            background: linear-gradient(to bottom, rgba(0,50,36,0) 0%,rgba(0,50,36,0.39) 34%,rgba(0,50,36,0.41) 36%,rgba(0,50,36,1) 100%);
-            bottom: 0;
           }
         }
     }
@@ -122,7 +111,7 @@ const fadeSlide = () => {
           </div>
         </div>
         {/* slider content end */}
-        <Slider {...settings} className="shadow-slider">
+        <Slider {...settings}>
           <div className="slide-box">
             <picture>
               <source media="(max-width:700px)" srcset="./images/sliders/slider-1-mobile.png"/>
@@ -132,7 +121,13 @@ const fadeSlide = () => {
           <div className="slide-box">
             <picture>
               <source media="(max-width:700px)" srcset="./images/sliders/slider-1-mobile.png"/>
-              <img src="./images/sliders/slider-image.png" alt=""/>
+              <img src="./images/sliders/slider-two.png" alt=""/>
+            </picture>
+          </div>
+           <div className="slide-box">
+            <picture>
+              <source media="(max-width:700px)" srcset="./images/sliders/slider-1-mobile.png"/>
+              <img src="./images/sliders/slider-three.png" alt=""/>
             </picture>
           </div>
         </Slider>
