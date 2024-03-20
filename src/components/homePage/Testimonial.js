@@ -18,16 +18,15 @@ const Testimonials = () => {
         {
             breakpoint: 1023,
             settings: {
-            slidesToShow: 3,
+            slidesToShow: 1,
             slidesToScroll: 1,
             centerMode: true,
+            className: 'center',
             arrows: false,
             dots: true,
             speed: 300,
-            centerPadding: '20px',
+            centerPadding: '35px',
             infinite: true,
-            autoplaySpeed: 5000,
-            autoplay: true
             }
         },
     ]
@@ -115,29 +114,35 @@ const Testimonials = () => {
                     max-width: none;
                     order: 1;
                     box-shadow: none;
-                    .slick-slide{
+                
+                    .slick-slider{
+                        margin-left: -20px;
+                        margin-right: -20px;
+                    }
+                    .slick-slide>div{
                         margin: 0 8px;
-                        .slick-center { 
-                            transform: scale(1.08);
-                        }
-                        .slide-box{
-                            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
-                            padding: 20px 16px 20px;
-                            .profile-info-parent{
+                    }
+                    .slide-box{
+                        box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+                        padding: 20px 16px 20px;
+                        .profile-info-parent{
+                            display: inline-block;
+                            .profile-img{
+                                margin-bottom: 8px;
+                            }
+                            .profile-info-quote{
                                 display: inline-block;
-                                .profile-img{
-                                    margin-bottom: 8px;
-                                }
-                                .profile-info-quote{
-                                    display: inline-block;
-                                    .profile-quote{
-                                        margin-bottom: 4px;
-                                    }
+                                .profile-quote{
+                                    margin-bottom: 4px;
                                 }
                             }
                         }
                     }
-                    
+                    .slick-center{
+                        .profile-name{
+                            margin-top: 6px;
+                        }
+                    }
                 }
                 .testimonal-information{
                     order: 0;
