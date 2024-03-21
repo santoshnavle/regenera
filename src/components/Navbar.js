@@ -33,7 +33,8 @@ const [openMenu, setOpenMenu] = useState(false);
           top: 34px;
           padding: 10px 0;
           box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
-          right: 0;
+          right: -10px;
+          border: 1px solid #fefefe;
           z-index: 2;
           border-radius: 8px;
           li{
@@ -61,6 +62,7 @@ const [openMenu, setOpenMenu] = useState(false);
             transition: color 0.3s linear;
             display: flex;
             align-items: center;
+            gap: 3px;
           }
 
           &:hover,

@@ -101,6 +101,7 @@ p {
   font-size: 16px;
   margin-top: 12px;
   font-weight:400;
+  line-height: 180%;
 }
 
 a {
