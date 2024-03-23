@@ -28,9 +28,7 @@ const Testimonials = () => {
             centerPadding: '35px',
             infinite: true,
             }
-        },
-    ]
-        
+        }]
     };
 
     const Testimonials = styled.section`

@@ -7,13 +7,14 @@ const HeroSection = () => {
     padding-left:4.8rem;
     gap: 80px;
     position: relative;
-        /* &::after{
-            content: " ";
-            background-image: url("./images/hero-leaf");
-            background-size: 100% auto;
-            width: 104px;
-            height: 178px;
-        } */
+    @media (max-width:${({ theme }) => theme.media.tab}){
+        margin-top: 66px;
+        padding: 25px 0 35px;
+        gap: 30px;
+    }
+    @media (max-width:${({ theme }) => theme.media.mobile}){
+        flex-direction: column;
+    }
     `
     const LeftSection = styled.section`
         max-width: 522px;
@@ -36,8 +37,31 @@ const HeroSection = () => {
                 color: ${({ theme }) => theme.colors.text_color};
             }
         }
+        @media (max-width:${({ theme }) => theme.media.tab}){
+            max-width: 100%;
+            padding: 0 20px;
+            .title-box{
+                margin-bottom: 12px;
+                h1{
+                    font-size: 38px;
+                    line-height: 52px;
+                    .border{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     `
     const RightSection = styled.section`
+    @media (max-width:${({ theme }) => theme.media.tab}){
+        padding-left: 20px;
+        min-width: 40%;
+        @media (max-width:${({ theme }) => theme.media.mobile}){
+            min-width: 100%;
+        }
+    }
     `
 
     return (
@@ -59,7 +83,7 @@ const HeroSection = () => {
 
             <RightSection>
                 <picture>
-                    <source media="(max-width:700px)" srcset="./images/banner-about-m.png"/>
+                    <source media="(max-width:768px)" srcset="./images/banner-about-m.png"/>
                     <img src="./images/banner-about.png" className="w-full" alt="about us"/>
                 </picture>
             </RightSection>
