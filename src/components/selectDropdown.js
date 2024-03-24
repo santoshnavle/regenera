@@ -61,6 +61,7 @@ const CustomSelect = () => {
   };
 
   const CustomSelectBox = styled.div`
+    position: relative;
     button{
         border-radius: 25px;
         border: 1px solid #DDEDD0;
@@ -80,6 +81,10 @@ const CustomSelect = () => {
         list-style: none;
         padding: 4px 0;
         background-color: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
         li{
             padding: 10px;
             &:active, &:focus, &:hover, [aria-selected="true"]

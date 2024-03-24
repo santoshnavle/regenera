@@ -3,6 +3,7 @@ import { LightGreenBtn } from "../Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import CustomSelect from "../selectDropdown";
+import ImpactSlider from "react-slick";
 
 const PartnersImpact = () => {
 
@@ -17,6 +18,33 @@ const PartnersImpact = () => {
         { id: 2, img: '../images/image-35.png', link:'#', title: 'Cocoons: A New Technology',  linkText: 'Read article', },
         { id: 3, img: '../images/image-35.png', link:'#', title: 'Cocoons: A New Technology',  linkText: 'Read article', },
     ]);
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+      
+        responsive: [
+        {
+            breakpoint: 9999,
+            settings: "unslick"
+        },
+        {
+            breakpoint: 1023,
+            settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false,
+            speed: 300,
+            infinite: true,
+            variableWidth: true,
+            }
+        }]
+    };
 
     const PositiveImpact = styled.section`
         padding: 40px 5px 55px 80px;
@@ -200,40 +228,44 @@ const PartnersImpact = () => {
                     .article-section{
                         gap: 16px;
                         padding-left:20px;
-                        padding-right: 20px;
+                        padding-right: 0;
                         overflow-x: auto;
-                        .discover-card{
-                            min-width: 292px;
-                            max-width: 292px;
-                            .card-button{
-                                display: none;
-                            }
-                            .discover-card-info{
-                                padding: 20px 16px;
-                                border-radius: 8px;
-                                position: relative;
-                                top: -20px;
-                                .card-title{
-                                    margin-bottom: 4px;
+                        .card-slider{
+                            width: 100%;
+                            .discover-card{
+                                min-width: 292px;
+                                max-width: 292px;
+                                .card-button{
+                                    display: none;
                                 }
-                                hr{
-                                    margin: 16px 0;
-                                }
-                                .icon-with-numbers{
-                                    li{
-                                        &:last-child{
-                                            margin-bottom: 16px;
-                                        }
+                                .discover-card-info{
+                                    padding: 20px 16px;
+                                    border-radius: 8px;
+                                    position: relative;
+                                    top: -20px;
+                                    .card-title{
+                                        margin-bottom: 4px;
                                     }
-                                    
-                                }
-                                .card-button-mobile{
-                                    display: block;
+                                    hr{
+                                        margin: 16px 0;
+                                    }
+                                    .icon-with-numbers{
+                                        li{
+                                            &:last-child{
+                                                margin-bottom: 16px;
+                                            }
+                                        }
+                                        
+                                    }
+                                    .card-button-mobile{
+                                        display: block;
+                                    }
                                 }
                             }
-                        }
-                        .discover-card.mobile-show{
-                            display: block;
+                            .slick-slide{margin-right: 16px}
+                            .discover-card.mobile-show{
+                                display: block;
+                            }
                         }
                         .recent-actions{
                             display: none;
@@ -258,112 +290,115 @@ const PartnersImpact = () => {
                         </div>
                        
                     </div>
-                    <div className="article-section flex justify-space-between">
-                        <div className="discover-card w-full">
-                            <div className="card-img-btn">
-                                <div className="card-img">
-                                    <picture>
-                                        <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
-                                        <img src="../images/card-img.png" className="w-full" alt=""/>
-                                    </picture>                         
+                    <div className="article-section flex items-start justify-space-between">
+                        <div className="card-slider">
+                            <ImpactSlider {...settings}>
+                                <div className="discover-card w-full">
+                                    <div className="card-img-btn">
+                                        <div className="card-img">
+                                            <picture>
+                                                <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
+                                                <img src="../images/card-img.png" className="w-full" alt=""/>
+                                            </picture>                         
+                                        </div>
+                                        <LightGreenBtn className="card-button">
+                                            <Link to= "#">Discover more</Link>
+                                        </LightGreenBtn>
+                                    </div>
+                                    
+                                    <div className="discover-card-info">
+                                        <div className="card-title">Cañete Landscape</div>
+                                        <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
+                                        <hr/>
+                                        <div className="icon-with-numbers flex flex-col">
+                                            <ul>
+                                                {data.map((item) =>(
+                                                    <li className="flex items-center" key={item.id}>
+                                                        <div className="icon-box flex items-center justify-center">
+                                                            <img src={item.img} alt=""/>
+                                                        </div>
+                                                        <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <LightGreenBtn className="card-button-mobile">
+                                                <Link to= "#">Discover more</Link>
+                                            </LightGreenBtn>
+                                        </div>
+                                    </div>
                                 </div>
-                                <LightGreenBtn className="card-button">
-                                    <Link to= "#">Discover more</Link>
-                                </LightGreenBtn>
-                            </div>
-                            
-                            <div className="discover-card-info">
-                                <div className="card-title">Cañete Landscape</div>
-                                <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
-                                <hr/>
-                                <div className="icon-with-numbers flex flex-col">
-                                    <ul>
-                                        {data.map((item) =>(
-                                            <li className="flex items-center" key={item.id}>
-                                                <div className="icon-box flex items-center justify-center">
-                                                     <img src={item.img} alt=""/>
-                                                </div>
-                                                <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <LightGreenBtn className="card-button-mobile">
-                                        <Link to= "#">Discover more</Link>
-                                    </LightGreenBtn>
+                                {/* mobile view discovery card start */}
+                                <div className="discover-card w-full mobile-show">
+                                    <div className="card-img-btn">
+                                        <div className="card-img">
+                                            <picture>
+                                                <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
+                                                <img src="../images/card-img.png" className="w-full" alt=""/>
+                                            </picture>                         
+                                        </div>
+                                        <LightGreenBtn className="card-button">
+                                            <Link to= "#">Discover more</Link>
+                                        </LightGreenBtn>
+                                    </div>
+                                    
+                                    <div className="discover-card-info mobile-show">
+                                        <div className="card-title">Cañete Landscape</div>
+                                        <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
+                                        <hr/>
+                                        <div className="icon-with-numbers flex flex-col">
+                                            <ul>
+                                                {data.map((item) =>(
+                                                    <li className="flex items-center" key={item.id}>
+                                                        <div className="icon-box flex items-center justify-center">
+                                                            <img src={item.img} alt=""/>
+                                                        </div>
+                                                        <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <LightGreenBtn className="card-button-mobile">
+                                                <Link to= "#">Discover more</Link>
+                                            </LightGreenBtn>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <div className="discover-card w-full mobile-show">
+                                    <div className="card-img-btn">
+                                        <div className="card-img">
+                                            <picture>
+                                                <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
+                                                <img src="../images/card-img.png" className="w-full" alt=""/>
+                                            </picture>                         
+                                        </div>
+                                        <LightGreenBtn className="card-button">
+                                            <Link to= "#">Discover more</Link>
+                                        </LightGreenBtn>
+                                    </div>
+                                    
+                                    <div className="discover-card-info">
+                                        <div className="card-title">Cañete Landscape</div>
+                                        <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
+                                        <hr/>
+                                        <div className="icon-with-numbers flex flex-col">
+                                            <ul>
+                                                {data.map((item) =>(
+                                                    <li className="flex items-center" key={item.id}>
+                                                        <div className="icon-box flex items-center justify-center">
+                                                            <img src={item.img} alt=""/>
+                                                        </div>
+                                                        <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <LightGreenBtn className="card-button-mobile">
+                                                <Link to= "#">Discover more</Link>
+                                            </LightGreenBtn>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* mobile view discovery card ends*/}
+                            </ImpactSlider>
                         </div>
-                        {/* mobile view discovery card start */}
-                        <div className="discover-card w-full mobile-show">
-                            <div className="card-img-btn">
-                                <div className="card-img">
-                                    <picture>
-                                        <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
-                                        <img src="../images/card-img.png" className="w-full" alt=""/>
-                                    </picture>                         
-                                </div>
-                                <LightGreenBtn className="card-button">
-                                    <Link to= "#">Discover more</Link>
-                                </LightGreenBtn>
-                            </div>
-                            
-                            <div className="discover-card-info mobile-show">
-                                <div className="card-title">Cañete Landscape</div>
-                                <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
-                                <hr/>
-                                <div className="icon-with-numbers flex flex-col">
-                                    <ul>
-                                        {data.map((item) =>(
-                                            <li className="flex items-center" key={item.id}>
-                                                <div className="icon-box flex items-center justify-center">
-                                                     <img src={item.img} alt=""/>
-                                                </div>
-                                                <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <LightGreenBtn className="card-button-mobile">
-                                        <Link to= "#">Discover more</Link>
-                                    </LightGreenBtn>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="discover-card w-full mobile-show">
-                            <div className="card-img-btn">
-                                <div className="card-img">
-                                    <picture>
-                                        <source media="(max-width:700px)" srcset="../images/card-img-mobile.png"/>
-                                        <img src="../images/card-img.png" className="w-full" alt=""/>
-                                    </picture>                         
-                                </div>
-                                <LightGreenBtn className="card-button">
-                                    <Link to= "#">Discover more</Link>
-                                </LightGreenBtn>
-                            </div>
-                            
-                            <div className="discover-card-info">
-                                <div className="card-title">Cañete Landscape</div>
-                                <p className="card-info">The Cañete River is one of the most important rivers in the Lima region.</p>
-                                <hr/>
-                                <div className="icon-with-numbers flex flex-col">
-                                    <ul>
-                                        {data.map((item) =>(
-                                            <li className="flex items-center" key={item.id}>
-                                                <div className="icon-box flex items-center justify-center">
-                                                     <img src={item.img} alt=""/>
-                                                </div>
-                                                <div className="number-info"><strong>{item.strong}</strong> {item.text}</div>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <LightGreenBtn className="card-button-mobile">
-                                        <Link to= "#">Discover more</Link>
-                                    </LightGreenBtn>
-                                </div>
-                            </div>
-                        </div>
-                        {/* mobile view discovery card ends*/}
                         <div className="recent-actions">
                             <h6>Recent actions:</h6>
                             <div className="list-recent-action flex flex-col">
