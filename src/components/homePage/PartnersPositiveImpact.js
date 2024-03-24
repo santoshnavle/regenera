@@ -228,7 +228,7 @@ const PartnersImpact = () => {
                                     
                                 }
                                 .card-button-mobile{
-                                    display: none;
+                                    display: block;
                                 }
                             }
                         }
