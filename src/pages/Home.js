@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import Carousel from "../components/Carousel";
 import TakeAction from "../components/homePage/TakeAction";
 import CompanyLogos from "../components/CompanyLogos";
@@ -7,7 +7,27 @@ import BenefitsMembership from "../components/homePage/BenefitsMembership";
 import Mission from "../components/homePage/Mission";
 import Testimonials from "../components/homePage/Testimonial";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
+
 const Home = () => {
+
+    const container = useRef();
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".take-action-group",
+                markers: true,
+                start: "top center",
+            }
+        });
+        tl.from(".iconframe", {top: 100, opacity:0, stagger:{amount:1}});
+    },{ scope:container}
+    );
 
     const sliderData = [
         { id: 1, img: '../images/company-logo/idb.png' },
@@ -46,17 +66,19 @@ const Home = () => {
     };
 
     return <>
-        <Carousel/>
-        <TakeAction/>
-        <CompanyLogos 
-            settings = {slidersetting}
-            data = {sliderData}
-            title = "Proud of our work practices and alliances:"
-        />
-        <PartnersImpact/>
-        <BenefitsMembership/>
-        <Mission/>
-        <Testimonials/>
+        <div ref={container}>
+            <Carousel/>
+            <TakeAction/>
+            <CompanyLogos 
+                settings = {slidersetting}
+                data = {sliderData}
+                title = "Proud of our work practices and alliances:"
+            />
+            <PartnersImpact/>
+            <BenefitsMembership/>
+            <Mission/>
+            <Testimonials/>
+        </div>
     </>
 }
 

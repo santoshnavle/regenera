@@ -4,6 +4,7 @@ import styled from "styled-components";
 const IconWithText = ({icon, title, text}) => {
 
     const IconTextFrame = styled.div`
+        opacity: 1;
         gap: 20px;
         max-width: 305px;
         position: relative;
@@ -56,7 +57,7 @@ const IconWithText = ({icon, title, text}) => {
     `
 
     return (
-        <IconTextFrame className="flex flex-col items-center justify-start">
+        <IconTextFrame className="iconframe flex flex-col items-center justify-start">
             <img src={icon} alt="icon"/>
             <div className="title-description flex-col items-center justify-start">
                 <div className="title">{title}</div>
