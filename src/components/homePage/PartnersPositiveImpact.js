@@ -40,6 +40,8 @@ const PartnersImpact = () => {
             arrows: false,
             dots: false,
             speed: 300,
+            centerMode: true, 
+            centerPadding: '35px',
             infinite: true,
             variableWidth: true,
             }
@@ -227,13 +229,13 @@ const PartnersImpact = () => {
                     }
                     .article-section{
                         gap: 16px;
-                        padding-left:20px;
+                        padding-left:0;
                         padding-right: 0;
                         overflow-x: auto;
                         .card-slider{
                             width: 100%;
                             .discover-card{
-                                min-width: 292px;
+                                margin: 0 8px;
                                 max-width: 292px;
                                 .card-button{
                                     display: none;
@@ -262,7 +264,6 @@ const PartnersImpact = () => {
                                     }
                                 }
                             }
-                            .slick-slide{margin-right: 16px}
                             .discover-card.mobile-show{
                                 display: block;
                             }
