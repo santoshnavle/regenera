@@ -21,12 +21,15 @@ const HeroSection = () => {
         .title-box{
             margin-bottom: 16px;
             h1{
+                font-size: 48px;
+                line-height: 58px;
                 .border{
                     position: relative;
                     img{
                         position: absolute;
                         bottom: -3px;
                         left: 0;
+                        width: 100%;
                     }
                 }
             }
@@ -45,6 +48,9 @@ const HeroSection = () => {
                 h1{
                     font-size: 38px;
                     line-height: 52px;
+                    br{
+                        display: none;
+                    }
                     .border{
                         img{
                             width: 100%;
@@ -68,12 +74,11 @@ const HeroSection = () => {
         <HeroContainer className="flex items-center justify-space-between">
             <LeftSection>
                 <div className="title-box">
-                    <h1>We protect and&nbsp;
+                    <h1>We protect and <br/>
                         <span className="border">
                             regenerate 
                             <img src="./images/title-border-line.svg" alt="border"/>
-                        </span>&nbsp;
-                        Nature, together</h1>
+                        </span>&nbsp;Nature, together</h1>
                 </div>
                 <div className="content-box">
                     <p>Our team enables your organisation to have a positive impact on nature, climate, and communities. This is achieved through our partnerships with local land managers who receive technical assistance and monthly financial support to protect and restore natural landscapes. </p>
