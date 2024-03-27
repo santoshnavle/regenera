@@ -12,6 +12,7 @@ const Header = () => {
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
+    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
 
     .logo {
       height: auto;

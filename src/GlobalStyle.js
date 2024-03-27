@@ -140,7 +140,6 @@ li {
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
-  box-shadow: 0 0 30px #eaeaea;
 }
 
 .company-logo-container .slick-track{
