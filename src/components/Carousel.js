@@ -1,24 +1,11 @@
-import React, {useRef} from "react";
+import React from "react";
 import "../slick-slider-css/slick.min.css";
 import "../slick-slider-css/slick-theme.min.css";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import { OrangeBtn } from "./Button";
 import styled from "styled-components";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-
 const FadeSlide = () => {
-
-  // animation
-  const SliderContainer = useRef();
-   
-  useGSAP(() => {
-      // use selectors...
-      gsap.from(SliderContainer.current,  {delay:1, opacity:0, y:300, ease: "sine",})
-    },
-    { scope: SliderContainer }  // <-- scope for selector text (optional)
-  );
 
   const settings = {
     dots: false,
@@ -105,7 +92,7 @@ const FadeSlide = () => {
     <SliderSection>
       <div className="slider-container">
         {/* slider content */}
-        <div ref={SliderContainer} class="signup-button-frame">
+        <div class="signup-button-frame">
           <div class="header-frame flex flex-col justify-start">
             <h1 class="make-nature-your-business-container">
               Make Nature<br/>your business

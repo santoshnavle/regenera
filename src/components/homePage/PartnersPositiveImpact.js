@@ -282,7 +282,7 @@ const PartnersImpact = () => {
 
     return(
         <PositiveImpact>
-            <div className="peru-location-info mx-auto flex items-center">
+            <div id="partner-animation" className="peru-location-info mx-auto flex items-center">
                 <div className="impact-list-info flex flex-col">
                     <div className="title-box">
                         <h3>Places in Peru where our Partners are <br/> already making a positive impact</h3>
@@ -291,7 +291,7 @@ const PartnersImpact = () => {
                         </div>
                        
                     </div>
-                    <div className="article-section flex items-start justify-space-between">
+                    <div className="scroll-pin article-section flex items-start justify-space-between">
                         <div className="card-slider">
                             <ImpactSlider {...settings}>
                                 <div className="discover-card w-full">
@@ -418,19 +418,19 @@ const PartnersImpact = () => {
                 </div>         
                 <div className="peru-map">
                     <img src="../images/peru-map.svg" alt="peru map"/>
-                    <Link to="#" className="top-one-location">
+                    <Link to="#" className="top-one-location location-icon">
                         <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
-                    <Link to="#" className="active center-two-location">
+                    <Link to="#" className="active center-two-location location-icon">
                         <img src="../images/icons/orange-location-pin.svg" alt="selected location"/>
                     </Link>
-                    <Link to="#" className="bottom-three-location">
+                    <Link to="#" className="bottom-three-location location-icon">
                         <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
-                    <Link to="#" className="bottom-four-location">
+                    <Link to="#" className="bottom-four-location location-icon">
                         <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
-                    <Link to="#" className="bottom-five-location">
+                    <Link to="#" className="bottom-five-location location-icon">
                         <img src="../images/icons/location-pin.svg" alt="unselected location"/>
                     </Link>
                     <div className="click-info">

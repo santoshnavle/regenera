@@ -158,25 +158,31 @@ const Mission = () => {
             <PositiveImpact>
                 <div className="impact-info mx-auto flex flex-col">
                     <h3>Our positive impact for Nature</h3>
-                    <div className="impact-group">
+                    <div id="storageNumber" className="impact-group">
                         <div className="grid grid-three-column">
                             <div className="impact-info-numbers flex flex-col">
                                 <div className="total-numbers-info">
-                                    9,059
+                                    <div className="number-animation">
+                                        9,059
+                                    </div>
                                     <span>land managers</span>
                                 </div>
                                 <div className="short-info">receiving technical and financial recognition</div>
                             </div>
                             <div className="impact-info-numbers flex flex-col">
                                 <div className="total-numbers-info">
-                                    127,313
+                                    <div className="number-animation">
+                                        127,313
+                                    </div>
                                     <span>hectares</span>
                                 </div>
                                 <div className="short-info">of natural ecosystems protected and managed regeneratively</div>
                             </div>
                             <div className="impact-info-numbers flex flex-col">
                                 <div className="total-numbers-info">
-                                    180,010
+                                    <div className="number-animation">
+                                        180,010
+                                    </div>
                                     <span>tonnes</span>
                                 </div>
                                 <div className="short-info">of avoided deforestation and captured restoration carbon emissions</div>

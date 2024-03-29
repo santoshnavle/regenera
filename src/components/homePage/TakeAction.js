@@ -1,25 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import IconWithText from "../iconWithText";
-// import gsap from "gsap";
-// import { useGSAP } from "@gsap/react";
 
 const TakeAction = () => {
-
-    // const actionContainer = useRef();
-
-    // useGSAP(() => {
-    //     const scroltgr = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".take-action-group",
-    //             start: "top center",
-    //             end: "bottom bottom",
-    //             markers: true,
-    //         }
-    //     })
-    //     scroltgr.from(".iconframe", {top: 100, opacity:0, stagger:{amount:1}, delay:3,});
-    // },{ scope:actionContainer }
-    // );
 
     const TakeActionSection = styled.section`
         padding: 88px 4.8rem 110px;
