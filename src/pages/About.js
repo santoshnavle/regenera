@@ -86,11 +86,17 @@ const About = () => {
             padding: 110px 4.8rem;
             max-width: 1920px;
         }
+        .autor-section {
+            .imgBoxClass{
+                flex: 1 0 50%;
+                max-width: 522px;
+            }
+            .img-text-container{
+                align-items: stretch;
+            }
+        }
         .corporation-section{
             background-color: white;
-        }
-        .imgBoxClass{
-            min-width: 522px;
         }
         .business-container{
             margin: 0 auto;

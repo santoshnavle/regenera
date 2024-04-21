@@ -187,7 +187,7 @@ const [openMenu, setOpenMenu] = useState(false);
                 className="navbar-link" 
                 onClick={() => setOpenMenu(false)} 
                 to="/about"> 
-                About Regenera
+                About
               </NavLink>
             </li>
             <li>

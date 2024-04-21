@@ -8,7 +8,7 @@ const ToJoin = () => {
         position: relative;
         .team-section{
             min-height: 347px;
-            background-color:${({ theme }) => theme.colors.title_green};
+            background: url('../images/bg-texture-green.jpg');
             text-align: center;
             gap: 40px;
             .title-box{
