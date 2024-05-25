@@ -194,7 +194,7 @@ const [openMenu, setOpenMenu] = useState(false);
               <NavLink
                 className="navbar-link"
                 onClick={() => setOpenMenu(false)}
-                to="/service">
+                to="/blog">
                 Blog
               </NavLink>
             </li>

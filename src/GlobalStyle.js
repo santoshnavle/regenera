@@ -97,6 +97,10 @@ h1, h2, h3, .card-title{
   width: 100%;
 }
 
+.text-center{
+  text-align: center;
+}
+
 p {
   font-size: 16px;
   margin-top: 12px;
@@ -127,6 +131,14 @@ li {
 
 .grid-four-column{
    grid-template-columns: 1fr 1.2fr .5fr .8fr ;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
 }
 
 .sticky{
