@@ -178,7 +178,7 @@ const [openMenu, setOpenMenu] = useState(false);
             <li className="mission-nav">
               <NavLink
                 className="navbar-link" to="#">
-                  Join the mission <IoIosArrowDown/>
+                  Join <IoIosArrowDown/>
                   <MissionSubmenu/>  
               </NavLink>     
             </li>
