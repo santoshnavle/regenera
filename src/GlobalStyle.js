@@ -84,6 +84,10 @@ h1, h2, h3, .card-title{
   justify-content: flex-end;
 }
 
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -139,6 +143,22 @@ li {
 
 .relative{
   position: relative;
+}
+
+.small, small{
+  font-size: 14px;
+}
+
+.form-group .form-control{
+  line-height: 29px;
+  padding: 2px 12px;
+  border-radius: 6px;
+  border: 1px solid #DDEDD0;
+}
+
+.form-group .form-control::placeholder{
+  color: #004D37;
+  font-weight: 400;
 }
 
 .sticky{

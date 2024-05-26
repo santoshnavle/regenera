@@ -4,6 +4,12 @@ import { LightGreenBtn } from "./Button";
 
 const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
 
+    // temporary code starts
+    function btnClick() {
+        window.open("/blogsearch");
+    }
+    // temporary code ends 
+
     const HeroContainer = styled.section`
     min-height: 370px;
     background: url('../images/bg-texture-green.jpg');
@@ -13,7 +19,7 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
     }
     `
     const Center = styled.div`
-        max-width: 522px;
+        max-width: 925px;
         align-self: center;
         top: -18px;
         margin: 26px 20px;
@@ -22,20 +28,20 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
                 font-size: 48px;
                 line-height: 58px;
                 color: white;
+                position: relative;
                 .border{
-                    position: relative;
                     img{
                         position: absolute;
                         bottom: -8px;
                         transform: translateX(-50%);
                         left: 50%;
-                        width: 95%;
                     }
                 }
             }
             .subtitle{
                 color: white;
                 margin-top:20px;
+                max-width: 522px;
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
@@ -89,16 +95,16 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
                             {title}
                             <picture>
                                 <source media="(max-width:768px)" srcset={ImageMobile}/>
-                                <img src={Image} className="w-full" alt=""/>
+                                <img src={Image} className="w-auto" alt=""/>
                             </picture>
                         </span>
                     </h1>
-                    <div className="subtitle">{subtitle}</div>
+                    <div className="subtitle mx-auto">{subtitle}</div>
                 </div>
             </Center>
             <SearchBox className="mx-auto w-full flex absolute">
                 <input type="text" class="form-control w-full" placeholder="Search..." aria-label="blog search" aria-describedby="blog search"/>
-                <LightGreenBtn className="search-btn absolute" type="submit">Search</LightGreenBtn>
+                <LightGreenBtn className="search-btn absolute" onClick={btnClick} type="submit">Search</LightGreenBtn>
             </SearchBox>
         </HeroContainer>
     )

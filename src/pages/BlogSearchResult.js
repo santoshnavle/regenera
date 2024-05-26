@@ -17,12 +17,7 @@ const Blog = () => {
 
     // blog posts data
      const data  = [
-        { id: 1, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '15 May 2024' },
-        { id: 2, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '16 May 2024' },
-        { id: 3, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '17 May 2024' },
-        { id: 4, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '15 May 2024' },
-        { id: 5, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '16 May 2024' },
-        { id: 6, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '17 May 2024' },
+        
     ];
 
     // styled
@@ -37,6 +32,14 @@ const Blog = () => {
             .post-lists{
                 flex-wrap: wrap;
                 gap: 30px 20px;
+                .no-result{
+                    font-size: 32px;
+                    line-height: 42px;
+                    color: #CECECE;
+                    max-width: 630px;
+                    margin-top: 30px;
+                    font-weight: 600;
+                }
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
@@ -146,8 +149,8 @@ const Blog = () => {
     return (
         <BlogSection>
             <HeroSectionBlog
-            title="Regenera in Action"
-            subtitle={para1}
+            title="Results for 'Jaguar something longer so it's on 2 lines'"
+            subtitle=""
             ImageMobile={"../images/blog-title-line-m.svg"}
             Image={"../images/blog-title-line-d.svg"}
             />
@@ -200,7 +203,7 @@ const Blog = () => {
                         postDate = {item.postDate}
                     />
                     ))}
-                    
+                    <h2 className="no-result mx-auto text-center">There are no results. Please try different words or filters. </h2>
                 </div>
             </div>
             <NewsSubscribe/>
