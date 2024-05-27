@@ -46,10 +46,10 @@ const BlogPostCard = ({image, category, title, authorName, postDate}) => {
                 }
             }
         }
-        @media (max-width:${({ theme }) => theme.media.tab}){
+        @media (max-width: 700px){
             width: 50%;
         }
-        @media (max-width:${({ theme }) => theme.media.mobile}){
+        @media (max-width:699){
             width: 100%;
         }
         

@@ -38,6 +38,7 @@ const NewsSubscribe = () => {
             .success-fail{
                 margin-top: 30px;
                 font-weight: 600;
+                height: 18px;
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}){

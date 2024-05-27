@@ -49,6 +49,8 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
             margin-top: 0;
             .title-box{
                 h1{
+                    font-size: 42px;
+                    line-height: 52px;
                     .border{
                         display: block;
                         img{

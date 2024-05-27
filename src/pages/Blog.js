@@ -49,6 +49,7 @@ const Blog = () => {
         max-width: 1280px;
         .navbar-menu {
             gap: 12px;
+            margin-right: 20px;
             .landscape-nav{
                 .submenu{
                     right: -115px;
@@ -108,11 +109,12 @@ const Blog = () => {
                         display: block;
                     }
                 }
-                
+            }
+            @media (max-width:${({ theme }) => theme.media.tab}){
+                margin-bottom: 8px;
             }
         }    
         .selected-multi{
-            margin-left: 20px;
             .selected-token{
                 gap:12px;
                 .token{
@@ -129,6 +131,10 @@ const Blog = () => {
                     .close-icon{
                         font-size: 30px;
                     }
+                    span{
+                        text-wrap: nowrap;
+                    }
+
                 }
                 .remove{
                     font-weight: 600;
@@ -137,6 +143,16 @@ const Blog = () => {
                     &:hover{
                         border: 1px solid #ccc;
                         border-radius: 25px;
+                    }
+                }
+            }
+            @media (max-width:${({ theme }) => theme.media.tab}){
+                .selected-token{
+                    gap: 5px;
+                    .token{
+                        &:last-child{
+                            margin-right: 0;
+                        }
                     }
                 }
             }
@@ -152,7 +168,7 @@ const Blog = () => {
             Image={"../images/blog-title-line-d.svg"}
             />
             <div className="blog-lists-container mx-auto">
-                <BlogMenu className="mx-auto flex items-center">
+                <BlogMenu className="mx-auto flex flex-wrap items-start">
                     <ul className="navbar-menu nav-right flex items-center">
                         <li className="category-nav">
                             <NavLink
@@ -170,7 +186,7 @@ const Blog = () => {
                         </li>
                     </ul>
                     <div className="selected-multi">
-                        <div className="selected-token flex">
+                        <div className="selected-token flex flex-wrap">
                             <Link className="token flex items-center">
                                 <span>Regenerate Together</span>
                                 <img src="../../images/icons/close-icon.svg" className="close-icon" alt="close"/>
