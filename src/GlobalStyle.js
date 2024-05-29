@@ -161,6 +161,19 @@ li {
   font-weight: 400;
 }
 
+.category-list{
+  gap: 8px;
+}
+.category-list li{
+      color: white;
+      font-weight: 600;
+      background-color: ${({ theme }) => theme.colors.title_green};
+      border-radius: 25px;
+      line-height: 28px;
+      padding: 0px 10px;
+  }
+            
+
 .sticky{
   position: fixed;
   top: 0;

@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogSearchResult from "./pages/BlogSearchResult";
+import BlogPost from "./pages/BlogPost";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
@@ -42,6 +43,7 @@ const App = () =>{
             <Route path="/about" element={<About/>}/>
             <Route path="/blog" element={<Blog/>}/>
             <Route path="/blogsearch" element={<BlogSearchResult/>}/>
+            <Route path="/blog-post" element={<BlogPost/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>

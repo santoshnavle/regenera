@@ -18,17 +18,6 @@ const BlogPostCard = ({image, category, title, authorName, postDate}) => {
             padding: 24px 32px;
             position: relative;
             z-index: 99;
-            .category-list{
-                gap: 8px;
-                li{
-                    color: white;
-                    font-weight: 600;
-                    background-color: ${({ theme }) => theme.colors.title_green};
-                    border-radius: 25px;
-                    line-height: 28px;
-                    padding: 0px 10px;
-                }
-            }
             .title-box{
                 gap: 8px;
                 h4{
