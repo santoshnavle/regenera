@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const BlogPostCard = ({image, category, title, authorName, postDate}) => {
+const BlogPostCard = ({linkto, classname, image, category, title, authorName, postDate}) => {
 
     const CardContainer = styled.div`
         box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.05);
@@ -46,21 +47,23 @@ const BlogPostCard = ({image, category, title, authorName, postDate}) => {
     
 
     return (
-        <CardContainer>
-            <img src={image} className="w-full" alt={title}/>
-            <div className="card-box flex flex-col">
-                <ul className="category-list flex">
-                    {category}
-                </ul>
-                <div className="title-box flex flex-col">
-                    <h4>{title}</h4>
-                    <div className="author">
-                        <small>
-                            {authorName} | {postDate}
-                        </small>
+        <CardContainer className={classname}>
+            <Link to={linkto}>
+                <img src={image} className="w-full" alt={title}/>
+                <div className="card-box flex flex-col">
+                    <ul className="category-list flex">
+                        {category}
+                    </ul>
+                    <div className="title-box flex flex-col">
+                        <h4>{title}</h4>
+                        <div className="author">
+                            <small>
+                                {authorName} | {postDate}
+                            </small>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Link>
         </CardContainer>
     )
 }

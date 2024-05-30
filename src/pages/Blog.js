@@ -17,12 +17,12 @@ const Blog = () => {
 
     // blog posts data
      const data  = [
-        { id: 1, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '15 May 2024' },
-        { id: 2, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '16 May 2024' },
-        { id: 3, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '17 May 2024' },
-        { id: 4, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '15 May 2024' },
-        { id: 5, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '16 May 2024' },
-        { id: 6, img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '17 May 2024' },
+        { id: 1, linkto: "/blog-post", img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '15 May 2024' },
+        { id: 2, linkto: "/blog-post", img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '16 May 2024' },
+        { id: 3, linkto: "/blog-post", img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '17 May 2024' },
+        { id: 4, linkto: "/blog-post", img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '15 May 2024' },
+        { id: 5, linkto: "/blog-post", img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '16 May 2024' },
+        { id: 6, linkto: "/blog-post", img: '../images/blog-post-img.png', categoryData: ['Category', 'Landscape'], title: 'A nice title that may be as long as about two lines goes here.', authorName: 'manicured hectares', postDate: '17 May 2024' },
     ];
 
     // styled
@@ -205,6 +205,7 @@ const Blog = () => {
                 <div className="post-lists flex justify-space-between">
                     {data.map((item) =>(
                         <BlogPostCard
+                        linkto = {item.linkto}
                         image = {item.img}
                         category = {item.categoryData.map((catitem)=>{
                                 return(

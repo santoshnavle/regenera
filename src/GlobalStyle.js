@@ -44,6 +44,14 @@ h1, h2, h3, .card-title{
   font-weight: 600;
 }
 
+.fw-normal{
+  font-weight: 600;
+}
+
+.fw-bold{
+  font-weight: bold;
+}
+
 .flex{
   display: flex;
 }
@@ -221,6 +229,11 @@ li {
 }
 
 @media (max-width:${({ theme }) => theme.media.mobile}) {
+
+  .hide-mobile{
+    display: none;
+  }
+  
 
   .grid{
     gap: 3.2rem;
