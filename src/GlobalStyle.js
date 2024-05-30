@@ -123,6 +123,9 @@ p {
 a {
   text-decoration: none;
 }
+a:active {
+  color: darkgreen;
+}
 
 li {
   list-style: none;
@@ -173,13 +176,13 @@ li {
   gap: 8px;
 }
 .category-list li{
-      color: white;
-      font-weight: 600;
-      background-color: ${({ theme }) => theme.colors.title_green};
-      border-radius: 25px;
-      line-height: 28px;
-      padding: 0px 10px;
-  }
+    color: white;
+    font-weight: 600;
+    background-color: ${({ theme }) => theme.colors.title_green};
+    border-radius: 25px;
+    line-height: 28px;
+    padding: 0px 10px;
+}
             
 
 .sticky{
@@ -233,7 +236,7 @@ li {
   .hide-mobile{
     display: none;
   }
-  
+
 
   .grid{
     gap: 3.2rem;

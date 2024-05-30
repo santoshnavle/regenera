@@ -43,7 +43,7 @@ const RelatedSection = () => {
             slidesToScroll: 1,
             centerMode: true,
             className: 'center',
-            centerPadding: '60px',
+            centerPadding: '30px',
             arrows: false,
             dots: false,
             speed: 300,
@@ -78,9 +78,10 @@ const RelatedSection = () => {
             }
            .card-container{
                 width: auto;
-                margin: 0 12px;
+               min-width: 290px;
+                padding: 0 12px;
                 &:first-child{
-                    margin-left: 0;
+                    padding-left: 0;
                 }
             }
         }

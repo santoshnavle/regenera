@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import NewsSubscribe from "../components/blogList/NewsSubscribe";
 import RelatedSection from "../components/blogDetail/Related";
+import BecomeMember from "../components/blogDetail/BecomePartner";
 
 
 
@@ -132,7 +132,12 @@ const BlogPost = () => {
 
             </div>
             <RelatedSection/>
-            <NewsSubscribe/>
+            <BecomeMember
+                title="Take action for Nature, climate, and communities" 
+                linkto="#"
+                btnText= "Become a Partner"
+                paraText = "From only $30 per month, you and your business can become a force of Nature."
+            />
         </BlogPostSection>
     )
 }

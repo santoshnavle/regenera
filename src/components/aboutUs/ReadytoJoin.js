@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { OrangeBtn } from "../Button";
 
-const ToJoin = (title, button, connectText, paraText) => {
+const ToJoin = () => {
     const JoinSection = styled.section`
         position: relative;
         .team-section{
