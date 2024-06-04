@@ -7,6 +7,7 @@ const BecomeMember = ({title, linkto, btnText, paraText}) => {
     const GreenSection = styled.section`
         position: relative;
         background: url('../images/bg-texture-green.jpg');
+        background-size: cover;
         text-align: center;
         .green-box{
             min-height: 380px;

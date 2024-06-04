@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const HeroSection = () => {
+const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, alttxt}) => {
 
     const HeroContainer = styled.section`
     padding-left:4.8rem;
@@ -71,25 +71,24 @@ const HeroSection = () => {
     `
 
     return (
-        <HeroContainer className="flex items-center justify-space-between">
+        <HeroContainer className={`flex items-center justify-space-between ${heroBg}`}>
             <LeftSection>
                 <div className="title-box">
-                    <h1>We protect and <br/>
+                    <h1 className={titleclass}>{title} <br/>
                         <span className="border">
-                            regenerate 
+                            {titleline} 
                             <img src="./images/title-border-line.svg" alt="border"/>
-                        </span>&nbsp;Nature, together</h1>
+                        </span>&nbsp;{titleafter}</h1>
                 </div>
-                <div className="content-box">
-                    <p>Our team enables your organisation to have a positive impact on nature, climate, and communities. This is achieved through our partnerships with local land managers who receive technical assistance and monthly financial support to protect and restore natural landscapes. </p>
-                    <p>More than carbon offsets and tree planting alone, Regenera supports living landscapes management led by the people who know their lands best.</p>
+                <div className={`content-box ${ paraclass }`}>
+                    {paratext}
                 </div>
             </LeftSection>
 
             <RightSection>
                 <picture>
-                    <source media="(max-width:768px)" srcset="./images/banner-about-m.png"/>
-                    <img src="./images/banner-about.png" className="w-full" alt="about us"/>
+                    <source media="(max-width:768px)" srcset={heroImgM}/>
+                    <img src={heroImgD} className="w-full" alt={alttxt}/>
                 </picture>
             </RightSection>
         </HeroContainer>

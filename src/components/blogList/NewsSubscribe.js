@@ -7,6 +7,7 @@ const NewsSubscribe = () => {
     const NewsUpdate = styled.section`
         position: relative;
         background: url('../images/bg-texture-green.jpg');
+        background-size: cover;
         .news-section{
             min-height: 400px;
             max-width: 630px;

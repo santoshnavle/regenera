@@ -4,11 +4,13 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogSearchResult from "./pages/BlogSearchResult";
 import BlogPost from "./pages/BlogPost";
+import Partner from "./pages/Partner";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 const App = () =>{
   const theme = {
@@ -44,6 +46,7 @@ const App = () =>{
             <Route path="/blog" element={<Blog/>}/>
             <Route path="/blogsearch" element={<BlogSearchResult/>}/>
             <Route path="/blog-post" element={<BlogPost/>}/>
+            <Route path="/partner" element={<Partner/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>

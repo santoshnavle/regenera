@@ -9,6 +9,7 @@ const ToJoin = () => {
         .team-section{
             min-height: 347px;
             background: url('../images/bg-texture-green.jpg');
+            background-size: cover;
             text-align: center;
             gap: 40px;
             .title-box{

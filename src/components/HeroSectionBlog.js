@@ -13,6 +13,7 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
     const HeroContainer = styled.section`
     min-height: 370px;
     background: url('../images/bg-texture-green.jpg');
+    background-size: cover;
     @media (max-width:${({ theme }) => theme.media.tab}){
         min-height: 300px;
         margin-top: 60px;
