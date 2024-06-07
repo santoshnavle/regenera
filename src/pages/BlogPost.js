@@ -32,7 +32,7 @@ const BlogPost = () => {
                             max-height: 86px;
                             img{
                                 border-radius: 50%;
-                                border:3px solid #DDEDD0;
+                                border:1px solid #DDEDD0;
                             }
                         }
                         .author-detail{
