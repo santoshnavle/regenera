@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import RelatedSection from "../components/blogDetail/Related";
 import BecomeMember from "../components/blogDetail/BecomePartner";
+import { Link } from "react-router-dom";
+import { BsFillShareFill } from "react-icons/bs";
 
 
 
@@ -11,40 +13,62 @@ const BlogPost = () => {
     const BlogPostSection = styled.section`
         background-color: #F8FBF6;
         position: relative;
+        .bg-img{
+            height: 490px;
+            background: url('./images/bg-texture-green.jpg') center top no-repeat;
+        }
         .blog-detail-info{
             background: white;
             max-width: 1064px;
-            padding: 68px 109px;
-            margin-top: -328px;
+            margin-top: -450px;
             z-index:1;
-            .author-category{
-                .author-section{
-                    gap: 20px;
-                    .author-img{
-                        max-width: 88px;
-                        max-height: 86px;
-                        img{
-                            border-radius: 50%;
-                            border:3px solid #DDEDD0;
+            .blog-detail-hero{
+                padding: 24px 24px 0;
+                .author-category{
+                    .author-section{
+                        gap: 20px;
+                        .author-img{
+                            max-width: 88px;
+                            max-height: 86px;
+                            img{
+                                border-radius: 50%;
+                                border:3px solid #DDEDD0;
+                            }
                         }
-                    }
-                    .author-detail{
-                        .post-date{
-                            line-height:180%;
+                        .author-detail{
+                            .author-name{
+                                margin-bottom: 15px;
+                            }
+                            .post-date, .time-to-read{
+                                line-height:180%;
+                            }
+                            .time-to-read{
+                                margin-left: 25px;
+                            }
                         }
                     }
                 }
-                .category-list{
-                    right: 55px;
-                    top: 30px;
-                }
-            }
-            .post-content{
-                margin-top:40px;
                 .main-post-title{
                     font-size: 48px;
                     line-height: 58px;
                     margin: 20px 0;
+                }
+                .blog-hero-image{
+                    margin-top: 30px;
+                    img{
+                        max-height: 410px;
+                        object-fit: cover;
+                    }
+                }
+            }
+            
+            .post-content{
+                padding: 65px 100px;
+                .share-link{
+                    position: absolute;
+                    right: 30px;
+                    top: 20px;
+                    gap: 5px;
                 }
                 .post-title{
                     margin-top:40px;
@@ -57,69 +81,99 @@ const BlogPost = () => {
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
-           .blog-detail-info{
-            padding: 8px 14px 25px;
-            margin: -65px 15px 20px;
-            .author-category{
-                .author-section{
-                    gap: 12px;
-                    .author-img{
-                        max-width: 66px;
-                        max-height: 63px;
+            .blog-detail-info{
+                padding: 8px 14px 25px;
+                margin: -400px 15px 20px;
+                z-index:1;
+                .blog-detail-hero{
+                    padding: 0;
+                    .author-category{
+                        gap: 16px;
+                        .author-section{
+                            gap: 10px;
+                            .author-img{
+                                max-width: 66px;
+                                max-height: 66px;
+                            }
+                            .author-detail{
+                                flex: 1 0 auto;
+                                .author-name{
+                                    font-size: 16px;
+                                    margin-bottom: 5px;
+                                }
+                                .post-date, .time-to-read{
+                                    line-height:180%;
+                                }
+                                .time-to-read{
+                                    margin-left: 40px;
+                                }
+                            }
+                        }
+                    }
+                    .main-post-title{
+                        font-size: 40px;
+                        line-height: 52px;
+                        margin: 12px 0;
+                    }
+                    .blog-hero-image{
+                        margin-top: 30px;
                     }
                 }
-                .category-list{
-                    right: 55px;
-                    top: 30px;
+                
+                .post-content{
+                    padding: 20px 5px;
+                    .share-link{
+                        position: static;
+                        right: 0;
+                        top: 0;
+                        gap: 5px;
+                    }
+                    .post-title{
+                        margin-top:20px;
+                        margin-bottom: 12px;
+                    }
+                    .post-img{
+                        margin: 20px auto 10px;
+                    }
                 }
-            }
-            .post-content{
-                margin-top: 20px;
-                .main-post-title{
-                    font-size: 40px;
-                    line-height: 52px;
-                    margin: 12px 0;
-                }
-                .post-title{
-                    margin-top:20px;
-                    margin-bottom: 12px;
-                }
-                .post-img{
-                    margin: 20px auto 10px;
-                }
-            }
-           }
+            }           
         }
     `
     return (
         <BlogPostSection>
-            <div className="bg-img">
-                <picture>
-                    <source media="(max-width:700px)" srcset="./images/blog-bg-mobile.png"/>
-                    <img  src="./images/blog-bg-desktop.png" alt="" className="w-full"/>
-                </picture>
-            </div>
+            <div className="bg-img"></div>
             <div className="blog-detail-info mx-auto relative">
-                <div className="author-category">
-                    <div className="author-section flex items-center">
-                        <div className="author-img">
-                            <img src="https://www.shareicon.net/data/2016/07/05/791221_man_512x512.png" className="w-full"/>
-                        </div>
-                        <div className="author-detail">
-                            <div className="author-name fw-bold">
-                                <h4>Gabriel Herrera</h4>
+                <div className="blog-detail-hero">
+                    <div className="author-category flex flex-wrap justify-space-between items-center">
+                        <div className="author-section flex items-center">
+                            <div className="author-img">
+                                <img src="https://www.shareicon.net/data/2016/07/05/791221_man_512x512.png" alt="" className="w-full"/>
                             </div>
-                            <div className="post-date">00-00-00</div>
+                            <div className="author-detail">
+                                <div className="author-name fw-bold">
+                                    <h4>Gabriel Herrera</h4>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="post-date">00-00-00</div>
+                                    <div className="time-to-read"><small>4 min read</small></div>
+                                </div>
+                            </div>
                         </div>
+                        <ul class="category-list flex flex-wrap">
+                            <li><small>Category</small></li>
+                            <li><small>Landscape</small></li>
+                        </ul>
                     </div>
-                    <ul class="category-list absolute flex hide-mobile">
-                        <li><small>Category</small></li>
-                        <li><small>Landscape</small></li>
-                    </ul>
-                </div>
-                <div className="post-content">
-                    <div className="time-to-read"><small>4 min read</small></div>
                     <h1 className="main-post-title">A nice title that may be as long as about two lines goes here.</h1>
+                    <div className="blog-hero-image">
+                        <img className="w-full" src="https://cms.regenera.earth/wp-content/uploads/2024/05/Paisaje-intervenido-por-ocupacion-humana-scaled.jpg" alt="hero-img"/>
+                    </div>
+                </div>
+                
+                <div className="post-content relative">
+                    <Link to="#" className="flex items-center share-link">
+                        Share  <BsFillShareFill/>
+                    </Link>
                     <p className="intro-text small fw-normal">In addition to being one of the world’s leading tropical ecology research centres, the Cocha Cashu Biological Station is an active member of Regenera. We spoke with César Flores Negrón, director of San Diego Zoo Global Peru, the organization in charge of managing the station.</p>
                     <p>“For 50 years, a whole generation of researchers has been studying the rainforest here at Cocha Cashu, and we have been able to observe over those years how we are approaching a tipping point in which, if we do nothing, we are going to leave a very dark future for our children,” says César Flores Negrón, a forestry engineer with extensive experience in research in the Peruvian Amazon. <br/> “That is why we believe that – not only as scientists but also as citizens – we must take action. That is why, as San Diego Zoo Global Peru, we believe that through our actions here at the station we can show local communities, and citizens in general, that we can change the near future. That is why when we learned about the Regenera initiative, we felt we had to be part of it and do our bit,” he says.</p>
                     <h2 className="post-title">Science and education for the world</h2>

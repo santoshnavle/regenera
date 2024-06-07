@@ -8,6 +8,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
 import * as Icon from "react-icons/fi";
+
 import Checkbox from "react-custom-checkbox";
 
 const Footer = () => {

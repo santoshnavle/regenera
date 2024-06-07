@@ -9,11 +9,10 @@ import styled from "styled-components";
 const Partner = () => {
 
     const paras = [
-        "I grew up in Peru with a collection of snakes, lizards, and toads, and learned early that Nature was something to be cherished. Forty years later, it's more obvious than ever: we depend completely on healthy Nature for our survival. Think about it. All the materials and services for our daily needs and lives are provided by Nature. No Nature, no us.",
-        "That's why we set up Regenera in 2016, with the conviction that we must protect and restore Nature together. We’re proud of the thousands of hectares of living landscapes we are regenerating in the Amazon and Andes of Peru. But we've only just started. And everyone has a role to play. Now is the time to take action!",
+        "Our team enables your organisation to have a positive impact on nature, climate, and communities. This is achieved through our partnerships with local land managers who receive technical assistance and monthly financial support to protect and restore natural landscapes.",
     ];
     const pragraph = paras.map((para) => <p>{para}</p>)
-    const para1 =  <p>Our best practices in operations, diversity, and governance made us the first company in Peru to be certified by B Lab. As a B Corp,  we're part of a global community of businesses that meet high standards of social and environmental impact.</p>;
+    
 
     const backLogos = [
         { id: 1, img: '../images/company-logo/idb.png' },
@@ -190,6 +189,15 @@ const Partner = () => {
             title="We can't regenerate Nature without your"
             titleline="support"
             titleclass="text-white"
+            paratext = {pragraph}
+            paraclass = "text-white"
+            heroBg = "../images/bg-texture-green.jpg"
+            heroImgM = "../images/partners-hero-m.png"
+            heroImgD = "../images/partners-hero-d.png"
+            alttxt = "Partners"
+            orangeBtn
+            btnText = "Sign up" 
+            btnLink = "#"
             />
             <ImageWithText
                 section = "autor-section"
@@ -216,7 +224,7 @@ const Partner = () => {
                 imgBoxClass = "img-b-certified"
                 smallTitle = "b-corp certified"
                 firstTitle = "We're using business as a force for good"
-                text = { para1 }
+                text = ""
                 backtitle = "With the backing of:"
                 backlogos = { cologoback }
             />

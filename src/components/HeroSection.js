@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { OrangeBtn } from "./Button";
 
-const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, alttxt}) => {
+const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, alttxt, orangeBtn, btnText, btnLink,}) => {
 
     const HeroContainer = styled.section`
     padding-left:4.8rem;
@@ -83,6 +85,11 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
                 <div className={`content-box ${ paraclass }`}>
                     {paratext}
                 </div>
+                { orangeBtn && (
+                    <OrangeBtn class="cta">
+                        <Link to={btnLink}>{btnText}</Link>
+                    </OrangeBtn>
+                )}
             </LeftSection>
 
             <RightSection>
