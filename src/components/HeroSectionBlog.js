@@ -106,7 +106,7 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
                 </div>
             </Center>
             <SearchBox className="mx-auto w-full flex absolute">
-                <input type="text" class="form-control w-full" placeholder="Search..." aria-label="blog search" aria-describedby="blog search"/>
+                <input type="text" className="form-control w-full" placeholder="Search..." aria-label="blog search" aria-describedby="blog search"/>
                 <LightGreenBtn className="search-btn absolute" onClick={btnClick} type="submit">Search</LightGreenBtn>
             </SearchBox>
         </HeroContainer>

@@ -92,19 +92,19 @@ const fadeSlide = () => {
     <SliderSection>
       <div className="slider-container">
         {/* slider content */}
-        <div class="signup-button-frame">
-          <div class="header-frame flex flex-col justify-start">
-            <h1 class="make-nature-your-business-container">
+        <div className="signup-button-frame">
+          <div className="header-frame flex flex-col justify-start">
+            <h1 className="make-nature-your-business-container">
               Make Nature<br/>your business
             </h1>
-            <div class="we-help-organisations">
+            <div className="we-help-organisations">
               We help organisations measure, reduce, and transform their
               environmental impact. This enables us to work with
               communities and other land managers to protect and restore
               their landscapes. Together, we regenerate Nature and
               climate.
             </div>
-            <OrangeBtn class="sign-up-btn">
+            <OrangeBtn className="sign-up-btn">
               <Link to="#">Sign up</Link>
             </OrangeBtn>
             

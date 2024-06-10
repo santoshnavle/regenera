@@ -86,13 +86,13 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
                     {paratext}
                 </div>
                 { orangeBtn && (
-                    <OrangeBtn class="cta">
+                    <OrangeBtn className="cta">
                         <Link to={btnLink}>{btnText}</Link>
                     </OrangeBtn>
                 )}
             </LeftSection>
 
-            <RightSection>
+            <RightSection className="right-section">
                 <picture>
                     <source media="(max-width:768px)" srcset={heroImgM}/>
                     <img src={heroImgD} className="w-full" alt={alttxt}/>

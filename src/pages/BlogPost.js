@@ -159,7 +159,7 @@ const BlogPost = () => {
                                 </div>
                             </div>
                         </div>
-                        <ul class="category-list flex flex-wrap">
+                        <ul className="category-list flex flex-wrap">
                             <li><small>Category</small></li>
                             <li><small>Landscape</small></li>
                         </ul>
