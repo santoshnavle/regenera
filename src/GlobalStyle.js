@@ -203,6 +203,10 @@ li {
   align-items: center;
 }
 
+.center-text-btn{
+  gap: 20px;
+}
+
 @keyframes headermove {
   from {top: -80px;}
   to {top: 0px;}
@@ -228,6 +232,9 @@ li {
   }
   html, p{
     font-size: 14px;
+  }
+  .center-text-btn{
+    gap: 12px;
   }
 }
 

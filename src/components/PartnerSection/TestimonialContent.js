@@ -36,6 +36,7 @@ const VidTestimonial = ({
             speed: 300,
             centerPadding: '35px',
             infinite: true,
+            adaptiveHeight: true,
             }
         }]
     };
@@ -49,7 +50,7 @@ const VidTestimonial = ({
         .two-cols{
             max-width: 100%;
             flex: 1;
-            gap: 120px;
+            gap: 80px;
             .testimonal-slider{
                 box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
                 border-radius: 8px;
@@ -69,7 +70,8 @@ const VidTestimonial = ({
                             text-align: center;
                             img{
                                 border-radius: 50%;
-                                max-width: 100%;    
+                                max-width: 100%;   
+                                border: 3px solid #6EA44C;  
                             }
                         }
                         .profile-info-quote{
@@ -86,6 +88,13 @@ const VidTestimonial = ({
                         }
 
                     }
+                }
+            }
+            .video-section{
+                video{
+                    max-width: 596px;
+                    height: auto;
+                    border-radius: 8px;
                 }
             }
             .testimonal-information{
@@ -126,6 +135,9 @@ const VidTestimonial = ({
                     .slick-slider{
                         margin-left: -20px;
                         margin-right: -20px;
+                        .slick-dots{
+                            bottom:-30px;
+                        }
                     }
                     .slick-slide>div{
                         margin: 0 8px;
@@ -150,6 +162,12 @@ const VidTestimonial = ({
                         .profile-name{
                             margin-top: 6px;
                         }
+                    }
+                }
+                .video-section{
+                    margin-top: -50px;
+                    video{
+                        width: 100%
                     }
                 }
                 .testimonal-information{

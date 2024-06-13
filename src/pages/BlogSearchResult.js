@@ -13,8 +13,6 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Blog = () => {
 
-    const para1 =  <p>Catch up on our news, from updates on the activities of our Guardians and Partners, to opinion pieces by our expert team.</p>;
-
     // blog posts data
      const data  = [
         

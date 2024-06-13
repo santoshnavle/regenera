@@ -59,7 +59,8 @@ const Testimonials = () => {
                             text-align: center;
                             img{
                                 border-radius: 50%;
-                                max-width: 100%;    
+                                max-width: 100%;   
+                                border: 3px solid #6EA44C; 
                             }
                         }
                         .profile-info-quote{

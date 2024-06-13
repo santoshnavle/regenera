@@ -6,6 +6,8 @@ import ImageWithText from "../components/ImageWithText";
 import StepSlider from "react-slick";
 import CompanyLogos from "../components/CompanyLogos";
 import ToJoin from "../components/aboutUs/ReadytoJoin";
+import PlanBoxOption from "../components/PlanBox";
+import { OrangeBtn } from "../components/Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -61,7 +63,12 @@ const Partner = () => {
         },]
     };
 
-    
+    // featureData
+    const featureData = [
+        {featureTitle: 'Measure', featureShort: 'Use our tools to:', featureList: ['Calculate your footprint']},
+        {featureTitle: 'Improve', featureShort: 'We enable you to:', featureList: ['Protect & restore <b>1</b> hectare', 'Defend endangered species', 'Compensate <b>20</b> tonnes GHG']},
+        {featureTitle: 'Lead', featureShort: 'Work with us towards your:', featureList: ['Nature positive objectives']},
+    ]
 
     // company logos
     const sliderDataOne = [
@@ -197,6 +204,7 @@ const Partner = () => {
                     justify-content: center;
                     gap: 40px;
                 }
+                padding-bottom: 24px;
             }
         }
     `
@@ -243,20 +251,43 @@ const Partner = () => {
                     }
                 }
             }
+            .faq-link{
+                color: ${({ theme }) => theme.colors.text_color};
+                a{
+                    font-weight:bold;
+                    color: ${({ theme }) => theme.colors.text_color};
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .center-text-btn{
+            padding:70px 20px 0;
+            button{
+                max-width:330px;
+                margin: 0 auto;
+            }
         }
         
         @media (max-width:${({ theme }) => theme.media.tab}) {
-            padding: 33px 20px 35px;
+            padding: 33px 0px 35px;
             .steps-how{
                 .step-row{
+                    box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.07);
                     padding: 16px;
                     background-color: #fff;
                     margin-top: 20px;
+                    margin: 20px 20px 35px;
+                    border-radius: 8px;
                     .img-text{
                         .picture-box{
                             align-self: center;
                         }
                     }
+                }
+                .slick-slider{
+                    padding-bottom: 45px;
                 }
                 .slick-next, .slick-prev{
                     width: auto;
@@ -267,19 +298,19 @@ const Partner = () => {
                     font-size: 16px;
                     font-weight: 600;
                     background: #6EA44C;
-                    bottom: 0;
+                    bottom: 0px;
                     top: auto;
                     z-index: 99;
                     transform: translate(0);
                 }
                 .slick-next{
-                    right: 0;
+                    right: 15px;
                     &::before{
                         content: none;
                     }
                 }
                 .slick-prev{
-                    left: 0;
+                    left: 15px;
                     &::before{
                         content: none;
                     }
@@ -287,8 +318,61 @@ const Partner = () => {
                 .slick-disabled{
                     background: #CECECE;
                 }
+                .slick-dots{
+                    bottom: 43px;
+                }
+                .faq-link{
+                    padding-left:20px;
+                    margin-top:28px;
+                    a{
+                        display:block;
+                    }
+                }
             }
-           
+            .center-text-btn{
+                padding:45px 20px 0;
+                button{
+                    max-width:330px;
+                    margin: 0 auto;
+                }
+            }
+        }
+    `
+
+    const PlanContainer = styled.section`
+        padding: 78px 4.8rem 110px;
+        position: relative;
+        &::before, &::after{
+            content: "";
+            position: absolute;
+            width: 168px;
+            height: 351px;
+        }
+        &::before{
+            background: url('../images/left-leaf.png') left top no-repeat;
+            left: 0;
+            top: -100px;
+        }
+        &::after{
+            background: url('../images/right-leaf.png') left top no-repeat;
+            right: 0;
+            top: -100px;
+        }
+        .title-box{
+            margin-bottom: 60px;
+        }
+        .plan-group{
+            gap: 20px;
+            .plan-box{
+                border: 2px solid #f3f2f2;
+            }
+            .plan-box-active{
+                border: 2px solid #6EA44C;
+            }
+        }
+
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+
         }
     `
 
@@ -375,7 +459,53 @@ const Partner = () => {
                     </StepSlider>
                     <div className="faq-link">Want to learn more? <Link to="#">Check our FAQ</Link></div>
                 </div>
+                <div className="center-text-btn flex flex-col text-center">
+                    <h2>Have you checked your footprint yet?</h2>
+                    <OrangeBtn>
+                        <Link to="#">Calculate your org footprint</Link>
+                    </OrangeBtn>
+                </div>
             </HowitsWork>
+            <PlanContainer>
+                <div className="title-box text-center">
+                    <h3>Let's regenerate<br/>Nature together!</h3>
+                </div>
+                <div className="plan-group flex justify-center">
+                    <PlanBoxOption
+                        planBoxClass="plan-box"
+                        planImg="../images/seed-plan.png" 
+                        planName="Seed plan"
+                        planInfo="For start-up organisations who do not own premises or vehicles and a team up to 10 people." 
+                        planCost="$30"
+                        planduration="/mo" 
+                        actionLink="#"
+                        data={featureData}
+                        actionLinkText="Choose plan"
+                    />
+                    <PlanBoxOption
+                        planBoxClass="plan-box-active"
+                        planImg="../images/seed-plan.png" 
+                        planName="Seed plan"
+                        planInfo="For start-up organisations who do not own premises or vehicles and a team up to 10 people." 
+                        planCost="$30"
+                        planduration="/mo" 
+                        actionLink="#"
+                        data={featureData}
+                        actionLinkText="Choose plan"
+                    />
+                    <PlanBoxOption
+                        planBoxClass="plan-box"
+                        planImg="../images/seed-plan.png" 
+                        planName="Seed plan"
+                        planInfo="For start-up organisations who do not own premises or vehicles and a team up to 10 people." 
+                        planCost="$30"
+                        planduration="/mo" 
+                        actionLink="#"
+                        data={featureData}
+                        actionLinkText="Choose plan"
+                    />
+                </div>
+            </PlanContainer>
             
             <CompanyLogos 
                 title = "Get to know the Regenera network!"
