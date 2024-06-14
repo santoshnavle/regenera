@@ -7,9 +7,12 @@ import StepSlider from "react-slick";
 import CompanyLogos from "../components/CompanyLogos";
 import ToJoin from "../components/aboutUs/ReadytoJoin";
 import PlanBoxOption from "../components/PlanBox";
+import ContactAction from "../components/ContactAction";
 import { OrangeBtn } from "../components/Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 
 const Partner = () => {
 
@@ -33,7 +36,6 @@ const Partner = () => {
     ]
 
     const lastStepData = listingdata.map((list) => {
-
         return(
             <>  
                 {list.textintro && (<p>{list.textintro}</p>)}
@@ -68,7 +70,13 @@ const Partner = () => {
         {featureTitle: 'Measure', featureShort: 'Use our tools to:', featureList: ['Calculate your footprint']},
         {featureTitle: 'Improve', featureShort: 'We enable you to:', featureList: ['Protect & restore <b>1</b> hectare', 'Defend endangered species', 'Compensate <b>20</b> tonnes GHG']},
         {featureTitle: 'Lead', featureShort: 'Work with us towards your:', featureList: ['Nature positive objectives']},
-    ]
+    ];
+
+    // contact Action
+    const iconTextData = [
+        {icon: <FaEnvelope />, text: 'Schedule a call'},
+        {icon: <FaPhoneAlt />, text: 'Send an e-mail'}
+    ];
 
     // company logos
     const sliderDataOne = [
@@ -142,6 +150,10 @@ const Partner = () => {
             .cta{
                 margin-top: 10px;
             }
+        }
+        .business-nature{
+            background: #004532 url('../images/bg-texture-green.jpg') no-repeat;
+            background-size: cover;
         }
         .company-group{
             gap: 35px !important;
@@ -338,7 +350,6 @@ const Partner = () => {
             }
         }
     `
-
     const PlanContainer = styled.section`
         padding: 78px 4.8rem 110px;
         position: relative;
@@ -372,9 +383,19 @@ const Partner = () => {
         }
 
         @media (max-width:${({ theme }) => theme.media.tab}) {
-
+            padding: 32px 20px 50px;
+            &::before, &::after{
+                content: none;
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.mobile}) {
+            .plan-group{
+                flex-wrap: wrap;
+                gap: 10px;
+            }
         }
     `
+  
 
     return (
         <PartnerSection>
@@ -505,8 +526,23 @@ const Partner = () => {
                         actionLinkText="Choose plan"
                     />
                 </div>
+
+                <ContactAction
+                    title = "Is your company larger or would you like to make a one-off payment?"
+                    paraTxt = "We're flexible. Please contact us to discuss your options." 
+                    iconText = {iconTextData}
+                />
             </PlanContainer>
-            
+            <ImageWithText
+                section = "business-nature"
+                Image = "../images/nature-business-d.png" 
+                ImageMobile="../images/nature-business-m.png"
+                imgWithClass = "nature-img"
+                contentBox = "text-content"
+                imgBoxClass="picture-box"
+                firstTitle = "Make Nature your business today!"
+                text = {<OrangeBtn><Link to="#">Join now</Link></OrangeBtn>}
+            />
             <CompanyLogos 
                 title = "Get to know the Regenera network!"
                 settings = {slidersetting}
