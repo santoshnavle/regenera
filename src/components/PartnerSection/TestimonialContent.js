@@ -36,10 +36,24 @@ const VidTestimonial = ({
             speed: 300,
             centerPadding: '35px',
             infinite: true,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            className: 'center',
+            arrows: false,
+            dots: true,
+            speed: 300,
+            centerPadding: '35px',
+            infinite: true,
             adaptiveHeight: true,
             }
-        }]
-    };
+        }
+    ]};
 
     const VidTestimonial = styled.section`
         background: #004532 url("../images/bg-texture-green.jpg") no-repeat center top;

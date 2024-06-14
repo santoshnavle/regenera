@@ -5,7 +5,6 @@ import VidTestimonial from "../components/PartnerSection/TestimonialContent";
 import ImageWithText from "../components/ImageWithText";
 import StepSlider from "react-slick";
 import CompanyLogos from "../components/CompanyLogos";
-import ToJoin from "../components/aboutUs/ReadytoJoin";
 import PlanBoxOption from "../components/PlanBox";
 import ContactAction from "../components/ContactAction";
 import { OrangeBtn } from "../components/Button";
@@ -154,6 +153,32 @@ const Partner = () => {
         .business-nature{
             background: #004532 url('../images/bg-texture-green.jpg') no-repeat;
             background-size: cover;
+            .nature-img{
+                gap: 20px;
+                overflow:hidden;
+                .picture-box{
+                    margin-bottom: -5px;
+                }
+            }
+            .content{
+                text-align: center;
+                padding-right: 4.8rem;
+                .title-box{
+                    max-width: 522px;
+                    margin: 0 auto;
+                    .small-title{
+                        display:none;
+                    }
+                    h3{
+                        font-size: 48px;
+                        line-height: 58px;
+                        color: white;
+                    }
+                }
+                .button-box{
+                    margin-top: 30px;
+                }
+            }
         }
         .company-group{
             gap: 35px !important;
@@ -180,6 +205,34 @@ const Partner = () => {
                     padding-left: 0;
                     margin-bottom: -5px;
                     margin-top: -20px;
+                }
+            }
+            .business-nature{
+                .nature-img{
+                    flex-direction: row;
+                }
+                .content{
+                    text-align: center;
+                    padding-right: 30px;
+                    .title-box{
+                        h3{
+                            font-size: 28px;
+                            line-height: 38px;
+                        }
+                    }
+                    .button-box{
+                        margin-top: 30px;
+                    }
+                }
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.mobile}) {
+            .business-nature{
+                .nature-img{
+                    flex-direction: column;
+                }
+                .content{
+                    padding: 55px 20px 55px;
                 }
             }
         }
@@ -538,7 +591,7 @@ const Partner = () => {
                 Image = "../images/nature-business-d.png" 
                 ImageMobile="../images/nature-business-m.png"
                 imgWithClass = "nature-img"
-                contentBox = "text-content"
+                contentBox = "button-box"
                 imgBoxClass="picture-box"
                 firstTitle = "Make Nature your business today!"
                 text = {<OrangeBtn><Link to="#">Join now</Link></OrangeBtn>}
@@ -550,7 +603,6 @@ const Partner = () => {
                 data = {sliderDataOne}
                 datatwo = {sliderDataTwo}
             />
-            <ToJoin/>
         </PartnerSection>
     )
 }
