@@ -413,12 +413,12 @@ const Partner = () => {
             height: 351px;
         }
         &::before{
-            background: url('../images/left-leaf.png') left top no-repeat;
+            background: url('../images/left-leaf.webp') left top no-repeat;
             left: 0;
             top: -100px;
         }
         &::after{
-            background: url('../images/right-leaf.png') left top no-repeat;
+            background: url('../images/right-leaf.webp') left top no-repeat;
             right: 0;
             top: -100px;
         }
@@ -462,8 +462,8 @@ const Partner = () => {
                 paratext = {pragraph}
                 paraclass = "text-white"
                 heroBg = "green-bg"
-                heroImgM = "../images/partners-hero-m.png"
-                heroImgD = "../images/partners-hero-d.png"
+                heroImgM = "../images/partners-hero-m.webp"
+                heroImgD = "../images/partners-hero-d.webp"
                 alttxt = "Partners"
                 orangeBtn
                 btnText = "Sign up" 
@@ -505,7 +505,7 @@ const Partner = () => {
                     <StepSlider {...stepSettings}>
                         <ImageWithText
                             section = "step-row"
-                            Image = "../images/step1.png" 
+                            Image = "../images/step1.webp" 
                             imgWithClass = "img-text"
                             contentBox = "text-section"
                             imgBoxClass="picture-box"
@@ -515,7 +515,7 @@ const Partner = () => {
                         />
                         <ImageWithText
                             section = "step-row"
-                            Image = "../images/step2.png" 
+                            Image = "../images/step2.webp" 
                             imgWithClass = "img-text"
                             contentBox = "text-section"
                             imgBoxClass="picture-box"
@@ -525,7 +525,7 @@ const Partner = () => {
                         />
                         <ImageWithText
                             section = "step-row"
-                            Image = "../images/step3.png" 
+                            Image = "../images/step3.webp" 
                             imgWithClass = "img-text"
                             contentBox = "text-section"
                             imgBoxClass="picture-box"
@@ -550,7 +550,7 @@ const Partner = () => {
                 <div className="plan-group flex justify-center">
                     <PlanBoxOption
                         planBoxClass="plan-box"
-                        planImg="../images/seed-plan.png" 
+                        planImg="../images/seed-plan.webp" 
                         planName="Seed plan"
                         planInfo="For start-up organisations who do not own premises or vehicles and a team up to 10 people." 
                         planCost="$30"
@@ -561,7 +561,7 @@ const Partner = () => {
                     />
                     <PlanBoxOption
                         planBoxClass="plan-box-active"
-                        planImg="../images/seed-plan.png" 
+                        planImg="../images/tree-plan.webp" 
                         planName="Seed plan"
                         planInfo="For start-up organisations who do not own premises or vehicles and a team up to 10 people." 
                         planCost="$30"
@@ -572,7 +572,7 @@ const Partner = () => {
                     />
                     <PlanBoxOption
                         planBoxClass="plan-box"
-                        planImg="../images/seed-plan.png" 
+                        planImg="../images/forest-plan.webp" 
                         planName="Seed plan"
                         planInfo="For start-up organisations who do not own premises or vehicles and a team up to 10 people." 
                         planCost="$30"
@@ -591,7 +591,7 @@ const Partner = () => {
             </PlanContainer>
             <ImageWithText
                 section = "business-nature"
-                Image = "../images/nature-business-d.png" 
+                Image = "../images/nature-business-d.webp" 
                 ImageMobile="../images/nature-business-m.webp"
                 imgWithClass = "nature-img"
                 contentBox = "button-box"

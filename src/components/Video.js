@@ -41,7 +41,7 @@ const VideoPlayer = ({thumbnail, path, videoClass}) => {
                 {isVisible && 
                 <div className="thumbnail-box absolute">
                     <img className="w-full" alt="video thumbnail" src={thumbnail}/>
-                    <button onClick={handleClick}><img src="./images/playbtn.png" alt="Play button"/></button>
+                    <button onClick={handleClick}><img src="./images/playbtn.webp" alt="Play button"/></button>
                 </div>}
             </VideoPlay>
             )}

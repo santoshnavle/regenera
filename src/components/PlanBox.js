@@ -55,7 +55,7 @@ const PlanBoxOption = ({planBoxClass, planImg, planName, planInfo, planCost, pla
                         &::before{
                             position:absolute;
                             content: "";
-                            background: url('../images/list-icon.png') no-repeat center center;
+                            background: url('../images/list-icon.webp') no-repeat center center;
                             width:20px;
                             height:21px;
                             top:5px;
