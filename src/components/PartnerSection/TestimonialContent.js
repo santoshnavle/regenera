@@ -106,6 +106,7 @@ const VidTestimonial = ({
             }
             .video-section{
                 video{
+                    width: 100%;
                     max-width: 596px;
                     height: auto;
                     border-radius: 8px;
@@ -136,7 +137,7 @@ const VidTestimonial = ({
                 }
             }
         }
-        @media (max-width:${({ theme }) => theme.media.tab}) {
+        @media (max-width: 1170px) {
             padding: 24px 20px 60px;
             .two-cols{
                 flex-wrap: wrap;
@@ -145,7 +146,6 @@ const VidTestimonial = ({
                     max-width: none;
                     order: 1;
                     box-shadow: none;
-                
                     .slick-slider{
                         margin-left: -20px;
                         margin-right: -20px;
@@ -214,12 +214,14 @@ const VidTestimonial = ({
     return(
         <VidTestimonial>
             <div className="two-cols flex justify-center items-center">
-                <VideoPlayer
-                    thumbnail = "../images/video-thumb.png" 
-                    path = "../images/naturaleza.mp4" 
-                    videoClass = "video-section"
-                />
-                {titleBorder && (
+                {!titleBeforeborder && (
+                    <VideoPlayer
+                        thumbnail = "../images/video-thumb.png" 
+                        path = "../images/naturaleza.mp4" 
+                        videoClass = "video-section"
+                    />
+                )}
+                {titleBeforeborder && (
                     <div className="testimonal-information flex flex-col items-start">
                         <h1>{titleBeforeborder}
                             <span class="border">{titleBorder}

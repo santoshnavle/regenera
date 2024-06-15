@@ -31,18 +31,23 @@ const VideoPlayer = ({thumbnail, path, videoClass}) => {
     };
 
     return (
-        <VideoPlay className={videoClass}>
-            <video id="videobox" controls ref={videoRef} poster={thumbnail}>
-                <source src={path} type="video/mp4"/>
-                Your browser does not support the video tag.
-            </video>
-            {isVisible && 
-            <div className="thumbnail-box absolute">
-                <img className="w-full" alt="video thumbnail" src={thumbnail}/>
-                <button onClick={handleClick}><img src="./images/playbtn.png" alt="Play button"/></button>
-            </div>}
-        </VideoPlay>
+        <>
+            {thumbnail && (
+                <VideoPlay className={videoClass}>
+                <video id="videobox" controls ref={videoRef} poster={thumbnail}>
+                    <source src={path} type="video/mp4"/>
+                    Your browser does not support the video tag.
+                </video>
+                {isVisible && 
+                <div className="thumbnail-box absolute">
+                    <img className="w-full" alt="video thumbnail" src={thumbnail}/>
+                    <button onClick={handleClick}><img src="./images/playbtn.png" alt="Play button"/></button>
+                </div>}
+            </VideoPlay>
+            )}
+        </>
     )
+   
 }
 
 export default VideoPlayer;

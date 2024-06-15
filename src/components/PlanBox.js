@@ -115,8 +115,12 @@ const PlanBoxOption = ({planBoxClass, planImg, planName, planInfo, planCost, pla
             <div className="feature-boxes">
                 {data.map((item) => (
                     <div className="feature">
-                        <div className="feature-title">{item.featureTitle}</div>
-                        <div className="short"><small>{item.featureShort}</small></div>
+                        {item.featureTitle && (
+                            <>
+                                <div className="feature-title">{item.featureTitle}</div>
+                                <div className="short"><small>{item.featureShort}</small></div>
+                            </>
+                        )}
                         <ul className="list">
                             {item.featureList.map((innritem) => {
                                 return(

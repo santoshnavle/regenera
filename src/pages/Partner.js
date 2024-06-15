@@ -429,13 +429,16 @@ const Partner = () => {
             gap: 20px;
             .plan-box{
                 border: 2px solid #f3f2f2;
+                &:hover{
+                    border: 2px solid #6EA44C;
+                }
             }
             .plan-box-active{
                 border: 2px solid #6EA44C;
             }
         }
 
-        @media (max-width:${({ theme }) => theme.media.tab}) {
+        @media (max-width: 1175px) {
             padding: 32px 20px 50px;
             &::before, &::after{
                 content: none;
@@ -589,7 +592,7 @@ const Partner = () => {
             <ImageWithText
                 section = "business-nature"
                 Image = "../images/nature-business-d.png" 
-                ImageMobile="../images/nature-business-m.png"
+                ImageMobile="../images/nature-business-m.webp"
                 imgWithClass = "nature-img"
                 contentBox = "button-box"
                 imgBoxClass="picture-box"
