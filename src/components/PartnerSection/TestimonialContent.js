@@ -115,33 +115,35 @@ const VidTestimonial = ({
             .testimonal-information{
                 gap: 12px 0;
                 text-align: left;
-                max-width: 446px;
+                max-width: 330px;
+                h3.white-text{
+                    font-size: 48px;
+                    line-height: 58px;
+                    font-weight: 600;
+                    color: white;
+                    .border{
+                        margin: 0 10px;
+                        img{
+                            left: 2px;
+                            bottom: -2px;
+                        }
+                    }
+                }
                 .parent-info{
-                    gap: 32px;
+                    gap: 16px;
                     .testimonial-text{
                         line-height: 180%;
-                        color: ${({theme}) => theme.colors.title_green};
-                    }
-                    .group-buttons-info{
-                        gap: 12px 0;
-                        .group-btns{
-                            gap: 0 12px;
-                            .action-btn{
-                                padding: 0 35px;
-                                width: 100%;
-                                display: block;
-                                text-wrap: nowrap;
-                            }
-                        }
+                        color: white;
                     }
                 }
             }
         }
         @media (max-width: 1170px) {
-            padding: 24px 20px 60px;
+            padding: 24px 20px 80px;
             .two-cols{
                 flex-wrap: wrap;
-                gap: 40px;
+                gap: 32px;
+                padding: 0;
                 .testimonal-slider{
                     max-width: none;
                     order: 1;
@@ -150,7 +152,7 @@ const VidTestimonial = ({
                         margin-left: -20px;
                         margin-right: -20px;
                         .slick-dots{
-                            bottom:-30px;
+                            bottom:-45px;
                         }
                     }
                     .slick-slide>div{
@@ -186,25 +188,15 @@ const VidTestimonial = ({
                 }
                 .testimonal-information{
                     order: 0;
-                    text-align: center;
+                    text-align: left;
                     gap: 8px;
+                    max-width: max-content;
+                    h3.white-text{
+                        font-size: 28px;
+                        line-height: 38px;
+                    }
                     .parent-info{
-                        gap: 24px;
-                        .group-buttons-info{
-                            .group-btns{
-                                flex-direction: column;
-                                gap: 8px;
-                                .action-btn{
-                                    margin: 0 auto;
-                                    &:first-child{
-                                        max-width: 211px;
-                                    }
-                                    &:last-child{
-                                        max-width: 197px;
-                                    }
-                                }
-                            }
-                        }
+                        gap: 12px;
                     }
                 }
             }
@@ -223,11 +215,11 @@ const VidTestimonial = ({
                 )}
                 {titleBeforeborder && (
                     <div className="testimonal-information flex flex-col items-start">
-                        <h1>{titleBeforeborder}
-                            <span class="border">{titleBorder}
-                            <img src="../images/title-border-small.png" alt="border"/>
+                        <h3 className="white-text">{titleBeforeborder}
+                            <span className="border relative">{titleBorder}
+                            <img src="../images/title-border-small.png" className="absolute w-full" alt="border"/>
                             </span>{titleAfterborder}
-                        </h1>
+                        </h3>
                         
                         <div className="parent-info flex flex-col">
                             <div className="testimonial-text">

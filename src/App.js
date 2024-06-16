@@ -5,6 +5,7 @@ import Blog from "./pages/Blog";
 import BlogSearchResult from "./pages/BlogSearchResult";
 import BlogPost from "./pages/BlogPost";
 import Partner from "./pages/Partner";
+import Friends from "./pages/Friends";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
@@ -47,6 +48,7 @@ const App = () =>{
             <Route path="/blogsearch" element={<BlogSearchResult/>}/>
             <Route path="/blog-post" element={<BlogPost/>}/>
             <Route path="/partner" element={<Partner/>}/>
+            <Route path="/friends" element={<Friends/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>

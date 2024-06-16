@@ -240,6 +240,17 @@ const Partner = () => {
     const WhyJoinMission =  styled.section`
         padding: 70px 4.8rem 110px;
         text-align:center;
+        position: relative;
+        &::before{
+            content: " ";
+            background-image: url("../images/hero-leaf.png");
+            background-size: 100% auto;
+            width: 104px;
+            height: 178px;
+            position: absolute;
+            right: 0;
+            top: -60px;
+        }
         .take-action-group{
             max-width: 1200px;
             width: 100%;
@@ -262,6 +273,9 @@ const Partner = () => {
         }
         @media (max-width:${({ theme }) => theme.media.tab}) {
             padding: 56px 20px 42px;
+            &::before{
+                content: none;
+            }
             .take-action-group{
                 gap: 32px;
                 .icon-text-container{
@@ -428,6 +442,7 @@ const Partner = () => {
         .plan-group{
             gap: 20px;
             .plan-box{
+                max-width: 415px;
                 border: 2px solid #f3f2f2;
                 &:hover{
                     border: 2px solid #6EA44C;
@@ -547,7 +562,7 @@ const Partner = () => {
                 <div className="title-box text-center">
                     <h3>Let's regenerate<br/>Nature together!</h3>
                 </div>
-                <div className="plan-group flex justify-center">
+                <div className="plan-group flex justify-center items-start">
                     <PlanBoxOption
                         planBoxClass="plan-box"
                         planImg="../images/seed-plan.webp" 
@@ -560,7 +575,7 @@ const Partner = () => {
                         actionLinkText="Choose plan"
                     />
                     <PlanBoxOption
-                        planBoxClass="plan-box-active"
+                        planBoxClass="plan-box plan-box-active"
                         planImg="../images/tree-plan.webp" 
                         planName="Seed plan"
                         planInfo="For start-up organisations who do not own premises or vehicles and a team up to 10 people." 
