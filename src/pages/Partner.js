@@ -443,6 +443,7 @@ const Partner = () => {
             gap: 20px;
             .plan-box{
                 max-width: 415px;
+                width: 100%;
                 border: 2px solid #f3f2f2;
                 &:hover{
                     border: 2px solid #6EA44C;
@@ -562,7 +563,7 @@ const Partner = () => {
                 <div className="title-box text-center">
                     <h3>Let's regenerate<br/>Nature together!</h3>
                 </div>
-                <div className="plan-group flex justify-center items-start">
+                <div className="plan-group flex justify-center">
                     <PlanBoxOption
                         planBoxClass="plan-box"
                         planImg="../images/seed-plan.webp" 

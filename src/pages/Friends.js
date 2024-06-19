@@ -168,6 +168,7 @@ const Friends = () => {
             gap: 20px;
             .plan-box{
                 max-width: 415px;
+                width: 100%;
                 border: 2px solid #f3f2f2;
                 &:hover{
                     border: 2px solid #6EA44C;
@@ -227,7 +228,7 @@ const Friends = () => {
                     {/* tab panel 1 */}
                     <TabPanel>
                         <Link className="text-center panel-link" to="#">Looking for Regenera for organisations?</Link>
-                        <div className="plan-group flex justify-center items-start">
+                        <div className="plan-group flex justify-center">
                             <PlanBoxOption
                                 planBoxClass="plan-box"
                                 planImg="../images/pollen-plan.webp" 
@@ -268,7 +269,7 @@ const Friends = () => {
                     {/* tabpanel 2 */}
                     <TabPanel>
                         <Link className="text-center panel-link" to="#">Looking for Regenera for organisations?</Link>
-                        <div className="plan-group flex justify-center items-start">
+                        <div className="plan-group flex justify-center">
                             <PlanBoxOption
                                 planBoxClass="plan-box plan-box-active"
                                 planImg="../images/tree-plan.webp" 

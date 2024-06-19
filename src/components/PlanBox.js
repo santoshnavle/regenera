@@ -11,6 +11,9 @@ const PlanBoxOption = ({planBoxClass, planImg, planName, planInfo, planCost, pla
         box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
         .plan-intro{
             text-align:center;
+            img{
+                max-height: 56px;
+            }
             .plan-name{
                 margin-top:12px;
                 font-size: 19px;
@@ -20,6 +23,7 @@ const PlanBoxOption = ({planBoxClass, planImg, planName, planInfo, planCost, pla
             .plan-info{
                 line-height: 150%;
                 font-weight:300;
+                min-height: 100px;
             }
             .plan-cost{
                 font-size:32px;
@@ -66,7 +70,7 @@ const PlanBoxOption = ({planBoxClass, planImg, planName, planInfo, planCost, pla
             }
         }
         .action{
-            margin-top:12px;
+            margin-top:auto;
             button{
                 width: 100%;
             }
@@ -80,6 +84,9 @@ const PlanBoxOption = ({planBoxClass, planImg, planName, planInfo, planCost, pla
                     font-size: 16px;
                     font-weight: 500;
                     line-height: 24px;
+                }
+                .plan-info{
+                    min-height: auto;
                 }
                 .plan-cost{
                     font-size:28px;
@@ -98,14 +105,14 @@ const PlanBoxOption = ({planBoxClass, planImg, planName, planInfo, planCost, pla
                     }
                 }
             }
-        }
-        .action{
-            margin-top:8px;
+            .action{
+                margin-top:30px;
+            }
         }
     `
 
     return (
-        <PlanBox className={planBoxClass}>
+        <PlanBox className={`flex flex-col ${planBoxClass}`}>
             <div className="plan-intro">
                 <img src={planImg} alt={planName}/>
                 <div className="plan-name">{planName}</div>
