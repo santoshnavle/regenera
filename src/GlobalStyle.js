@@ -259,6 +259,75 @@ li {
   to {top: 0px;}
 }
 
+
+/* stepform  starts*/
+.input-box-section label{
+  line-height: 180%;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.form-control{
+  height: 37px;
+  width: 100%;
+  padding: 4px 12px;
+  border: 1px solid #CECECE;
+  border-radius: 6px;
+  &:focus{
+    outline: 0;
+  }
+  &::placeholder{
+    color: ${({ theme }) => theme.colors.title_green};
+  }
+}
+.form-section .two-col {
+  gap: 8px;
+}
+.input-error{
+  border-color: #DD6B17;
+  color: #DD6B17;
+}
+.error-text{
+  color: #DD6B17;
+  line-height: 180%;
+  margin-top: 5px;
+  font-weight: 600;
+}
+.contsent-box label a {
+  font-weight: 600;
+  color:${({ theme }) => theme.colors.title_green};
+}
+.step-nav{
+  margin-top: 50px;
+  max-width: 440px;
+  gap: 13px;
+  .bullet{
+    background: #DDEDD0;
+    width: 100%;
+    height: 4px;
+  }
+  .current{
+    background: #6EA44C;
+  }
+}
+.formnextprev {
+  top: -50px;
+  button{
+    line-height: 180%;
+    font-weight: 600;
+    padding: 5px;
+    gap: 4px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    color:${({ theme }) => theme.colors.title_green};
+  }
+  .disable{
+    color: #BABABA;
+    cursor: default;
+  }
+}
+/* stepform ends */
+
 /* ===========================================
 /* media queries  
 ======================================= */

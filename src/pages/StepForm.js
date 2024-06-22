@@ -1,232 +1,143 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
-import HeroSectionBlog from "../components/HeroSectionBlog";
-import BlogPostCard from "../components/BlogPostCard";
-import BlogFilterCategory from "../components/submenu/BlogFilterCategory";
-import NewsSubscribe from "../components/blogList/NewsSubscribe";
-import BlogFilterLand from "../components/submenu/BlogFilterLand";
-import { IoIosArrowDown } from "react-icons/io";
-
+import StepOne from "../components/MultiStepForms/StepOne";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 
 const StepForm = () => {
-
-    // blog posts data
-     const data  = [
-        
-    ];
-
     // styled
-    const BlogSection = styled.section`
-        background-color: #F8FBF6;
-        .blog-lists-container{
-            max-width: 1320px;
-            padding: 50px 20px 105px;
-            .blog-list-count{
-                margin: 10px 0 10px;
-            }
-            .post-lists{
-                flex-wrap: wrap;
-                gap: 30px 20px;
-                .no-result{
-                    font-size: 32px;
-                    line-height: 42px;
-                    color: #CECECE;
-                    max-width: 630px;
-                    margin-top: 30px;
-                    font-weight: 600;
-                }
-            }
-        }
-        @media (max-width:${({ theme }) => theme.media.tab}){
-            .blog-lists-container{
-                padding: 45px 20px 38px;
-            }
-            .post-lists{
-                .no-result{
-                    margin: 30px 0;
-                }
-            }
-        }
-    `
-    const BlogMenu =  styled.section`
-        max-width: 1280px;
-        .navbar-menu {
-            gap: 12px;
-            margin-right: 20px;
-            .landscape-nav{
-                .submenu{
-                    right: -115px;
-                }
-            }
-            .category-nav{
-                .submenu{
-                    right: -129px;
-                }
-            }
-            li {
-                list-style: none;
-                position: relative;
-                .navbar-link{
-                    background-color: ${({ theme }) => theme.colors.light_green};
-                    border-radius: 25px;
-                    font-weight: 600;
-                    color: white;
-                    padding: 4px 12px;
-                    line-height: 29px;
-                    height: 35px;
-                    gap: 5px;
-                }
-                .submenu{
-                    display: none;
-                    min-width: 249px;
-                    width: auto;
-                    background: white;
-                    position: absolute;
-                    top: 35px;
-                    padding: 10px 12px;
-                    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
-                    right: -10px;
-                    border: 1px solid #fefefe;
-                    z-index: 2;
-                    border-radius: 8px;
-                    li{
-                        margin: 4px 0;
-                        padding: 0;
-                        .checkbox-section{
-                            input[type=checkbox]{
-                                width: 20px;
-                                height: 20px;
-                            }
-                            .form-check-label{
-                                text-wrap: nowrap;
-                                line-height: 1.5;
-                                color: ${({ theme }) => theme.colors.title_green};
-                            }
-                        }
-                    }
-                }
-                &:hover,
-                &:active {
-                    color: ${({ theme }) => theme.colors.helper};
-                        .submenu{
-                        display: block;
-                    }
-                }
-            }
-            @media (max-width:${({ theme }) => theme.media.tab}){
-                margin-bottom: 8px;
-            }
-        }    
-        .selected-multi{
-            .selected-token{
-                gap:12px;
-                .token{
-                    border-radius: 25px;
-                    border: 1px solid #004D37;
-                    height: 35px;
-                    padding: 3px 12px;
-                    font-weight: 600;
-                    color: ${({ theme }) => theme.colors.title_green};
-                    gap: 4px;
-                    &:hover{
-                        border-color: black;
-                    }
-                    .close-icon{
-                        font-size: 30px;
-                    }
-                    span{
-                        text-wrap: nowrap;
-                    }
+    const MainForm = styled.section`
+        
+        margin: 0 auto;
+        display: flex;
 
-                }
-                .remove{
-                    font-weight: 600;
-                    color: ${({ theme }) => theme.colors.title_green};
-                    padding: 3px 10px;
-                    &:hover{
-                        border: 1px solid #ccc;
-                        border-radius: 25px;
-                    }
-                }
+        @media (max-width:${({ theme }) => theme.media.tab}){
+            
+        }
+    `
+    const StepSection = styled.section`
+        width: 100%;
+        max-width:36%;
+        padding: 70px 20px;
+        background: ${({ theme }) => theme.colors.title_green};
+
+        .step-each{
+            max-width: 258px;
+            margin-top: 58px;
+            position: relative;
+            left: 25px;
+            .step-title, .step-text{
+                color: white; 
             }
-            @media (max-width:${({ theme }) => theme.media.tab}){
-                .selected-token{
-                    gap: 5px;
-                    .token{
-                        &:last-child{
-                            margin-right: 0;
-                        }
-                    }
+            .step-title{
+                color: white;
+                font-weight: 600;
+                line-height: 28px;
+            }
+            .step-text{
+                line-height: 150%;
+            }
+            &:first-child{
+                margin-top: 0;
+            }
+            &::before{
+                position: absolute;
+                content: "•";
+                color: white;
+                font-size: 77px;
+                line-height: 0;
+                height: 13px;
+                padding: 10px 5px 10px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                left: -59px;
+                top: 0;
+            }
+            &::after{
+                position:absolute;
+                content: "";
+                background: white;
+                width:1px;
+                height:60px;
+                top:40px;
+                left: -43px;
+            }
+            &:last-child{
+                &::after{
+                    content: none;
                 }
             }
         }
+        .step-one{
+            &::after{
+                height:68px;
+                top:40px;
+            }
+        }
+        .step-two{
+            margin-top: 45px;
+        }
+        .step-each.start{
+            &::before{
+                background:white;
+                color: #699d49;
+            }
+        }
+        .complete-check{
+            &::before{
+                background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='12' viewBox='0 0 17 12' fill='none'%3E%3Cpath d='M1 5L5.29453 9.72399C5.6786 10.1465 6.33785 10.1621 6.74158 9.75842L15.5 1' stroke='%236EA44C' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center center;
+                content: "";
+                width:22px;
+                height: 12px;
+
+            }
+        }
     `
+    const FormSection = styled.section`
+        flex: 1 1 auto;
+        padding: 75px 4.8rem 50px 20px;
+        position: relative;
+        .form-title{
+            font-size: 19px;
+            line-height: 27px;
+            font-weight: 600;
+            margin-bottom: 14px;
+            margin-bottom: 15px;
+        }
+    `
+    
 
     return (
-        <BlogSection>
-            <HeroSectionBlog
-            title="Results for 'Jaguar something longer so it's on 2 lines'"
-            subtitle=""
-            ImageMobile={"../images/blog-title-line-m.svg"}
-            Image={"../images/blog-title-line-d.svg"}
-            />
-            <div className="blog-lists-container mx-auto">
-                <BlogMenu className="mx-auto flex flex-wrap items-start">
-                    <ul className="navbar-menu nav-right flex items-center">
-                        <li className="category-nav">
-                            <NavLink
-                                className="navbar-link flex items-center">
-                                Category <IoIosArrowDown/>
-                                <BlogFilterCategory/>
-                            </NavLink>
-                        </li>
-                        <li className="landscape-nav">
-                            <NavLink
-                                className="navbar-link flex items-center">
-                                Landscape <IoIosArrowDown/>
-                                <BlogFilterLand/>
-                            </NavLink>
-                        </li>
-                    </ul>
-                    <div className="selected-multi">
-                        <div className="selected-token flex flex-wrap">
-                            <Link className="token flex items-center">
-                                <span>Regenerate Together</span>
-                                <img src="../../images/icons/close-icon.svg" className="close-icon" alt="close"/>
-                            </Link>
-                            <Link className="token flex items-center">
-                                <span>Stories from Earth</span>
-                                <img src="../../images/icons/close-icon.svg" className="close-icon" alt="close"/>
-                            </Link>
-                            <Link className="remove flex items-center">
-                                Remove all
-                            </Link>
-                        </div>
-                    </div>
-                </BlogMenu>
-                <div className="blog-list-count">{data.length} items</div>
-                <div className="post-lists flex justify-space-between">
-                    {data.map((item) =>(
-                        <BlogPostCard
-                        image = {item.img}
-                        category = {item.categoryData.map((catitem)=>{
-                                return(
-                                    <li><small>{catitem}</small></li>
-                                )
-                            })}
-                        title = {item.title}
-                        authorName = {item.authorName}
-                        postDate = {item.postDate}
-                    />
-                    ))}
-                    <h2 className="no-result mx-auto text-center">There are no results. Please try different words or filters. </h2>
+        <MainForm>
+            <StepSection>
+                {/* check class - complete-check */}
+                <div className="step-one step-each complete-check relative mx-auto">
+                    <div className="step-title">Your details</div>
+                    <div className="step-text small">Please provide us with your name and e-mail and create a password.</div>
                 </div>
-            </div>
-            <NewsSubscribe/>
-        </BlogSection>
+                {/* white bg green dot class - start */}
+                <div className="step-two step-each start relative mx-auto">
+                    <div className="step-title">Select your plan</div>
+                    <div className="step-text small">Pick how you want to support.</div>
+                </div>
+                <div className="step-three step-each relative mx-auto">
+                    <div className="step-title">Select your landscape</div>
+                    <div className="step-text small">Pick where you want to support.</div>
+                </div>
+                 <div className="step-four step-each relative mx-auto">
+                    <div className="step-title">Add payment details</div>
+                    <div className="step-text small">Please provide us with your credit card or debit card details.</div>
+                </div>
+            </StepSection>
+            <FormSection>
+                <div className="formnextprev justify-space-between relative w-full flex items-center">
+                    <button className="prev-btn flex items-center disable"><IoIosArrowBack /> <small>Previous</small></button>
+                    <button className="next-btn flex items-center"><small>Next</small> <IoIosArrowForward /></button>
+                </div>
+                <StepOne/>
+            </FormSection>
+        </MainForm>
     )
 }
 
