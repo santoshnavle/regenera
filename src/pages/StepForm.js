@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import StepOne from "../components/MultiStepForms/StepOne";
+import StepTwo from "../components/MultiStepForms/StepTwo";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -8,13 +9,8 @@ import { IoIosArrowForward } from "react-icons/io";
 const StepForm = () => {
     // styled
     const MainForm = styled.section`
-        
         margin: 0 auto;
         display: flex;
-
-        @media (max-width:${({ theme }) => theme.media.tab}){
-            
-        }
     `
     const StepSection = styled.section`
         width: 100%;
@@ -93,6 +89,9 @@ const StepForm = () => {
 
             }
         }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            display: none;
+        }
     `
     const FormSection = styled.section`
         flex: 1 1 auto;
@@ -104,6 +103,24 @@ const StepForm = () => {
             font-weight: 600;
             margin-bottom: 14px;
             margin-bottom: 15px;
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            margin-top: 66px;
+            padding: 20px;
+            .form-title{
+                text-align: center;
+                font-size: 16px;
+                line-height: 180%;
+                .title-info{
+                    font-weight: 400;
+                    padding: 0 15px;
+                }
+            }
+            .step-nav{
+                order: -1;
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
         }
     `
     
@@ -132,10 +149,11 @@ const StepForm = () => {
             </StepSection>
             <FormSection>
                 <div className="formnextprev justify-space-between relative w-full flex items-center">
-                    <button className="prev-btn flex items-center disable"><IoIosArrowBack /> <small>Previous</small></button>
-                    <button className="next-btn flex items-center"><small>Next</small> <IoIosArrowForward /></button>
+                    <button className="prev-btn absolute flex items-center disable"><IoIosArrowBack /> <small>Previous</small></button>
+                    <button className="next-btn absolute flex items-center"><small>Next</small> <IoIosArrowForward /></button>
                 </div>
-                <StepOne/>
+                <StepOne classname="hidden"/>
+                <StepTwo classname=""/>
             </FormSection>
         </MainForm>
     )

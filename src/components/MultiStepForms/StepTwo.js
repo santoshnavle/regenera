@@ -1,13 +1,14 @@
 import React from "react";
 import CheckBoxInfo from "../checkbox";
-import CustomRadioSelect from "../selectRadioDropdown";
+import CustomSelect from "../selectDropdown";
 import { OrangeBtn } from "../Button";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { IoIosInformationCircle } from "react-icons/io";
 
 
 
-const StepOne = ({classname}) => {
+const StepTwo = ({classname}) => {
 
     const consentLabel = <div dangerouslySetInnerHTML={{ __html: "<small>Click to agree to <a href='#'>our Privacy Policy</a></small>" }} />;
     const optionsList = [
@@ -16,7 +17,8 @@ const StepOne = ({classname}) => {
         "For me and my family",
         "For an organisation",
     ];
-    const StepOneSection = styled.section`
+    const StepTwoSection = styled.section`
+        margin-top: 60px;
         max-width: 440px;
         .form-section{
             gap: 16px;
@@ -47,9 +49,16 @@ const StepOne = ({classname}) => {
     `
 
     return(
-        <StepOneSection className={`mx-auto flex flex-col ${classname}`}>
+        <StepTwoSection className={`mx-auto flex flex-col ${classname}`}>
+            <div className="fee-n-box w-full box-shadow absolute">
+                <div className="fee flex items-center justify-space-between">
+                    <div className="small-txt small">Monthly fee</div>
+                    <div className="big-txt flex items-center small">$120 <IoIosInformationCircle className="tooltip-ic"/></div>
+                </div>
+               
+            </div>
             <div className="form-title">
-                Your details
+                Select your plan
                 <div className="title-info text-center show-mobile">
                     Please provide us with your name and e-mail and create a password.
                 </div>
@@ -85,13 +94,13 @@ const StepOne = ({classname}) => {
                         </div>
                     </div>
                     <div className="one-col">
-                        <CustomRadioSelect
+                        <CustomSelect
                             classname="form-control"
                             optionsList = {optionsList}
                         />
                     </div>
                     <div className="one-col">
-                        <CustomRadioSelect
+                        <CustomSelect
                             classname="form-control"
                             optionsList = {optionsList}
                         />
@@ -119,8 +128,8 @@ const StepOne = ({classname}) => {
                 <div className="bullet"></div>
                 <div className="bullet"></div>
             </div>
-        </StepOneSection>
+        </StepTwoSection>
     );    
 }
 
-export default StepOne;
+export default StepTwo;

@@ -161,6 +161,8 @@ li {
 }
 
 .form-group .form-control{
+  color: ${({ theme }) => theme.colors.title_green};
+  font-weight: 400;
   line-height: 29px;
   padding: 2px 12px;
   border-radius: 6px;
@@ -267,11 +269,14 @@ li {
   margin-bottom: 4px;
 }
 .form-control{
+  font-size: 16px;
   height: 37px;
   width: 100%;
   padding: 4px 12px;
   border: 1px solid #CECECE;
   border-radius: 6px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.title_green};
   &:focus{
     outline: 0;
   }
@@ -279,8 +284,53 @@ li {
     color: ${({ theme }) => theme.colors.title_green};
   }
 }
+.radio-box{
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #DDEDD0;
+    border-radius: 50%;
+  }
+
+  /* When the radio button is checked, add a blue background */
+  input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    &:checked ~ .checkmark {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cellipse cx='9.94924' cy='10' rx='9.94924' ry='10' fill='%236EA44C'/%3E%3Cpath d='M4.97461 9.28561L8.02285 12.6558C8.29738 12.9593 8.7703 12.9706 9.05895 12.6804L15.2792 6.42847' stroke='%23F8FBF6' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+}
 .form-section .two-col {
   gap: 8px;
+  @media (max-width:${({ theme }) => theme.media.tab}) {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 .input-error{
   border-color: #DD6B17;
@@ -292,12 +342,21 @@ li {
   margin-top: 5px;
   font-weight: 600;
 }
+.disabled{
+  border-color: #BABABA;
+  color: #BABABA;
+  background-color: white;
+  &::placeholder{
+    color: #BABABA;
+  }
+}
 .contsent-box label a {
   font-weight: 600;
   color:${({ theme }) => theme.colors.title_green};
 }
 .step-nav{
   margin-top: 50px;
+  width: 100%;
   max-width: 440px;
   gap: 13px;
   .bullet{
@@ -321,9 +380,50 @@ li {
     cursor: pointer;
     color:${({ theme }) => theme.colors.title_green};
   }
+  .prev-btn{
+    align-self: flex-start;
+  }
+  .next-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
   .disable{
     color: #BABABA;
     cursor: default;
+  }
+  @media (max-width:${({ theme }) => theme.media.tab}) {
+    top: 13px;
+  }
+}
+.hidden{
+  display: none;
+}
+.fee-n-box{
+  max-width: 195px;
+  right: 4.8rem;
+  gap: 8px;
+  border-radius: 8px;
+  top: 70px;
+  box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.07);
+  padding: 8px 12px;
+  .big-txt{
+    font-weight: 600;
+    gap: 4px;
+  }
+  .tooltip{
+    display: none;
+    padding: 20px;
+    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
+    background: white;
+    border-radius: 8px;
+  }
+  .tooltip-ic{
+    &:hover{
+      .tooltip{
+        display: block;
+      }
+    }
   }
 }
 /* stepform ends */
@@ -353,10 +453,16 @@ li {
     gap: 12px;
   }
 }
+.show-mobile{
+  display: none;
+}
 
 @media (max-width:${({ theme }) => theme.media.mobile}) {
   .hide-mobile{
     display: none;
+  }
+  .show-mobile{
+    display: block;
   }
   .grid{
     gap: 3.2rem;
