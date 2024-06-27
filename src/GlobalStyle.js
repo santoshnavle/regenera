@@ -200,6 +200,13 @@ li {
   -o-transition: all 0.3s ease 0s;
 }
 
+.smooth{
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+}
+
 .company-logo-container .slick-track{
   display: flex;
   align-items: center;
@@ -411,18 +418,22 @@ li {
     font-weight: 600;
     gap: 4px;
   }
-  .tooltip{
+  .tooltip-box{
     display: none;
     padding: 20px;
     box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
     background: white;
     border-radius: 8px;
+    position: absolute;
+    font-weight: 400;
+    width: 190px;
   }
   .tooltip-ic{
-    &:hover{
-      .tooltip{
-        display: block;
-      }
+    font-size: 18px;
+    line-height: 12px;
+    color: ${({ theme }) => theme.colors.title_green};
+    &:hover + .tooltip-box{
+      display: block;
     }
   }
 }
