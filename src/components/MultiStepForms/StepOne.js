@@ -50,7 +50,7 @@ const StepOne = ({classname}) => {
         <StepOneSection className={`mx-auto flex flex-col ${classname}`}>
             <div className="form-title">
                 Your details
-                <div className="title-info text-center show-mobile">
+                <div className="title-info text-center show-tab">
                     Please provide us with your name and e-mail and create a password.
                 </div>
             </div>

@@ -152,8 +152,8 @@ const StepForm = () => {
                     <button className="prev-btn absolute flex items-center disable"><IoIosArrowBack /> <small>Previous</small></button>
                     <button className="next-btn absolute flex items-center"><small>Next</small> <IoIosArrowForward /></button>
                 </div>
-                <StepOne classname="hidden"/>
-                <StepTwo classname=""/>
+                <StepOne classname=""/>
+                <StepTwo classname="hidden"/>
             </FormSection>
         </MainForm>
     )
