@@ -472,6 +472,9 @@ li {
   .hide-tab{
     display: none;
   }
+  .show-tab{
+    display: block;
+  }
   .grid-two-column, .grid-three-column, .grid-four-column{
     grid-template-columns: 1fr;
   }
