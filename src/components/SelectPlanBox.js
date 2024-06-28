@@ -120,7 +120,7 @@ const SelectPlanBox = ({planBoxClass, planImg, planName, planInfo, planCost, pla
             </div>
             <div className="plan-data-box flex">
                 <div className="plan-info"><small>{planInfo}</small></div>
-                <div className="feature-boxes">
+                <div className="feature-boxes w-full">
                     <div className="impact-title">{listTitle}</div>
                     <div className="feature">
                         <ul className="list">

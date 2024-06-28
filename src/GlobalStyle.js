@@ -436,6 +436,26 @@ li {
       display: block;
     }
   }
+  @media (max-width:${({ theme }) => theme.media.tab}) {
+    top: 0;
+    right: 0;
+    .tooltip-box{
+      display: none;
+      padding: 20px;
+      box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
+      background: white;
+      border-radius: 8px;
+      position: absolute;
+      font-weight: 400;
+      width: 190px;
+    }
+  }
+}
+.show-mobile{
+  display: none;
+}
+.show-tab{
+  display: none;
 }
 /* stepform ends */
 
@@ -449,7 +469,9 @@ li {
 
 //1023px
 @media (max-width:${({ theme }) => theme.media.tab}) {
-
+  .hide-tab{
+    display: none;
+  }
   .grid-two-column, .grid-three-column, .grid-four-column{
     grid-template-columns: 1fr;
   }
@@ -463,9 +485,9 @@ li {
   .center-text-btn{
     gap: 12px;
   }
-}
-.show-mobile{
-  display: none;
+  .show-tab{
+    display: block;
+  }
 }
 
 @media (max-width:${({ theme }) => theme.media.mobile}) {

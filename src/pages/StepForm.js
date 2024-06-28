@@ -95,7 +95,7 @@ const StepForm = () => {
     `
     const FormSection = styled.section`
         flex: 1 1 auto;
-        padding: 75px 4.8rem 50px 20px;
+        padding: 75px 5% 50px;
         position: relative;
         .form-title{
             font-size: 19px;

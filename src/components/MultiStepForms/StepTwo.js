@@ -59,7 +59,13 @@ const StepTwo = ({classname}) => {
             }
             
         }
-         @media (max-width:${({ theme }) => theme.media.tab}) {
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            .fee-n-box{
+                .tooltip-box{
+                    bottom: 35px;
+                    top: auto;
+                }
+            }
             .plan-group{
                 flex-wrap: wrap;
                 gap: 20px;
@@ -72,19 +78,29 @@ const StepTwo = ({classname}) => {
                             top: 8px;
                         }
                         .plan-box{
-                            max-width: none;
                             position: relative;
                             top: -18px;
                         }
                     }
                 }
             }
-         }
+        }
+        @media (max-width:500px) {
+            .plan-group{
+                .planradio{
+                    .radio-box{
+                        .plan-box{
+                            max-width: none;
+                        }
+                    }
+                }
+            }
+        }
     `
 
     return(
         <StepTwoSection className={`mx-auto flex flex-col ${classname}`}>
-            <div className="fee-n-box w-full box-shadow absolute hide-mobile">
+            <div className="fee-n-box w-full box-shadow absolute hide-tab">
                 <div className="fee flex items-center justify-space-between">
                     <div className="small-txt small">Monthly fee</div>
                     <div className="big-txt flex items-center small">
@@ -159,7 +175,17 @@ const StepTwo = ({classname}) => {
                         <span class="checkmark"></span>
                         </label>
                     </div>
-                    
+                </div>
+                <div className="fee-n-box w-full box-shadow relative show-tab">
+                    <div className="fee flex items-center justify-space-between">
+                        <div className="small-txt small">Monthly fee</div>
+                        <div className="big-txt flex items-center small">
+                            $120 <Link className="tooltip-ic"><IoIosInformationCircle/></Link>
+                            <div className="tooltip-box">
+                                As much as we love Stripe to secure our payment system, we want your money to go to Nature in stead of them. As they charge for every transaction, we try to limit those by billing quarterly.
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div className="cta mx-auto">
                     <OrangeBtn>
