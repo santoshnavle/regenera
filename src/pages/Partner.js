@@ -137,17 +137,21 @@ const Partner = () => {
 
     const PartnerSection = styled.section`
         .green-bg{
-            background: #004532 url("../images/bg-texture-green.jpg") no-repeat center top;
+            background: #004532 url("../images/partner-bg.webp") no-repeat center top;
             background-size: cover;
-            margin-bottom: -4px;
+            min-height: 500px;
             .text-white, .text-white p{ 
                 color: white;
             }
-            .right-section{
-                margin-bottom: -4px;
-            }
             .cta{
                 margin-top: 10px;
+            }
+            padding-bottom: 20px;
+            padding-top: 20px;
+            .right-section{
+                img{
+                    display: none;
+                }
             }
         }
         .business-nature{
@@ -193,18 +197,12 @@ const Partner = () => {
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
             .green-bg{
-                margin-bottom: 0;
-                padding-bottom: 0;
+                padding: 25px 0 0;
                 gap: 0;
                 .cta{
                     margin-top: 25px;
                     position: relative;
                     z-index: 999;
-                }
-                .right-section{
-                    padding-left: 0;
-                    margin-bottom: -5px;
-                    margin-top: -20px;
                 }
             }
             .business-nature{
@@ -227,6 +225,16 @@ const Partner = () => {
             }
         }
         @media (max-width:${({ theme }) => theme.media.mobile}) {
+            .green-bg{
+                background-image: none;
+                .right-section{
+                    padding-left: 0;
+                    margin-top: -30px;
+                    img{
+                    display: block;
+                    }
+                }
+            }
             .business-nature{
                 .nature-img{
                     flex-direction: column;
@@ -479,7 +487,6 @@ const Partner = () => {
                 paraclass = "text-white"
                 heroBg = "green-bg"
                 heroImgM = "../images/partners-hero-m.webp"
-                heroImgD = "../images/partners-hero-d.webp"
                 alttxt = "Partners"
                 orangeBtn
                 btnText = "Sign up" 
