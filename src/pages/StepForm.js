@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import StepOne from "../components/MultiStepForms/StepOne";
 import StepTwo from "../components/MultiStepForms/StepTwo";
+import StepThree from "../components/MultiStepForms/StepThree";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -11,6 +12,9 @@ const StepForm = () => {
     const MainForm = styled.section`
         margin: 0 auto;
         display: flex;
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            display: block;
+        }
     `
     const StepSection = styled.section`
         width: 100%;
@@ -152,8 +156,9 @@ const StepForm = () => {
                     <button className="prev-btn absolute flex items-center disable"><IoIosArrowBack /> <small>Previous</small></button>
                     <button className="next-btn absolute flex items-center"><small>Next</small> <IoIosArrowForward /></button>
                 </div>
-                <StepOne classname=""/>
+                <StepOne classname="hidden"/>
                 <StepTwo classname="hidden"/>
+                <StepThree classname=""/>
             </FormSection>
         </MainForm>
     )

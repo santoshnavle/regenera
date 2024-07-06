@@ -176,6 +176,7 @@ const StepTwo = ({classname}) => {
                         </label>
                     </div>
                 </div>
+                {/* fee related box and tooltip */}
                 <div className="fee-n-box w-full box-shadow relative show-tab">
                     <div className="fee flex items-center justify-space-between">
                         <div className="small-txt small">Monthly fee</div>

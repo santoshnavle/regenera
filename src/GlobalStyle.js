@@ -430,6 +430,9 @@ li {
   }
   .tooltip-ic{
     font-size: 18px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
     line-height: 12px;
     color: ${({ theme }) => theme.colors.title_green};
     &:hover + .tooltip-box{
