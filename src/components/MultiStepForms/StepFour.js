@@ -5,7 +5,7 @@ import styled from "styled-components";
 import LandscapSlider from "react-slick";
 import { IoIosInformationCircle } from "react-icons/io";
 
-const StepThree = ({classname}) => {
+const StepTwo = ({classname}) => {
 
     const settings = {
         dots: true,
@@ -53,7 +53,7 @@ const StepThree = ({classname}) => {
         {impactIc: '../images/icons/cotton-icon.svg', listTxt: '<b>1,500+</b> trees planted'},
     ];
 
-    const StepThreeSection = styled.section`
+    const StepTwoSection = styled.section`
         margin-top: 60px;
         width: 100%;
         max-width: 630px;
@@ -200,7 +200,7 @@ const StepThree = ({classname}) => {
     `
 
     return(
-        <StepThreeSection className={`mx-auto flex flex-col ${classname}`}>
+        <StepTwoSection className={`mx-auto flex flex-col ${classname}`}>
             <div className="fee-n-box w-full box-shadow absolute hide-tab">
                 <div className="fee flex items-center justify-space-between">
                     <div className="small-txt small">Monthly fee</div>
@@ -320,8 +320,8 @@ const StepThree = ({classname}) => {
                 <div className="bullet"></div>
                 <div className="bullet"></div>
             </div>
-        </StepThreeSection>
+        </StepTwoSection>
     );    
 }
 
-export default StepThree;
+export default StepTwo;
