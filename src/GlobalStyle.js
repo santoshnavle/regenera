@@ -169,7 +169,7 @@ li {
   border: 1px solid #DDEDD0;
 }
 
-.form-group .form-control::placeholder{
+.form-group .form-control::placeholder, .form-group .input-blank::placeholder{
   color: #004D37;
   font-weight: 400;
 }
@@ -430,6 +430,9 @@ li {
   }
   .tooltip-ic{
     font-size: 18px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
     line-height: 12px;
     color: ${({ theme }) => theme.colors.title_green};
     &:hover + .tooltip-box{
