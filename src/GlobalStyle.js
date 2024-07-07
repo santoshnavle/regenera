@@ -169,7 +169,7 @@ li {
   border: 1px solid #DDEDD0;
 }
 
-.form-group .form-control::placeholder{
+.form-group .form-control::placeholder, .form-group .input-blank::placeholder{
   color: #004D37;
   font-weight: 400;
 }

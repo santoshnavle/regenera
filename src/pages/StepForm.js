@@ -3,6 +3,7 @@ import styled from "styled-components";
 import StepOne from "../components/MultiStepForms/StepOne";
 import StepTwo from "../components/MultiStepForms/StepTwo";
 import StepThree from "../components/MultiStepForms/StepThree";
+import StepFour from "../components/MultiStepForms/StepFour";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -105,8 +106,11 @@ const StepForm = () => {
             font-size: 19px;
             line-height: 27px;
             font-weight: 600;
-            margin-bottom: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            .title-info{
+                font-weight: 400;
+                font-size: 14px;
+            }
         }
         @media (max-width:${({ theme }) => theme.media.tab}) {
             margin-top: 66px;
@@ -116,7 +120,6 @@ const StepForm = () => {
                 font-size: 16px;
                 line-height: 180%;
                 .title-info{
-                    font-weight: 400;
                     padding: 0 15px;
                 }
             }
@@ -158,7 +161,8 @@ const StepForm = () => {
                 </div>
                 <StepOne classname="hidden"/>
                 <StepTwo classname="hidden"/>
-                <StepThree classname=""/>
+                <StepThree classname="hidden"/>
+                <StepFour classname =""/>
             </FormSection>
         </MainForm>
     )

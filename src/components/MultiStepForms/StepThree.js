@@ -86,7 +86,7 @@ const StepThree = ({classname}) => {
                 .img-box{
                     img{
                         border-radius: 8px;
-                        min-width: 217px;
+                        min-width: 245px;
                     }
                 }
                 .content-box{
@@ -121,6 +121,10 @@ const StepThree = ({classname}) => {
                                 text-align: center;
                             }
                         }
+                    }
+                    .cta-btn{
+                        margin-top: 15px;
+                        max-width: 305px;
                     }
                 }
             }
@@ -258,6 +262,9 @@ const StepThree = ({classname}) => {
                                             </li>
                                         ))}
                                     </ul>
+                                    <OrangeBtn className="cta-btn w-full">
+                                        Select and coninue
+                                    </OrangeBtn>
                                 </div>
                             </div>
                             
@@ -286,6 +293,9 @@ const StepThree = ({classname}) => {
                                             </li>
                                         ))}
                                     </ul>
+                                    <OrangeBtn className="cta-btn w-full">
+                                        Select and coninue
+                                    </OrangeBtn>
                                 </div>
                             </div>
                             
@@ -308,16 +318,11 @@ const StepThree = ({classname}) => {
                         <div className="big-txt flex items-center small">1000 hectares/y</div>
                     </div>
                 </div>
-                <div className="cta mx-auto">
-                    <OrangeBtn>
-                        Select and coninue
-                    </OrangeBtn>
-                </div>
             </form>
             <div className="step-nav flex mx-auto">
                 <div className="bullet"></div>
-                <div className="bullet current"></div>
                 <div className="bullet"></div>
+                <div className="bullet current"></div>
                 <div className="bullet"></div>
             </div>
         </StepThreeSection>
