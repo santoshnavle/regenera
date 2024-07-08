@@ -4,6 +4,7 @@ import StepOne from "../components/MultiStepForms/StepOne";
 import StepTwo from "../components/MultiStepForms/StepTwo";
 import StepThree from "../components/MultiStepForms/StepThree";
 import StepFour from "../components/MultiStepForms/StepFour";
+import StepFive from "./finalStep";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -141,7 +142,7 @@ const StepForm = () => {
                     <div className="step-text small">Please provide us with your name and e-mail and create a password.</div>
                 </div>
                 {/* white bg green dot class - start */}
-                <div className="step-two step-each start relative mx-auto">
+                <div className="step-two step-each complete-check start relative mx-auto">
                     <div className="step-title">Select your plan</div>
                     <div className="step-text small">Pick how you want to support.</div>
                 </div>
