@@ -4,7 +4,6 @@ import StepSlider from "react-slick";
 import ImageWithText from "../components/ImageWithText";
 import RangeOption from "../components/RangeSlide";
 import { OrangeBtn } from "../components/Button";
-import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -16,7 +15,7 @@ const Guardians = () => {
         {textinfo: 'Your ownership and management documents, so that we can register your land.'},
         {textinfo: 'A signed agreement.'},
         {textinfo: 'Bank details in Stripe so we can recognize your good work results.'}
-    ];
+    ]
 
     const lastStepData = listingdata.map((list) => {
         return(
@@ -48,7 +47,7 @@ const Guardians = () => {
         },]
     };
 
-    // role listing
+    
     
 
     // styled
@@ -351,8 +350,6 @@ const Guardians = () => {
             }
         }
     `
-    const JoinNetwork = styled.section`
-    `
 
     return (
         <GuardianSection>
@@ -418,27 +415,6 @@ const Guardians = () => {
                     </StepSlider>
                 </div>
             </HowitsWork>
-            <JoinNetwork>
-                <div className="two-col-box flex justify-space-between items-center">
-                    <div className="guardian-network">
-                        <img src="../images/network-group.webp" alt="network group"/>
-                        <h3 className="h2">Ready to join our network of <br/> Guardians?</h3>
-                        <Link to="#" className="green-link">Click to see the great work they are doing</Link>
-                    </div>
-                    <div className="choose-role-section">
-                        <div className="role-box flex">
-                            <div className="role-img">
-                                <img src="../images/role1.webp" className="w-full" alt="role-img"/>
-                            </div>
-                            <div className="role-infobox">
-                                <h5 className="role-title">Private Guardian</h5>
-                                <p>Choose this option if you manage land through an individual or family title.</p>
-                                <Link to="#" className="green-link">Select and sign up <MdKeyboardArrowRight/></Link>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </JoinNetwork>
         </GuardianSection>
     )
 }
