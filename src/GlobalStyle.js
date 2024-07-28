@@ -127,6 +127,11 @@ a:active {
   color: darkgreen;
 }
 
+.green-link{
+  color: #6EA44C;
+  font-weight: 600;
+}
+
 li {
   list-style: none;
 }
@@ -154,6 +159,10 @@ li {
 
 .relative{
   position: relative;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 .small, small{

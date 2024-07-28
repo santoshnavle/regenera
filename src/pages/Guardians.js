@@ -3,8 +3,12 @@ import HeroSection from "../components/HeroSection";
 import StepSlider from "react-slick";
 import ImageWithText from "../components/ImageWithText";
 import RangeOption from "../components/RangeSlide";
-import { OrangeBtn } from "../components/Button";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import GuardianRole from "../components/RoleBox";
+import VidTestimonial from "../components/PartnerSection/TestimonialContent";
+import MyacordionSection from "../components/Accordion/MyAccordion";
+import { OrangeBtn, LightGreenBtn } from "../components/Button";
+import { RiSearchLine } from "react-icons/ri";
+import { SiWhatsapp } from "react-icons/si";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -48,7 +52,12 @@ const Guardians = () => {
         },]
     };
 
-    // role listing
+    // testimonial data
+    const testimonialData = [
+        {id:1, profileImg : 'https://www.shareicon.net/data/2016/07/05/791221_man_512x512.png', profileQuote: '"With Regenera I support the partnership of Andean and Amazonian forests in Peru, by compensating my footprint and supporting the people that live in those landscapes."', profileName: 'Martin Romero', profilePost: 'General manager Explorandes'},
+        {id:2, profileImg : 'https://www.shareicon.net/data/2016/07/05/791221_man_512x512.png', profileQuote: '"With Regenera I support the partnership of Andean and Amazonian forests in Peru, by compensating my footprint and supporting the people that live in those landscapes."', profileName: 'Martin Romero', profilePost: 'General manager Explorandes'},
+        {id:3, profileImg : 'https://www.shareicon.net/data/2016/07/05/791221_man_512x512.png', profileQuote: '"With Regenera I support the partnership of Andean and Amazonian forests in Peru, by compensating my footprint and supporting the people that live in those landscapes."', profileName: 'Martin Romero', profilePost: 'General manager Explorandes'},
+    ];
     
 
     // styled
@@ -72,47 +81,6 @@ const Guardians = () => {
                 }
             }
         }
-        .business-nature{
-            background: #004532 url('../images/bg-texture-green.jpg') no-repeat;
-            background-size: cover;
-            .nature-img{
-                gap: 20px;
-                overflow:hidden;
-                .picture-box{
-                    margin-bottom: -5px;
-                }
-            }
-            .content{
-                text-align: center;
-                padding-right: 4.8rem;
-                .title-box{
-                    max-width: 522px;
-                    margin: 0 auto;
-                    .small-title{
-                        display:none;
-                    }
-                    h3{
-                        font-size: 48px;
-                        line-height: 58px;
-                        color: white;
-                    }
-                }
-                .button-box{
-                    margin-top: 30px;
-                }
-            }
-        }
-        .company-group{
-            gap: 35px !important;
-            .company-logo-container{
-                .co-logo{
-                    height: 80px !important;
-                    padding: 0 40px !important;
-                    display: flex !important;
-                    align-items: center !important;
-                }
-            }
-        }
         @media (max-width:${({ theme }) => theme.media.tab}){
             .green-bg{
                 padding: 25px 0 0;
@@ -121,24 +89,6 @@ const Guardians = () => {
                     margin-top: 25px;
                     position: relative;
                     z-index: 999;
-                }
-            }
-            .business-nature{
-                .nature-img{
-                    flex-direction: row;
-                }
-                .content{
-                    text-align: center;
-                    padding-right: 30px;
-                    .title-box{
-                        h3{
-                            font-size: 28px;
-                            line-height: 38px;
-                        }
-                    }
-                    .button-box{
-                        margin-top: 30px;
-                    }
                 }
             }
         }
@@ -151,14 +101,6 @@ const Guardians = () => {
                     img{
                     display: block;
                     }
-                }
-            }
-            .business-nature{
-                .nature-img{
-                    flex-direction: column;
-                }
-                .content{
-                    padding: 55px 20px 55px;
                 }
             }
         }
@@ -232,18 +174,9 @@ const Guardians = () => {
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}) {
-            padding: 56px 20px 42px;
-            &::before{
+            padding: 20px 24px;
+            &::before, &::after{
                 content: none;
-            }
-            .take-action-group{
-                gap: 32px;
-                .icon-text-container{
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    gap: 40px;
-                }
-                padding-bottom: 24px;
             }
         }
     `
@@ -291,7 +224,11 @@ const Guardians = () => {
         }
         
         @media (max-width:${({ theme }) => theme.media.tab}) {
-            padding: 33px 0px 35px;
+            padding: 20px 0px;
+            .title-box{
+                margin-bottom: 0;
+                padding: 0 24px;
+            }
             .steps-how{
                 .step-row{
                     box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.07);
@@ -352,6 +289,126 @@ const Guardians = () => {
         }
     `
     const JoinNetwork = styled.section`
+        padding: 110px 4.8rem 100px;
+        max-width: 1440px;
+        margin: 0 auto;
+        .two-col-box{
+            .guardian-network{
+                max-width: 600px;
+                img{
+                    margin-bottom: 70px;
+                }
+                .green-link{
+                    line-height: 28px;
+                    margin-top:8px;
+                    display: inline-block;
+                }
+            }
+        }
+        .choose-role-section{
+            max-width: 414px;
+            .title{
+                font-size: 19px;
+                line-height: 27px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+            .guardian-role{
+                margin-bottom: 8px;
+            }
+            .radio-box{
+                padding-left: 0;
+                input:checked + .guardian-role{
+                    background: #6EA44C;
+                    color: white;
+                    border-radius: 8px;
+                    .green-link{
+                        color: white;
+                    }
+                }
+            }
+        }
+         @media (max-width:${({ theme }) => theme.media.tab}) {
+            
+        }
+    `
+    const FaqQuestions = styled.section`
+        padding: 98px 4.8rem 98px;
+        max-width: 1440px;
+        margin: 0 auto;
+        background: #F8FBF6;
+        .faq-section{
+            max-width: 630px;
+            .title-box{
+                margin-bottom: 32px;
+                .small-title{
+                    font-size: 19px;
+                    line-height: 180%;
+                    color: #6EA44C;
+                    margin-bottom: 5px;
+                }
+            }
+            .faq-accordion{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+            }
+            .other-info{
+                background: white;
+                padding: 20px 32px;
+                border-radius: 25px;
+                font-weight: 500;
+                box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+                margin-top: 20px;
+                .small-title{
+                    font-size: 19px;
+                    line-height: 27px;
+                }
+                .other-option-list{
+                    li{
+                        margin-top: 10px;
+                        .green-link{
+                            gap: 16px;
+                            .link-icon{
+                                font-size: 29px;
+                            }
+                            &:active{
+                                color: #6EA44C;
+                            }
+                            &:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `
+    const SearchBox = styled.div`
+        max-width: 630px;
+        border-radius: 25px;
+        box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+        .form-control{
+            width: 100%;
+            border-radius: 25px;
+            padding: 8px 26px;
+            height: 45px;
+            &::placeholder{
+                color: #004D37;
+            }
+            border: 1px solid #eaeaea;
+        }
+        .search-btn{
+            right: 0
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}){
+            bottom: -20px;
+            width: auto;
+            left: 20px;
+            right: 20px;
+            transform: none;
+        }
     `
 
     return (
@@ -419,26 +476,84 @@ const Guardians = () => {
                 </div>
             </HowitsWork>
             <JoinNetwork>
-                <div className="two-col-box flex justify-space-between items-center">
-                    <div className="guardian-network">
-                        <img src="../images/network-group.webp" alt="network group"/>
+                <div className="two-col-box flex justify-space-between flex-wrap">
+                    <div className="guardian-network text-center">
+                        <img src="../images/network-group.webp" className="w-full" alt="network group"/>
                         <h3 className="h2">Ready to join our network of <br/> Guardians?</h3>
                         <Link to="#" className="green-link">Click to see the great work they are doing</Link>
                     </div>
                     <div className="choose-role-section">
-                        <div className="role-box flex">
-                            <div className="role-img">
-                                <img src="../images/role1.webp" className="w-full" alt="role-img"/>
-                            </div>
-                            <div className="role-infobox">
-                                <h5 className="role-title">Private Guardian</h5>
-                                <p>Choose this option if you manage land through an individual or family title.</p>
-                                <Link to="#" className="green-link">Select and sign up <MdKeyboardArrowRight/></Link>
-                            </div>
-                        </div>
+                        <div className="title text-center">Choose a role:</div>
+                        <form action="">
+                            <label for="roleOne" class="radio-box">
+                                <input id="roleOne" name="selectRole" type="radio" value=""/>
+                                <GuardianRole
+                                    classrole="guardian-role"
+                                    roleImg="../images/role1.webp"
+                                    roleTitle="Private Guardian"
+                                    rolePara="Choose this option if you manage land through an individual or family title."
+                                    linkText="Select and sign up"
+                                />
+                            </label>
+                            <label for="roleTwo" class="radio-box">
+                                <input id="roleTwo" name="selectRole" type="radio" value=""/>
+                                <GuardianRole
+                                    classrole="guardian-role"
+                                    roleImg="../images/role2.webp"
+                                    roleTitle="Collective Guardian"
+                                    rolePara="Choose this option if you manage land as a community, cooperative, association, or other collective."
+                                    linkText="Select and sign up"
+                                />
+                            </label>
+                            <label for="roleThree" class="radio-box">
+                                <input id="roleThree" name="selectRole" type="radio" value=""/>
+                                <GuardianRole
+                                    classrole="guardian-role"
+                                    roleImg="../images/role3.webp"
+                                    roleTitle="Public Guardian"
+                                    rolePara="Choose this option if you manage land as a public or private concession holder."
+                                    linkText="Select and sign up"
+                                />
+                            </label>
+                        </form>
                     </div>
                 </div>
             </JoinNetwork>
+            <FaqQuestions>
+                <div className="faq-section mx-auto">
+                    <div className="title-box text-center">
+                        <div className="small-title uppercase">questions?</div>
+                        <h3>You may be wondering...</h3>
+                    </div>
+                    <SearchBox className="mx-auto w-full flex relative">
+                        <input type="text" className="form-control w-full" placeholder="Search..." aria-label="blog search" aria-describedby="blog search"/>
+                        <LightGreenBtn className="search-btn absolute" type="submit">Search</LightGreenBtn>
+                    </SearchBox>
+                    <MyacordionSection accordionClass="faq-accordion"/>
+                    <div className="other-info">
+                        <h4 className="small-title">Still not sure?</h4>
+                        <ul className="other-option-list">
+                            <li>
+                                <Link to="#" className="green-link flex items-center"><RiSearchLine className="link-icon"/> <small>Go to our knowledge centre for all questions</small></Link>
+                            </li>
+                            <li>
+                                <Link to="#" className="green-link flex items-center"><SiWhatsapp className="link-icon"/> <small>Chat to a Guardian</small></Link>
+                            </li>
+                            <li>
+                                <Link to="#" className="green-link flex items-center"><img src="../images/icons/user-icon.svg" alt="user icon"/> <small>Schedule a video call with a Regenera staff member</small></Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </FaqQuestions>
+            <VidTestimonial
+                titleBeforeborder = "Working"
+                titleBorder = "together" 
+                titleAfterborder = "for Nature"
+                btnLink = "#" 
+                btnText = "Become a Guardian"
+                data = {testimonialData}
+            />
         </GuardianSection>
     )
 }

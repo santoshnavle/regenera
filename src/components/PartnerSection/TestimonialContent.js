@@ -123,9 +123,12 @@ const VidTestimonial = ({
                     color: white;
                     .border{
                         margin: 0 10px;
+                        display: inline-block;
+                        height: 60px;
                         img{
                             left: 2px;
                             bottom: -2px;
+                            width: 182px;
                         }
                     }
                 }
