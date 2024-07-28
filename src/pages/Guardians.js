@@ -328,7 +328,7 @@ const Guardians = () => {
                 }
             }
         }
-         @media (max-width:${({ theme }) => theme.media.tab}) {
+        @media (max-width:${({ theme }) => theme.media.tab}) {
             
         }
     `
