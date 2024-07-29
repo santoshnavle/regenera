@@ -58,7 +58,7 @@ const StepOne = ({classname}) => {
                 <div className="form-section flex flex-col">
                     <div className="two-col flex space-between">
                         <div className="input-box-section">
-                            <label for="fname" className="small">Name</label>
+                            <label for="fname" className="small">First Name</label>
                             {/* for disabled use class disabled */}
                             <input name="fname" aria-describedby="firstnamehelp" disabled placeholder="Name" className="form-control disabled"/>
                         </div>
