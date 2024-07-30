@@ -41,6 +41,19 @@ const Signup = () => {
                     width: 100%;
                 }
             }
+            .circle-box{
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                border: 3px solid white;
+                overflow: hidden;
+                bottom: 10px;
+                left: 70px;
+                img{
+                    max-width: 100%;
+                    object-fit: cover;
+                }
+            }
         }
         .form-box{
             flex: 1 1 auto;
@@ -89,6 +102,10 @@ const Signup = () => {
                 h1{
                     font-size: 42px;
                     line-height: 53px;
+                    text-align: center;
+                    br{
+                        display: none;
+                    }
                 }
             }
             .form-box{
@@ -111,12 +128,15 @@ const Signup = () => {
     `
     return (
         <SignupSection className="flex flex-wrap">
-            <div className="left-section">
+            <div className="left-section relative">
                 <h1 className="text-white">Lets protect Nature <br/>
                     <span class="border">together
                         <img src="./images/title-border-line.svg" alt="border"/>
                     </span>
                 </h1>
+                <div className="circle-box absolute">
+                    <img src="https://earthsky.org/upl/2024/05/Otter_Ray-Harrington-Unsplash-scaled-e1714836163715.jpg" alt="nature image"/>
+                </div>
             </div>
             <div className="form-box mx-auto flex flex-col">
                 <div className="form-title text-center">
