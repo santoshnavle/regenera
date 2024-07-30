@@ -85,6 +85,10 @@ const Login = () => {
                 h1{
                     font-size: 42px;
                     line-height: 53px;
+                    text-align: center;
+                    br{
+                        display: none;
+                    }
                 }
             }
             .form-box{
