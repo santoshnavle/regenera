@@ -300,6 +300,21 @@ li {
     color: ${({ theme }) => theme.colors.title_green};
   }
 }
+.input-group{
+  .input-group-prepend{
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 12px;
+    line-height: 1;
+    z-index: 2;
+    height: 16px;
+    cursor: pointer;
+  }
+  .form-control{
+    padding-right: 35px;
+  }
+}
 .radio-box{
   position: relative;
   padding-left: 28px;
@@ -341,6 +356,25 @@ li {
   }
 
 }
+.login-w-google{
+  background-color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  line-height: 28px;
+  font-weight: 600;
+  gap: 10px;
+  height: 45px;
+  max-width: 305px;
+  padding: 8px 30px;
+  border: 1px solid #F6F6F6;
+  margin-top: 8px;
+  img{
+    width: 27px;
+  }
+  &:hover{
+    border: 1px solid #ccc;
+  }
+}
 .form-section .two-col {
   gap: 8px;
   @media (max-width:${({ theme }) => theme.media.tab}) {
@@ -358,12 +392,23 @@ li {
   margin-top: 5px;
   font-weight: 600;
 }
+.text-white{
+  color: white;
+}
 .disabled{
   border-color: #BABABA;
   color: #BABABA;
   background-color: white;
   &::placeholder{
     color: #BABABA;
+  }
+}
+button.disabled{
+  color: white;
+  background-color: #CECECE;
+  cursor: default;
+  &:hover{
+    background-color: #CECECE;
   }
 }
 .contsent-box label a {

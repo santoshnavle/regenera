@@ -8,6 +8,8 @@ import Partner from "./pages/Partner";
 import Friends from "./pages/Friends";
 import StepForm from "./pages/StepForm";
 import FinalStep from "./pages/finalStep";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import Guardians from "./pages/Guardians";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -54,6 +56,8 @@ const App = () =>{
             <Route path="/friends" element={<Friends/>}/>
             <Route path="/step-form" element={<StepForm/>}/>
             <Route path="/final-step" element={<FinalStep/>}/>
+            <Route path="/signup" element={<Signup/>}/>
+            <Route path="/login" element={<Login/>}/>
             <Route path="/guardians" element={<Guardians/>}/>
           </Routes>
           <Footer/>
