@@ -478,6 +478,10 @@ const Guardians = () => {
             <JoinNetwork>
                 <div className="two-col-box flex justify-space-between flex-wrap">
                     <div className="guardian-network text-center">
+                        <picture>
+                            <source media="(max-width:700px)" srcset="./images/sliders/slider-1-mobile.png"/>
+                            <img src="./images/sliders/slider-image.png" alt=""/>
+                        </picture>
                         <img src="../images/network-group.webp" className="w-full" alt="network group"/>
                         <h3 className="h2">Ready to join our network of <br/> Guardians?</h3>
                         <Link to="#" className="green-link">Click to see the great work they are doing</Link>

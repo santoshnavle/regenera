@@ -43,6 +43,13 @@ const GuardianRole = ({roleImg, roleTitle, rolePara, linkText, classrole}) => {
             }
             &:hover{
                 border: 1px solid #6EA44C;
+                background-color: #6EA44C;
+                color: white;
+                .role-infobox{
+                    .green-link{
+                        color: white;
+                    }
+                }
             }
         }
         
