@@ -31,6 +31,33 @@ const Guardians = () => {
         )
     });
 
+    // hero hanging arrow text
+    const heroArrow = () => {
+        return(
+            <div className="flex arrow-hero">
+                <div className="text">Like Gregorio</div>
+                <img src="../images/arrow-bended-hero.svg" alt="arrow"/>
+            </div>
+        )
+    };
+
+    // step slider next prev btns
+    const SampleNextArrow = (props) => {
+        const { className, style, onClick } = props;
+        return (
+            <div className={className} style={{ ...style, display: "flex", alignItems: "center"}}
+            onClick={onClick}>Next</div>
+        );
+    };
+
+    const SamplePrevArrow = (props) => {
+        const { className, style, onClick } = props;
+        return (
+            <div className={className} style={{ ...style,  display: "flex", alignItems: "center"}}
+            onClick={onClick}>Back</div>
+        );
+    }
+
     // step slider setting
     const stepSettings = {
         responsive: [
@@ -48,6 +75,8 @@ const Guardians = () => {
             speed: 300,
             infinite: false,
             adaptiveHeight: true,
+            nextArrow: <SampleNextArrow />,
+            prevArrow: <SamplePrevArrow />,
             }
         },]
     };
@@ -64,11 +93,20 @@ const Guardians = () => {
 
     const GuardianSection = styled.section`
         .green-bg{
-            background: #004532 url("../images/partner-bg.webp") no-repeat center top;
+            background: #004532 url("../images/bg-texture-green.webp") no-repeat center top;
             background-size: cover;
-            min-height: 500px;
+            min-height: 480px;
             .text-white, .text-white p{ 
                 color: white;
+                .arrow-hero{
+                    position: absolute;
+                    gap: 5px;
+                    top: -90px;
+                    right: -145px;
+                    .text{
+                        font-size: 19px;
+                    }
+                }
             }
             .cta{
                 margin-top: 10px;
@@ -76,33 +114,60 @@ const Guardians = () => {
             padding-bottom: 20px;
             padding-top: 20px;
             .right-section{
-                img{
-                    display: none;
-                }
+                max-width: 50%;
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
+            .right-section{
+                min-width: 100%;
+            }
             .green-bg{
                 padding: 25px 0 0;
                 gap: 0;
+                flex-wrap: wrap;
+                h1{
+                    br{
+                        display: none;
+                    }
+                }
+                .text-white{
+                    .arrow-hero{
+                        right: auto;
+                        left: 20px;
+                        top: auto;
+                        bottom: -50px;
+                    }
+                }
                 .cta{
                     margin-top: 25px;
                     position: relative;
                     z-index: 999;
                 }
             }
-        }
-        @media (max-width:${({ theme }) => theme.media.mobile}) {
-            .green-bg{
-                background-image: none;
-                .right-section{
-                    padding-left: 0;
-                    margin-top: -30px;
-                    img{
+            .testimonial-box {
+                padding: 35px 20px;
+                .two-cols {
                     display: block;
+                    .testimonal-information{
+                        margin: 0 auto;
+                        .button-box{
+                            display: none;
+                        }
+                        h3.white-text{
+                            text-align: center;
+                            margin-bottom: 20px;
+                            .border{
+                                height: auto;
+                            }
+                        }
+                    }
+                    .footer-btn{
+                        margin-top: 55px;
                     }
                 }
             }
+        }
+        @media (max-width:${({ theme }) => theme.media.mobile}) {
         }
     `
     const ProtectLand =  styled.section`
@@ -255,7 +320,7 @@ const Guardians = () => {
                     font-size: 16px;
                     font-weight: 600;
                     background: #6EA44C;
-                    bottom: 0px;
+                    bottom: 20px;
                     top: auto;
                     z-index: 99;
                     transform: translate(0);
@@ -276,7 +341,7 @@ const Guardians = () => {
                     background: #CECECE;
                 }
                 .slick-dots{
-                    bottom: 43px;
+                    bottom: 30px;
                 }
                 .faq-link{
                     padding-left:20px;
@@ -329,7 +394,33 @@ const Guardians = () => {
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}) {
-            
+            padding: 26px 0 30px;
+            .two-col-box{
+                .guardian-network{
+                    max-width: fit-content;
+                    img{
+                        margin-bottom: 20px;
+                    }
+                    h3, a{
+                        padding: 0 20px;
+                        br{
+                            display: none;
+                        }
+                    }
+                    a{
+                        font-size: 16px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .choose-role-section{
+                padding: 0 20px;
+                margin-top: 45px;
+                margin: 0 auto;
+                .title{
+                    font-size: 16px;
+                }
+            }
         }
     `
     const FaqQuestions = styled.section`
@@ -384,6 +475,23 @@ const Guardians = () => {
                 }
             }
         }
+        @media (max-width:${({ theme }) => theme.media.mobile}){
+            padding: 24px 20px;
+            .faq-section{
+                .title-box{
+                    text-align: left;
+                    margin-bottom: 20px;
+                    .small-title{
+                        margin-bottom: 0;
+                        font-size: 16px;
+                        line-height: 180%;
+                    }
+                }
+                .faq-accordion{
+                    margin-top: 10px;
+                }
+            }
+        }
     `
     const SearchBox = styled.div`
         max-width: 630px;
@@ -403,10 +511,8 @@ const Guardians = () => {
             right: 0
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
-            bottom: -20px;
             width: auto;
-            left: 20px;
-            right: 20px;
+            left: 0;
             transform: none;
         }
     `
@@ -417,9 +523,10 @@ const Guardians = () => {
                 title="We can't regenerate Nature without your"
                 titleline="support"
                 titleclass="text-white"
-                paratext = "para text here"
+                paratext = {heroArrow()}
                 paraclass = "text-white"
-                heroBg = "green-bg"
+                heroBg = "green-bg relative"
+                isVideo = "true"
                 heroImgM = "../images/partners-hero-m.webp"
                 alttxt = "Partners"
                 orangeBtn
@@ -479,10 +586,9 @@ const Guardians = () => {
                 <div className="two-col-box flex justify-space-between flex-wrap">
                     <div className="guardian-network text-center">
                         <picture>
-                            <source media="(max-width:700px)" srcset="./images/sliders/slider-1-mobile.png"/>
-                            <img src="./images/sliders/slider-image.png" alt=""/>
+                            <source media="(max-width:700px)" srcset="../images/network-group-m.webp"/>
+                            <img src="../images/network-group.webp" className="w-full" alt="network group"/>
                         </picture>
-                        <img src="../images/network-group.webp" className="w-full" alt="network group"/>
                         <h3 className="h2">Ready to join our network of <br/> Guardians?</h3>
                         <Link to="#" className="green-link">Click to see the great work they are doing</Link>
                     </div>
@@ -551,12 +657,14 @@ const Guardians = () => {
                 </div>
             </FaqQuestions>
             <VidTestimonial
+                testimonialClass = "testimonial-box"
                 titleBeforeborder = "Working"
                 titleBorder = "together" 
                 titleAfterborder = "for Nature"
                 btnLink = "#" 
                 btnText = "Become a Guardian"
                 data = {testimonialData}
+                mobileButton
             />
         </GuardianSection>
     )

@@ -54,7 +54,45 @@ const GuardianRole = ({roleImg, roleTitle, rolePara, linkText, classrole}) => {
         }
         
         @media (max-width:${({ theme }) => theme.media.tab}){
-            
+            .role-box{
+                .role-infobox{
+                    .role-title{
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 24px;
+                        margin-bottom: 0;
+                    }
+                    p{
+                        line-height: 150%;
+                        margin-top:0;
+                    }
+                    .green-link{
+                        margin: 3px 0;
+                        svg{
+                            font-size:20px;
+                            transition: all 1s ease-out;
+                        }
+                        span{
+                            line-height: 23px;
+                        }
+                        &:hover{
+                            svg{
+                                right: -5px;
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    border: 1px solid #6EA44C;
+                    background-color: #6EA44C;
+                    color: white;
+                    .role-infobox{
+                        .green-link{
+                            color: white;
+                        }
+                    }
+                }
+            }
         }
     `
     return (

@@ -13,7 +13,10 @@ const VidTestimonial = ({
     paraText, 
     btnLink, 
     btnText,
-    data,}) => {
+    data,
+    testimonialClass,
+    mobileButton,
+    }) => {
 
     const settings = {
         dots: true,
@@ -197,9 +200,15 @@ const VidTestimonial = ({
                     h3.white-text{
                         font-size: 28px;
                         line-height: 38px;
+                        .border{
+                            img{
+                                display: none;
+                            }
+                        }
                     }
                     .parent-info{
                         gap: 12px;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -207,12 +216,13 @@ const VidTestimonial = ({
     `
 
     return(
-        <VidTestimonial>
+        <VidTestimonial className={testimonialClass}>
             <div className="two-cols flex justify-center items-center">
                 {!titleBeforeborder && (
                     <VideoPlayer
                         thumbnail = "../images/video-thumb.webp" 
                         path = "../images/naturaleza.mp4" 
+                        playbtn="../images/playbtn.webp"
                         videoClass = "video-section"
                     />
                 )}
@@ -258,6 +268,13 @@ const VidTestimonial = ({
                         ))}
                     </SlideReview>
                 </div>
+                {mobileButton && (
+                    <div className="button-box footer-btn show-tab">
+                        <OrangeBtn>
+                            <Link to={btnLink}>{btnText}</Link>
+                        </OrangeBtn>
+                    </div>
+                )}
             </div>
         </VidTestimonial>
     );    
