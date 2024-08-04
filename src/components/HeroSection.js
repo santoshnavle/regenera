@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import VideoPlayer from "./Video";
 import { Link } from "react-router-dom";
 import { OrangeBtn } from "./Button";
 
-const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, alttxt, orangeBtn, btnText, btnLink,}) => {
+const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, isVideo, alttxt, orangeBtn, btnText, btnLink,}) => {
 
     const HeroContainer = styled.section`
     padding-left:4.8rem;
@@ -20,6 +21,7 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
     `
     const LeftSection = styled.section`
         max-width: 522px;
+        position: relative;
         .title-box{
             margin-bottom: 16px;
             h1{
@@ -63,13 +65,37 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
         }
     `
     const RightSection = styled.section`
-    @media (max-width:${({ theme }) => theme.media.tab}){
-        padding-left: 20px;
-        min-width: 40%;
-        @media (max-width:${({ theme }) => theme.media.mobile}){
-            min-width: 100%;
+        .isvideo{
+            max-width: 100%;
+            .video-section{
+                margin-right: 20px;
+                border-radius: 8px;
+                box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
+                video{
+                    width: 100%;
+                    border-radius: 8px;
+                }
+            }
         }
-    }
+        @media (max-width:${({ theme }) => theme.media.tab}){
+            padding-left: 20px;
+            min-width: 40%;
+            .isvideo{
+                min-width: 100%;
+                margin-top: 75px;
+                .video-section{
+                    margin-right: 20px;
+                    border-radius: 20px;
+                    video{
+                        width: 100%;
+                    }
+                }
+                padding-bottom: 25px;
+            }
+            @media (max-width:${({ theme }) => theme.media.mobile}){
+                min-width: 100%;
+            }
+        }
     `
 
     return (
@@ -93,10 +119,20 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
             </LeftSection>
 
             <RightSection className="right-section">
-                <picture>
-                    <source media="(max-width:768px)" srcset={heroImgM}/>
-                    <img src={heroImgD} className="w-full" alt={alttxt}/>
-                </picture>
+                {isVideo ? 
+                        <div className="isvideo">
+                            <VideoPlayer
+                                thumbnail = "./images/video-thumb.webp" 
+                                path = "./images/naturaleza.mp4" 
+                                playbtn="./images/play-btn-green.webp"
+                                videoClass = "video-section"
+                            />
+                        </div> : 
+                        <picture>
+                            <source media="(max-width:768px)" srcset={heroImgM}/>
+                            <img src={heroImgD} className="w-full" alt={alttxt}/>
+                        </picture>
+                }
             </RightSection>
         </HeroContainer>
     )

@@ -127,6 +127,11 @@ a:active {
   color: darkgreen;
 }
 
+.green-link{
+  color: #6EA44C;
+  font-weight: 600;
+}
+
 li {
   list-style: none;
 }
@@ -154,6 +159,10 @@ li {
 
 .relative{
   position: relative;
+}
+
+.uppercase{
+  text-transform: uppercase;
 }
 
 .small, small{
@@ -560,6 +569,15 @@ button.disabled{
     text-align: center;
   }
 }
-
-
+input[type="range"]::-webkit-slider-thumb {
+  /* removing default appearance */
+  -webkit-appearance: none;
+  appearance: none; 
+  /* creating a custom design */
+  height: 28px;
+  width: 28px;
+  background-color: #6EA44C;
+  border-radius: 50%;
+  margin-top: -2px;
+}
 `;

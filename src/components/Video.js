@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 
-const VideoPlayer = ({thumbnail, path, videoClass}) => {
+const VideoPlayer = ({thumbnail, path, playbtn, videoClass}) => {
 
     const VideoPlay = styled.div`
         position:relative;
@@ -19,6 +19,15 @@ const VideoPlayer = ({thumbnail, path, videoClass}) => {
                 top: 50%;
                 transform: translate(-50%, -50%);
                 cursor: pointer;
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}){
+            .thumbnail-box{
+                button{
+                    img{
+                        max-width: 45px;
+                    }
+                }
             }
         }
     `
@@ -41,7 +50,7 @@ const VideoPlayer = ({thumbnail, path, videoClass}) => {
                 {isVisible && 
                 <div className="thumbnail-box absolute">
                     <img className="w-full" alt="video thumbnail" src={thumbnail}/>
-                    <button onClick={handleClick}><img src="./images/playbtn.webp" alt="Play button"/></button>
+                    <button onClick={handleClick}><img src={playbtn} alt="Play button"/></button>
                 </div>}
             </VideoPlay>
             )}
