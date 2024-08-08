@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 
-const VideoPlayer = ({thumbnail, path, playbtn, videoClass}) => {
+const VideoPlayer = ({thumbnailD, thumbnailM, path, playbtn, videoClass}) => {
 
     const VideoPlay = styled.div`
         position:relative;
@@ -41,15 +41,18 @@ const VideoPlayer = ({thumbnail, path, playbtn, videoClass}) => {
 
     return (
         <>
-            {thumbnail && (
+            {thumbnailD && (
                 <VideoPlay className={videoClass}>
-                <video id="videobox" controls ref={videoRef} poster={thumbnail}>
+                <video id="videobox" controls ref={videoRef}>
                     <source src={path} type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>
                 {isVisible && 
                 <div className="thumbnail-box absolute">
-                    <img className="w-full" alt="video thumbnail" src={thumbnail}/>
+                    <picture>
+                        <source media="(max-width:768px)" srcset={thumbnailM}/>
+                        <img src={thumbnailD} className="w-full" alt="video thumbnail"/>
+                    </picture>
                     <button onClick={handleClick}><img src={playbtn} alt="Play button"/></button>
                 </div>}
             </VideoPlay>

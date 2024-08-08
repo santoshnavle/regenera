@@ -95,7 +95,15 @@ const Guardians = () => {
         .green-bg{
             background: #004532 url("../images/bg-texture-green.webp") no-repeat center top;
             background-size: cover;
-            min-height: 480px;
+            min-height: 479px;
+            overflow: hidden;
+            .title-box{
+                padding-top: 70px;
+                width: 110%;
+                br{
+                    display: none;
+                }
+            }
             .text-white, .text-white p{ 
                 color: white;
                 .arrow-hero{
@@ -109,15 +117,29 @@ const Guardians = () => {
                 }
             }
             .cta{
+                margin-bottom: 68px;
                 margin-top: 10px;
             }
-            padding-bottom: 20px;
-            padding-top: 20px;
             .right-section{
-                max-width: 50%;
+                max-width: 55%;
+                flex: 1 0 auto;
+                .isvideo{
+                    .video-section{
+                        text-align: right;
+                        img{
+                           width: 100%;
+                           height: auto;
+                        }
+                    }
+                }
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
+            .green-bg{
+                .title-box{
+                    width: auto;
+                }
+            }
             .right-section{
                 min-width: 100%;
             }
@@ -166,8 +188,6 @@ const Guardians = () => {
                     }
                 }
             }
-        }
-        @media (max-width:${({ theme }) => theme.media.mobile}) {
         }
     `
     const ProtectLand =  styled.section`
@@ -520,17 +540,20 @@ const Guardians = () => {
     return (
         <GuardianSection>
             <HeroSection
-                title="We can't regenerate Nature without your"
-                titleline="support"
+                title="Become a Guardian and be recognised for"
+                titleline="protecting"
+                titleafter="Nature on your land"
                 titleclass="text-white"
                 paratext = {heroArrow()}
                 paraclass = "text-white"
                 heroBg = "green-bg relative"
-                isVideo = "true"
-                heroImgM = "../images/partners-hero-m.webp"
+                isVideo
+                videoPath = "../images/naturaleza.mp4"
+                videoThumbnail = "../images/video-hero-img.webp"
+                videoThumbnailM = "../images/video-hero-img-m.webp"
                 alttxt = "Partners"
                 orangeBtn
-                btnText = "Sign up" 
+                btnText = "Become a Guardian" 
                 btnLink = "#"
             />
             <ProtectLand>

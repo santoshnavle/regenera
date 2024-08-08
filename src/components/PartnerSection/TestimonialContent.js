@@ -220,7 +220,8 @@ const VidTestimonial = ({
             <div className="two-cols flex justify-center items-center">
                 {!titleBeforeborder && (
                     <VideoPlayer
-                        thumbnail = "../images/video-thumb.webp" 
+                        thumbnailM = "../images/video-thumb.webp"
+                        thumbnailD = "../images/video-thumb.webp"
                         path = "../images/naturaleza.mp4" 
                         playbtn="../images/playbtn.webp"
                         videoClass = "video-section"

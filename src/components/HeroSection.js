@@ -4,7 +4,7 @@ import VideoPlayer from "./Video";
 import { Link } from "react-router-dom";
 import { OrangeBtn } from "./Button";
 
-const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, isVideo, alttxt, orangeBtn, btnText, btnLink,}) => {
+const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, isVideo, videoPath, videoThumbnail, videoThumbnailM, alttxt, orangeBtn, btnText, btnLink,}) => {
 
     const HeroContainer = styled.section`
     padding-left:4.8rem;
@@ -29,6 +29,9 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
                 line-height: 58px;
                 .border{
                     position: relative;
+                    height: 58px;
+                    display:inline-block;
+                    margin-right: 10px;
                     img{
                         position: absolute;
                         bottom: -3px;
@@ -56,6 +59,7 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
                         display: none;
                     }
                     .border{
+                        height: 50px;
                         img{
                             width: 100%;
                         }
@@ -68,7 +72,6 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
         .isvideo{
             max-width: 100%;
             .video-section{
-                margin-right: 20px;
                 border-radius: 8px;
                 box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
                 video{
@@ -106,7 +109,7 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
                         <span className="border">
                             {titleline} 
                             <img src="./images/title-border-line.svg" alt="border"/>
-                        </span>&nbsp;{titleafter}</h1>
+                        </span>{titleafter}</h1>
                 </div>
                 <div className={`content-box ${ paraclass }`}>
                     {paratext}
@@ -122,8 +125,9 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
                 {isVideo ? 
                         <div className="isvideo">
                             <VideoPlayer
-                                thumbnail = "./images/video-thumb.webp" 
-                                path = "./images/naturaleza.mp4" 
+                                thumbnailD = {videoThumbnail}
+                                thumbnailM = {videoThumbnailM}
+                                path = {videoPath} 
                                 playbtn="./images/play-btn-green.webp"
                                 videoClass = "video-section"
                             />
