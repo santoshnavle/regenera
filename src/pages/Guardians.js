@@ -95,14 +95,21 @@ const Guardians = () => {
         .green-bg{
             background: #004532 url("../images/bg-texture-green.webp") no-repeat center top;
             background-size: cover;
-            min-height: 480px;
+            overflow: hidden;
+            .title-box{
+                width: 110%;
+                br{
+                    display: none;
+                }
+            }
             .text-white, .text-white p{ 
                 color: white;
                 .arrow-hero{
                     position: absolute;
                     gap: 5px;
-                    top: -90px;
-                    right: -145px;
+                    top: -56px;
+                    right: -110px;
+                    z-index: 99;
                     .text{
                         font-size: 19px;
                     }
@@ -111,23 +118,32 @@ const Guardians = () => {
             .cta{
                 margin-top: 10px;
             }
-            padding-bottom: 20px;
-            padding-top: 20px;
             .right-section{
-                max-width: 50%;
+                max-width: 55%;
+                flex: 1 0 auto;
+                .isvideo{
+                    .video-section{
+                        text-align: right;
+                        height: 479px;
+                        img{
+                           width: auto;
+                           height: 100%;
+                        }
+                    }
+                }
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
-            .right-section{
-                min-width: 100%;
-            }
             .green-bg{
                 padding: 25px 0 0;
                 gap: 0;
                 flex-wrap: wrap;
-                h1{
-                    br{
-                        display: none;
+                .title-box{
+                    width: auto;
+                    h1{
+                        br{
+                            display: none;
+                        }
                     }
                 }
                 .text-white{
@@ -139,11 +155,33 @@ const Guardians = () => {
                     }
                 }
                 .cta{
-                    margin-top: 25px;
                     position: relative;
-                    z-index: 999;
+                    margin-top: 0;
+                }
+                .right-section{
+                    max-width: none;
+                    .isvideo{
+                        display: flex;
+                        justify-content: center;
+                        .video-section{
+                            max-width: 700px;
+                            padding-right: 0;
+                            margin-right: 20px;
+                            text-align: right;
+                            height: auto;
+                            .thumbnail-box{
+                                margin-bottom: 0;
+                                top: 30px;
+                                img{
+                                    width: 100%;
+                                    height:auto;
+                                }
+                            }
+                        }
+                    }
                 }
             }
+            
             .testimonial-box {
                 padding: 35px 20px;
                 .two-cols {
@@ -166,8 +204,6 @@ const Guardians = () => {
                     }
                 }
             }
-        }
-        @media (max-width:${({ theme }) => theme.media.mobile}) {
         }
     `
     const ProtectLand =  styled.section`
@@ -195,12 +231,12 @@ const Guardians = () => {
         }
         &::before{
             content: "";
-            background: url('../images/left-leaf.webp');
+            background: url('../images/guardian-leaf-left.webp');
             background-size: 100% auto;
             background-repeat: no-repeat;
             position: absolute;
-            width: 168px;
-            height: 351px;
+            width: 129px;
+            height: 373px;
             right: auto;
             left: 0;
             top: 0px;
@@ -208,14 +244,14 @@ const Guardians = () => {
         }
         &::after{
             content: "";
-            background: url('../images/right-leaf.webp');
+            background: url('../images/guardian-right-leaf.webp');
             background-size: 100% auto;
             background-repeat: no-repeat;
             position: absolute;
-            width: 168px;
-            height: 351px;
+            width: 121px;
+            height: 340px;
             right: 0;
-            top: -100px;
+            top: -70px;
             z-index: 2;
         }
         .take-action-group{
@@ -260,6 +296,7 @@ const Guardians = () => {
             }
             .img-text{
                 align-items: flex-start;
+                gap: 106px;
                  .picture-box{
                     flex: 1 0 auto;
                     img{
@@ -358,8 +395,10 @@ const Guardians = () => {
         max-width: 1440px;
         margin: 0 auto;
         .two-col-box{
+            max-width: 1065px;
+            margin: 0 auto;
             .guardian-network{
-                max-width: 600px;
+                max-width: 570px;
                 img{
                     margin-bottom: 70px;
                 }
@@ -393,9 +432,10 @@ const Guardians = () => {
                 }
             }
         }
-        @media (max-width:${({ theme }) => theme.media.tab}) {
+        @media (max-width: 1138px) {
             padding: 26px 0 30px;
             .two-col-box{
+                justify-content: center;
                 .guardian-network{
                     max-width: fit-content;
                     img{
@@ -520,17 +560,20 @@ const Guardians = () => {
     return (
         <GuardianSection>
             <HeroSection
-                title="We can't regenerate Nature without your"
-                titleline="support"
+                title="Become a Guardian and be recognised for"
+                titleline="protecting"
+                titleafter="Nature on your land"
                 titleclass="text-white"
                 paratext = {heroArrow()}
                 paraclass = "text-white"
                 heroBg = "green-bg relative"
-                isVideo = "true"
-                heroImgM = "../images/partners-hero-m.webp"
+                isVideo
+                videoPath = "../images/naturaleza.mp4"
+                videoThumbnail = "../images/video-hero-img.webp"
+                videoThumbnailM = "../images/video-hero-img-m.webp"
                 alttxt = "Partners"
                 orangeBtn
-                btnText = "Sign up" 
+                btnText = "Become a Guardian" 
                 btnLink = "#"
             />
             <ProtectLand>
@@ -576,8 +619,8 @@ const Guardians = () => {
                             contentBox = "text-section"
                             imgBoxClass="picture-box"
                             smallTitle = "Step 3"
-                            firstTitle = "Lead the way towards Nature & Climate positive action"
-                            text = "It's time to measure your footprint. If you do not yet know your carbon or environmental footprint, or would like it updated, use our Calculator or schedule a call with one of our Expert advisors."
+                            firstTitle = "Restore, inspire others, and receive economic recognition for your work"
+                            text = "Start your work in the field and share your Nature protection and restoration activities and photos with your landscape community on your profile. For your work you will receive a payment which can be collected at your nearest bank every X. The amount of money you’ll receive depends on X."
                         />
                     </StepSlider>
                 </div>
