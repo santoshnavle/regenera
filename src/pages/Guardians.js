@@ -145,27 +145,38 @@ const Guardians = () => {
                             display: none;
                         }
                     }
-                    .text-white{
-                        .arrow-hero{
-                            right: auto;
-                            left: 20px;
-                            top: auto;
-                            bottom: -50px;
-                        }
-                    }
-                    .cta{
-                        margin-top: 25px;
-                        position: relative;
-                        z-index: 999;
+                }
+                .text-white{
+                    .arrow-hero{
+                        right: auto;
+                        left: 20px;
+                        top: auto;
+                        bottom: -50px;
                     }
                 }
+                .cta{
+                    position: relative;
+                    margin-top: 0;
+                }
                 .right-section{
-                    min-width: 100%;
+                    max-width: none;
                     .isvideo{
+                        display: flex;
+                        justify-content: center;
                         .video-section{
+                            max-width: 700px;
                             padding-right: 0;
+                            margin-right: 20px;
                             text-align: right;
                             height: auto;
+                            .thumbnail-box{
+                                margin-bottom: 0;
+                                top: 30px;
+                                img{
+                                    width: 100%;
+                                    height:auto;
+                                }
+                            }
                         }
                     }
                 }
@@ -421,9 +432,10 @@ const Guardians = () => {
                 }
             }
         }
-        @media (max-width:${({ theme }) => theme.media.tab}) {
+        @media (max-width: 1138px) {
             padding: 26px 0 30px;
             .two-col-box{
+                justify-content: center;
                 .guardian-network{
                     max-width: fit-content;
                     img{

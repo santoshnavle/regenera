@@ -56,7 +56,7 @@ const VideoPlayer = ({thumbnailD, thumbnailM, path, playbtn, videoClass}) => {
                 {isVisible && 
                 <div className="thumbnail-box absolute">
                     <picture>
-                        <source media="(max-width:768px)" srcset={thumbnailM}/>
+                        <source media="(max-width:1023px)" srcset={thumbnailM}/>
                         <img src={thumbnailD} className="w-full" alt="video thumbnail"/>
                     </picture>
                     <button onClick={handleClick}><img src={playbtn} alt="Play button"/></button>
