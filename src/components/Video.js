@@ -6,6 +6,12 @@ const VideoPlayer = ({thumbnailD, thumbnailM, path, playbtn, videoClass}) => {
 
     const VideoPlay = styled.div`
         position:relative;
+        .hide{
+            visibility:hidden;
+        }
+        .show{
+            visibility: visible;
+        }
         .thumbnail-box{
             left: 0;
             right: 0;
@@ -43,7 +49,7 @@ const VideoPlayer = ({thumbnailD, thumbnailM, path, playbtn, videoClass}) => {
         <>
             {thumbnailD && (
                 <VideoPlay className={videoClass}>
-                <video id="videobox" controls ref={videoRef}>
+                <video id="videobox" controls className={isVisible ? "hide" : "show"} ref={videoRef}>
                     <source src={path} type="video/mp4"/>
                     Your browser does not support the video tag.
                 </video>

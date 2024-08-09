@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { OrangeBtn } from "./Button";
 
 const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paraclass, heroBg, heroImgM, heroImgD, isVideo, videoPath, videoThumbnail, videoThumbnailM, alttxt, orangeBtn, btnText, btnLink,}) => {
-
     const HeroContainer = styled.section`
     padding-left:4.8rem;
     gap: 80px;
@@ -73,10 +72,14 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
             max-width: 100%;
             .video-section{
                 border-radius: 8px;
+                padding-right: 30px;
                 box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
                 video{
                     width: 100%;
                     border-radius: 8px;
+                }
+                .thumbnail-box{
+                    margin-bottom:-5px;
                 }
             }
         }
@@ -129,7 +132,7 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
                                 thumbnailM = {videoThumbnailM}
                                 path = {videoPath} 
                                 playbtn="./images/play-btn-green.webp"
-                                videoClass = "video-section"
+                                videoClass = "video-section flex items-center"
                             />
                         </div> : 
                         <picture>
