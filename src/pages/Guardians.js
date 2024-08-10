@@ -521,6 +521,9 @@ const Guardians = () => {
                 .title-box{
                     text-align: left;
                     margin-bottom: 20px;
+                    h3{
+                        font-size: 25px;
+                    }
                     .small-title{
                         margin-bottom: 0;
                         font-size: 16px;
@@ -643,6 +646,7 @@ const Guardians = () => {
                                 <GuardianRole
                                     classrole="guardian-role"
                                     roleImg="../images/role1.webp"
+                                    roleImgM="../images/role1m.webp"
                                     roleTitle="Private Guardian"
                                     rolePara="Choose this option if you manage land through an individual or family title."
                                     linkText="Select and sign up"
@@ -653,6 +657,7 @@ const Guardians = () => {
                                 <GuardianRole
                                     classrole="guardian-role"
                                     roleImg="../images/role2.webp"
+                                    roleImgM="../images/role2m.webp"
                                     roleTitle="Collective Guardian"
                                     rolePara="Choose this option if you manage land as a community, cooperative, association, or other collective."
                                     linkText="Select and sign up"
@@ -663,6 +668,7 @@ const Guardians = () => {
                                 <GuardianRole
                                     classrole="guardian-role"
                                     roleImg="../images/role3.webp"
+                                    roleImgM="../images/role3m.webp"
                                     roleTitle="Public Guardian"
                                     rolePara="Choose this option if you manage land as a public or private concession holder."
                                     linkText="Select and sign up"

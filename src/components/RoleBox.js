@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
-const GuardianRole = ({roleImg, roleTitle, rolePara, linkText, classrole}) => {
+const GuardianRole = ({roleImg, roleImgM, roleTitle, rolePara, linkText, classrole}) => {
     const GuardianRole = styled.section`
         .role-box{
             padding: 12px;
@@ -55,6 +55,7 @@ const GuardianRole = ({roleImg, roleTitle, rolePara, linkText, classrole}) => {
         
         @media (max-width:${({ theme }) => theme.media.tab}){
             .role-box{
+                padding: 10px;
                 .role-infobox{
                     .role-title{
                         font-size: 16px;
@@ -99,7 +100,10 @@ const GuardianRole = ({roleImg, roleTitle, rolePara, linkText, classrole}) => {
         <GuardianRole className={classrole}>
             <div className="role-box flex">
                 <div className="role-img">
-                    <img src={roleImg} className="w-full" alt="role-img"/>
+                    <picture>
+                        <source media="(max-width:768px)" srcset={roleImgM}/>
+                        <img src={roleImg} className="w-full" alt="role-img"/>
+                    </picture>
                 </div>
                 <div className="role-infobox">
                     <h5 className="role-title">{roleTitle}</h5>
