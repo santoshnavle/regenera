@@ -159,13 +159,11 @@ const GuardiansForm = () => {
     return (
         <MainForm>
             <StepSection>
-                {/* check class - complete-check */}
-                <div className="step-one step-each complete-check relative mx-auto">
+                <div className="step-one step-each start relative mx-auto">
                     <div className="step-title">Choose a role</div>
                     <div className="step-text small">Please select the role that fits your situation best.</div>
                 </div>
-                {/* white bg green dot class - start */}
-                <div className="step-two step-each start relative mx-auto">
+                <div className="step-two step-each relative mx-auto">
                     <div className="step-title">Your details</div>
                     <div className="step-text small">Please provide us with your name, email and location preferences.</div>
                 </div>
@@ -223,7 +221,6 @@ const GuardiansForm = () => {
                 </div>
                 <div className="step-nav hide-tab flex mx-auto">
                     <div className="bullet current"></div>
-                    <div className="bullet"></div>
                     <div className="bullet"></div>
                     <div className="bullet"></div>
                 </div>

@@ -189,6 +189,10 @@ li {
   border: 1px solid #DDEDD0;
 }
 
+.form-control:focus{
+  border-color: #6EA44C;
+}
+
 .form-group .form-control::placeholder, .form-group .input-blank::placeholder{
   color: #004D37;
   font-weight: 400;
