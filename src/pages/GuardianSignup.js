@@ -8,7 +8,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
 
-const StepForm = () => {
+const GuardianSignup = () => {
     // styled
     const MainForm = styled.section`
         margin: 0 auto;
@@ -168,4 +168,4 @@ const StepForm = () => {
     )
 }
 
-export default StepForm;
+export default GuardianSignup;

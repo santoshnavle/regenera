@@ -11,6 +11,8 @@ import FinalStep from "./pages/finalStep";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Guardians from "./pages/Guardians";
+import GuardiansForms from "./pages/GuardiansFormRole";
+import GuardiansSignup from "./pages/GuardianSignup";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
@@ -59,6 +61,8 @@ const App = () =>{
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/guardians" element={<Guardians/>}/>
+            <Route path="/signup-guardians" element={<GuardiansSignup/>}/>
+            <Route path="/choose-role" element={<GuardiansForms/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>

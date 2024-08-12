@@ -44,6 +44,17 @@ h1, h2, h3, .card-title{
   font-weight: 600;
 }
 
+.small-title{
+  color:${({ theme }) => theme.colors.title_green};
+  font-size: 19px;
+  line-height: 27px;
+  font-weight: 600;
+  @media (max-width:${({ theme }) => theme.media.tab}) {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
 .fw-normal{
   font-weight: 600;
 }
@@ -511,7 +522,7 @@ button.disabled{
 .show-mobile{
   display: none;
 }
-.show-tab{
+.show-tab, .show-flex-tab{
   display: none;
 }
 /* stepform ends */
@@ -547,6 +558,9 @@ button.disabled{
   }
   .show-tab{
     display: block;
+  }
+  .show-flex-tab{
+    display: flex;
   }
 }
 
