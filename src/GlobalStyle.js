@@ -124,6 +124,10 @@ h1, h2, h3, .card-title{
   text-align: center;
 }
 
+.text-left{
+  text-align: left;
+}
+
 p {
   font-size: 16px;
   margin-top: 12px;

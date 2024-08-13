@@ -17,7 +17,8 @@ const CustomRadioSelect = ({optionsList, classname}) => {
   };
 
   const CustomSelectBox = styled.div`
-    position: relative;
+    position: relative; 
+    text-align: left;
     button{
         border-radius: 8px;
         border: 1px solid #DDEDD0;
