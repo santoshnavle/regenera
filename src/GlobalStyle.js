@@ -44,6 +44,17 @@ h1, h2, h3, .card-title{
   font-weight: 600;
 }
 
+.small-title{
+  color:${({ theme }) => theme.colors.title_green};
+  font-size: 19px;
+  line-height: 27px;
+  font-weight: 600;
+  @media (max-width:${({ theme }) => theme.media.tab}) {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
 .fw-normal{
   font-weight: 600;
 }
@@ -113,6 +124,10 @@ h1, h2, h3, .card-title{
   text-align: center;
 }
 
+.text-left{
+  text-align: left;
+}
+
 p {
   font-size: 16px;
   margin-top: 12px;
@@ -176,6 +191,10 @@ li {
   padding: 2px 12px;
   border-radius: 6px;
   border: 1px solid #DDEDD0;
+}
+
+.form-control:focus{
+  border-color: #6EA44C;
 }
 
 .form-group .form-control::placeholder, .form-group .input-blank::placeholder{
@@ -511,7 +530,7 @@ button.disabled{
 .show-mobile{
   display: none;
 }
-.show-tab{
+.show-tab, .show-flex-tab{
   display: none;
 }
 /* stepform ends */
@@ -547,6 +566,9 @@ button.disabled{
   }
   .show-tab{
     display: block;
+  }
+  .show-flex-tab{
+    display: flex;
   }
 }
 

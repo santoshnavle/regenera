@@ -19,7 +19,7 @@ const CheckBoxInfo = ({labelName, labelId, checkboxSection}) => {
                 -moz-appearance: none;
                 appearance: none;
                 &:checked{
-                    background: url("https://regenera.earth/static/media/checkbox.aa4ac918.svg") no-repeat center center;
+                    background: url("../images/checkbox.svg") no-repeat center center;
                     border-color: var(--Trust-Green,#004d37);
                 }
             }
