@@ -15,6 +15,7 @@ import GuardiansForms from "./pages/GuardiansFormRole";
 import GuardiansSignup from "./pages/GuardianSignup";
 import OutsidePeru from "./pages/OutsidePeru";
 import ThankyouOutside from "./pages/ThankyouOutsidePeru";
+import CreatingDoc from "./pages/CreatingDoc";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
@@ -67,6 +68,7 @@ const App = () =>{
             <Route path="/choose-role" element={<GuardiansForms/>}/>
             <Route path="/outside-peru" element={<OutsidePeru/>}/>
             <Route path="/outside-thankyou" element={<ThankyouOutside/>}/>
+            <Route path="/creating-doc" element={<CreatingDoc/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>
