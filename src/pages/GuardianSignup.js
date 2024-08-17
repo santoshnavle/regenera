@@ -177,6 +177,8 @@ const GuardianSignup = () => {
                         color: white;
                         border-radius: 8px;
                         border-color: #6EA44C;
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
@@ -293,11 +295,11 @@ const GuardianSignup = () => {
                                     <div className="select-language flex space-between">
                                         <label for="languageOne" class="radio-box">
                                             <input id="languageOne" name="selectlanguage" type="radio" value=""/>
-                                            <div className="language-btn">English</div>
+                                            <div className="language-btn flex justify-center items-center">English</div>
                                         </label>
                                         <label for="languageTwo" class="radio-box">
                                             <input id="languageTwo" name="selectlanguage" type="radio" value=""/>
-                                            <div className="language-btn">Español</div>
+                                            <div className="language-btn flex justify-center items-center">Español</div>
                                         </label>
                                     </div>
                                 </div>
