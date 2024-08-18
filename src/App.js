@@ -16,11 +16,15 @@ import GuardiansSignup from "./pages/GuardianSignup";
 import OutsidePeru from "./pages/OutsidePeru";
 import ThankyouOutside from "./pages/ThankyouOutsidePeru";
 import CreatingDoc from "./pages/CreatingDoc";
+import SignDocuments from "./pages/SignDocuments";
+import CreatingSign from "./pages/CreatingSign";
+import ThankYouGuardian from "./pages/ThankYouGuardian";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 
 const App = () =>{
@@ -69,6 +73,9 @@ const App = () =>{
             <Route path="/outside-peru" element={<OutsidePeru/>}/>
             <Route path="/outside-thankyou" element={<ThankyouOutside/>}/>
             <Route path="/creating-doc" element={<CreatingDoc/>}/>
+            <Route path="/sign-document" element={<SignDocuments/>}/>
+            <Route path="/creating-sign" element={<CreatingSign/>}/>
+            <Route path="/thankyou-guardian"element={<ThankYouGuardian/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>

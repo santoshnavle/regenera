@@ -355,6 +355,11 @@ li {
     border-radius: 50%;
   }
 
+  button{
+    border: 0 none;
+    background-color: none;
+  }
+
   /* When the radio button is checked, add a blue background */
   input{
     position: absolute;
@@ -421,6 +426,11 @@ li {
   &::placeholder{
     color: #BABABA;
   }
+}
+button{
+  border: 0 none;
+  background: none;
+  cursor: pointer;
 }
 button.disabled{
   color: white;
