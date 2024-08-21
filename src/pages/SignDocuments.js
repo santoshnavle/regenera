@@ -50,6 +50,11 @@ const SignDocumentUploaded = () => {
         margin: 0 auto;
         display: flex;
         position: relative;
+        @media (max-width: 1240px){
+            .toggleform-section{
+                padding-left: 180px;
+            }
+        }
         @media (max-width:${({ theme }) => theme.media.tab}) {
             display: block;
         }
@@ -60,7 +65,6 @@ const SignDocumentUploaded = () => {
         padding: 70px 20px;
         background: ${({ theme }) => theme.colors.title_green};
         z-index: 9;
-        height: 100%;
         .arrow-btn{
             color: white;
             font-size: 20px;
@@ -124,6 +128,7 @@ const SignDocumentUploaded = () => {
         .togglestep{
             .step-each{
                 max-width: 0;
+                left: 40px;
                 .step-title, .step-text{
                     display: none;
                 }
@@ -153,6 +158,9 @@ const SignDocumentUploaded = () => {
 
             }
         }
+        @media (max-width: 1240px){
+            height: 100%;
+        }
         @media (max-width:${({ theme }) => theme.media.tab}) {
             display: none;
         }
@@ -170,6 +178,7 @@ const SignDocumentUploaded = () => {
                     position: relative;
                     font-size: 14px;
                     color: #6EA44C;
+                    flex: 1 0 auto;
                     &::after{
                         content: ">";
                         position: absolute;
@@ -204,12 +213,11 @@ const SignDocumentUploaded = () => {
         .letter-sign{
             gap: 22px;
             .letter-section{
-                max-width: 410px;
                 padding: 25px 60px;
                 background-color: #EFE7DA;
+                flex: 1 1 auto;
                 box-shadow: inset 4px 4px 14px 0px rgba(0, 0, 0, 0.10);
                 .sign-letter{
-                    max-width: 288px;
                     background: white;
                     border-radius: 8px;
                     filter: drop-shadow(1.679px 3.359px 12.595px rgba(0, 0, 0, 0.05));
@@ -275,6 +283,7 @@ const SignDocumentUploaded = () => {
             .right-sign{
                 width: 100%;
                 max-width: 301px;
+                flex: 1 0 auto;
                 .sign-add{
                     padding: 12px 16px;
                     border-radius: 8px;
@@ -360,7 +369,7 @@ const SignDocumentUploaded = () => {
 
     return (
         <MainForm>
-            <StepSection className={screenSize < 1200 && "absolute"}>
+            <StepSection className={screenSize < 1200 && "absolute"} style={{'maxWidth': isToggled ? '129px' : ''}}>
                 {screenSize < 1200 && (
                     <button className="arrow-btn absolute" onClick={toggleClick}>
                         {isToggled ? <FaAnglesRight/> : <FaAnglesLeft/>}
@@ -381,7 +390,7 @@ const SignDocumentUploaded = () => {
                     </div>
                 </div>
             </StepSection>
-            <FormSection>
+            <FormSection className={isToggled ? 'toggleform-section' : ''}>
                 <div className="show-flex-tab justify-center breadcrumb mx-auto flex">
                     <Link className="breadbrumb-link" to="#">Choose a role</Link>
                     <Link className="breadbrumb-link">Fill in details</Link>
