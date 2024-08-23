@@ -120,6 +120,7 @@ const GuardianSignup = () => {
                     position: relative;
                     font-size: 14px;
                     color: #6EA44C;
+                    flex: 1 0 auto;
                     &::after{
                         content: ">";
                         position: absolute;

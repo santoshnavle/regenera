@@ -472,6 +472,10 @@ button.disabled{
   }
   .prev-btn{
     align-self: flex-start;
+    left: -10px;
+    @media (max-width:${({ theme }) => theme.media.tab}) {
+      left: 0;
+    }
   }
   .next-btn{
     position: absolute;

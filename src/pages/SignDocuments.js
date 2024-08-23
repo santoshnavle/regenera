@@ -7,7 +7,11 @@ import { LightGreenBtn, OrangeBtn } from "../components/Button";
 import { FiPlus } from "react-icons/fi";
 import { FiMinus } from "react-icons/fi";
 import { TbBallpen } from "react-icons/tb";
+import { FaAnglesRight } from "react-icons/fa6";
+import { FaAnglesLeft } from "react-icons/fa6";
+
 import { RiDeleteBin6Line } from "react-icons/ri";
+import useScreenSize from "../components/UseScreenSize";
 
 const SignDocumentUploaded = () => {
     const [image, setImage] = useState("");
@@ -29,9 +33,28 @@ const SignDocumentUploaded = () => {
     const onButtonClick = () => {
         inputFile.current.click();
     };
+
+    // screensize
+    const screenSize = useScreenSize().width;
+
+    // toggle width
+    const [isToggled, setIsToggled] = useState(false);
+    const toggleClick = () => {
+        setIsToggled(!isToggled);
+    }
+
+
+
+   
     const MainForm = styled.section`
         margin: 0 auto;
         display: flex;
+        position: relative;
+        @media (max-width: 1240px){
+            .toggleform-section{
+                padding-left: 180px;
+            }
+        }
         @media (max-width:${({ theme }) => theme.media.tab}) {
             display: block;
         }
@@ -41,7 +64,15 @@ const SignDocumentUploaded = () => {
         max-width:36%;
         padding: 70px 20px;
         background: ${({ theme }) => theme.colors.title_green};
-
+        z-index: 9;
+        .arrow-btn{
+            color: white;
+            font-size: 20px;
+            right: 0;
+            top: 0;
+            padding: 20px;
+            z-index: 99;
+        }
         .step-each{
             max-width: 258px;
             margin-top: 58px;
@@ -90,6 +121,18 @@ const SignDocumentUploaded = () => {
                     content: none;
                 }
             }
+            @media (max-width:1240px) {
+                min-height: 70px;
+            }
+        }
+        .togglestep{
+            .step-each{
+                max-width: 0;
+                left: 40px;
+                .step-title, .step-text{
+                    display: none;
+                }
+            }
         }
         .step-one{
             &::after{
@@ -115,6 +158,9 @@ const SignDocumentUploaded = () => {
 
             }
         }
+        @media (max-width: 1240px){
+            height: 100%;
+        }
         @media (max-width:${({ theme }) => theme.media.tab}) {
             display: none;
         }
@@ -132,6 +178,7 @@ const SignDocumentUploaded = () => {
                     position: relative;
                     font-size: 14px;
                     color: #6EA44C;
+                    flex: 1 0 auto;
                     &::after{
                         content: ">";
                         position: absolute;
@@ -166,12 +213,11 @@ const SignDocumentUploaded = () => {
         .letter-sign{
             gap: 22px;
             .letter-section{
-                max-width: 410px;
                 padding: 25px 60px;
                 background-color: #EFE7DA;
+                flex: 1 1 auto;
                 box-shadow: inset 4px 4px 14px 0px rgba(0, 0, 0, 0.10);
                 .sign-letter{
-                    max-width: 288px;
                     background: white;
                     border-radius: 8px;
                     filter: drop-shadow(1.679px 3.359px 12.595px rgba(0, 0, 0, 0.05));
@@ -237,6 +283,7 @@ const SignDocumentUploaded = () => {
             .right-sign{
                 width: 100%;
                 max-width: 301px;
+                flex: 1 0 auto;
                 .sign-add{
                     padding: 12px 16px;
                     border-radius: 8px;
@@ -322,21 +369,28 @@ const SignDocumentUploaded = () => {
 
     return (
         <MainForm>
-            <StepSection>
-                <div className="step-one step-each complete-check relative mx-auto">
-                    <div className="step-title">Choose a role</div>
-                    <div className="step-text small">Please select the role that fits your situation best.</div>
-                </div>
-                <div className="step-two step-each complete-check relative mx-auto">
-                    <div className="step-title">Your details</div>
-                    <div className="step-text small">Please provide us with your name, email and location preferences.</div>
-                </div>
-                <div className="step-three step-each start relative mx-auto">
-                    <div className="step-title">Sign Letter</div>
-                    <div className="step-text small">Sign the Letter of Intent to confirm your interest.</div>
+            <StepSection className={screenSize < 1200 && "absolute"} style={{'maxWidth': isToggled ? '129px' : ''}}>
+                {screenSize < 1200 && (
+                    <button className="arrow-btn absolute" onClick={toggleClick}>
+                        {isToggled ? <FaAnglesRight/> : <FaAnglesLeft/>}
+                    </button>
+                )}
+                <div className={isToggled ? "togglestep" : ""}>
+                    <div className="step-one step-each complete-check relative mx-auto">
+                        <div className="step-title">Choose a role {screenSize}</div>
+                        <div className="step-text small">Please select the role that fits your situation best.</div>
+                    </div>
+                    <div className="step-two step-each complete-check relative mx-auto">
+                        <div className="step-title">Your details</div>
+                        <div className="step-text small">Please provide us with your name, email and location preferences.</div>
+                    </div>
+                    <div className="step-three step-each start relative mx-auto">
+                        <div className="step-title">Sign Letter</div>
+                        <div className="step-text small">Sign the Letter of Intent to confirm your interest.</div>
+                    </div>
                 </div>
             </StepSection>
-            <FormSection>
+            <FormSection className={isToggled ? 'toggleform-section' : ''}>
                 <div className="show-flex-tab justify-center breadcrumb mx-auto flex">
                     <Link className="breadbrumb-link" to="#">Choose a role</Link>
                     <Link className="breadbrumb-link">Fill in details</Link>
@@ -350,7 +404,7 @@ const SignDocumentUploaded = () => {
                     <div className="form-title">
                         Letter of Intent
                     </div>
-                    <div className="letter-sign flex">
+                    <div className="letter-sign flex justify-center">
                         <div className="letter-section relative">
                             <div className="group-btn absolute">
                                 <button className="w-full flex items-center justify-center"><FiPlus/></button>
