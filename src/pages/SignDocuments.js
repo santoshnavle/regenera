@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { LightGreenBtn, OrangeBtn } from "../components/Button";
-import { FiPlus } from "react-icons/fi";
-import { FiMinus } from "react-icons/fi";
+import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa6";
 import { TbBallpen } from "react-icons/tb";
 import { FaAnglesRight } from "react-icons/fa6";
 import { FaAnglesLeft } from "react-icons/fa6";
@@ -50,13 +50,16 @@ const SignDocumentUploaded = () => {
         margin: 0 auto;
         display: flex;
         position: relative;
-        @media (max-width: 1240px){
-            .toggleform-section{
+        @media (max-width: 1199px){
+            .toggleform-section, .left-form-section{
                 padding-left: 180px;
             }
         }
         @media (max-width:${({ theme }) => theme.media.tab}) {
             display: block;
+            .left-form-section{
+                padding-left: 20px;
+            }
         }
     `
     const StepSection = styled.section`
@@ -121,7 +124,7 @@ const SignDocumentUploaded = () => {
                     content: none;
                 }
             }
-            @media (max-width:1240px) {
+            @media (max-width:1200px) {
                 min-height: 70px;
             }
         }
@@ -158,7 +161,7 @@ const SignDocumentUploaded = () => {
 
             }
         }
-        @media (max-width: 1240px){
+        @media (max-width: 1199px){
             height: 100%;
         }
         @media (max-width:${({ theme }) => theme.media.tab}) {
@@ -178,11 +181,11 @@ const SignDocumentUploaded = () => {
                     position: relative;
                     font-size: 14px;
                     color: #6EA44C;
-                    flex: 1 0 auto;
                     &::after{
                         content: ">";
                         position: absolute;
-                        right: -18px;
+                        left: 100%;
+                        transform: translateX(100%)
                     }
                     &:last-child{
                         &::after{
@@ -220,7 +223,7 @@ const SignDocumentUploaded = () => {
                 .sign-letter{
                     background: white;
                     border-radius: 8px;
-                    filter: drop-shadow(1.679px 3.359px 12.595px rgba(0, 0, 0, 0.05));
+                    box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
                     padding: 15px;
                     .letter-draft{
                         font-size: 6px
@@ -330,8 +333,20 @@ const SignDocumentUploaded = () => {
                 .letter-section{
                     max-width: none;
                     padding: 20px;
+                    .group-btn{
+                        box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
+                        button{
+                         border-radius: 15px 15px 0 0;
+                         &:last-child{
+                            border-radius: 0 0 15px 15px;
+                         }
+                        }
+                    }
                     .sign-letter{
                         max-width: none;
+                        .signature-box{
+                            height: 83px;
+                        }
                     }
                 }
                 .right-sign{
@@ -365,11 +380,9 @@ const SignDocumentUploaded = () => {
             
          }
     `
-    
-
     return (
         <MainForm>
-            <StepSection className={screenSize < 1200 && "absolute"} style={{'maxWidth': isToggled ? '129px' : ''}}>
+            <StepSection className={screenSize < 1200 && "absolute"} style={{'maxWidth': isToggled ? '129px' : '420px'}}>
                 {screenSize < 1200 && (
                     <button className="arrow-btn absolute" onClick={toggleClick}>
                         {isToggled ? <FaAnglesRight/> : <FaAnglesLeft/>}
@@ -390,7 +403,7 @@ const SignDocumentUploaded = () => {
                     </div>
                 </div>
             </StepSection>
-            <FormSection className={isToggled ? 'toggleform-section' : ''}>
+            <FormSection className={isToggled ? 'toggleform-section' : 'left-form-section'}>
                 <div className="show-flex-tab justify-center breadcrumb mx-auto flex">
                     <Link className="breadbrumb-link" to="#">Choose a role</Link>
                     <Link className="breadbrumb-link">Fill in details</Link>
@@ -407,8 +420,8 @@ const SignDocumentUploaded = () => {
                     <div className="letter-sign flex justify-center">
                         <div className="letter-section relative">
                             <div className="group-btn absolute">
-                                <button className="w-full flex items-center justify-center"><FiPlus/></button>
-                                <button className="w-full flex items-center justify-center"><FiMinus/></button>
+                                <button className="w-full flex items-center justify-center"><FaPlus/></button>
+                                <button className="w-full flex items-center justify-center"><FaMinus/></button>
                             </div>
                             <div className="sign-letter">
                                 <div className="letter-draft">
