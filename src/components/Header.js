@@ -18,7 +18,7 @@ const Header = () => {
       height: auto;
       max-width: 158px;
     }
-    @media (max-width:${({ theme }) => theme.media.tab}){
+    @media (max-width: 1065px){
       padding: 0 20px;
       height: 66px;
       position: fixed;
