@@ -11,15 +11,18 @@ const CheckBoxInfo = ({labelName, labelId, checkboxSection}) => {
             align-items: center;
             input[type=checkbox]{
                 border-radius: .25em;
-                width: 20px;
+                width: 27px;
                 height: 20px;
+                background-color: white;
                 position: relative;
                 border: 1px solid #ccc;
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
                 &:checked{
-                    background: url("../images/checkbox.svg") no-repeat center center;
+                    background-image: url("../images/checkbox.svg");
+                    background-repeat: no-repeat;
+                    background-position: center center;
                     border-color: var(--Trust-Green,#004d37);
                 }
             }

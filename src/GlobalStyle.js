@@ -228,6 +228,14 @@ li {
   -o-transition: all 0.3s ease 0s;
 }
 
+.sticky-map{
+  position: sticky !important;
+  top: 0;
+  @media (max-width: 1024px) {
+    position: absolute !important;
+  }
+}
+
 .smooth{
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease 0s;

@@ -6,7 +6,7 @@ import CheckBoxInfo from "../checkbox";
 const NewsSubscribe = () => {
     const NewsUpdate = styled.section`
         position: relative;
-        background: url('../images/bg-texture-green.jpg');
+        background-image: url('../images/bg-texture-green.jpg');
         background-size: cover;
         .news-section{
             min-height: 400px;
@@ -29,9 +29,15 @@ const NewsSubscribe = () => {
                     }
                     .checkbox-section{
                         width: 70%;
-                        .form-check-label{
-                            font-weight: 300;
-                            line-height: 1.5;
+                        .form-check{
+                            align-items: flex-start;
+                            .form-check-label{
+                                font-weight: 300;
+                                line-height: 1.5;
+                            }
+                            input[type=checkbox]{
+                                top: 3px;
+                            }
                         }
                     }
                 }
