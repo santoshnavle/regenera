@@ -229,8 +229,8 @@ li {
 }
 
 .sticky-map{
-  position: sticky !important;
-  top: 0;
+  position: fixed !important;
+  top: 90px;
   @media (max-width: 1024px) {
     position: absolute !important;
   }

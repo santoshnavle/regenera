@@ -145,7 +145,7 @@ const LandscapeList = () => {
                         line-height: 180%;
                     }
                     .select-lists{
-                        width: 848px;
+                        min-width: 848px;
                         .input-box-section{
                             max-width: 49%;
                         }
@@ -225,10 +225,9 @@ const LandscapeList = () => {
                     }
                 }
                 .peru-map{
-                    position: sticky;
+                    position: absolute;
                     z-index: 99;
                     right: 25px;
-                    top: 90px;
                     .top-one-location,.center-two-location,.bottom-three-location, .bottom-four-location,.bottom-five-location{
                         position: absolute;
                     }
@@ -262,54 +261,68 @@ const LandscapeList = () => {
                  }
             }
             @media (max-width: ${({ theme }) => theme.media.tab}) {
-                padding: 20px 0 28px 0;
+                padding: 86px 0 28px;
                 .landscape-herobox{
+                    padding-right: 0;
                     .left-side-content{
                         width: 100%;
                         max-width: none;
-                        gap: 0;
+                        gap: 16px;
+                        padding: 0 20px;
                         .title-box{
-                            padding: 0 20px;
+                            h1{
+                                font-size: 28px;
+                                line-height: 38px;
+                            }
+                            .border-img{
+                                max-width: 420px;
+                                width: 85%;
+                            }
                         }
-                        .article-section{
-                            gap: 16px;
-                            padding-left:0;
-                            padding-right: 0;
-                            overflow-x: auto;
-                            .card-slider{
-                                width: 100%;
-                                .discover-card{
-                                    margin: 0 8px;
-                                    max-width: 292px;
-                                    .card-button{
-                                        display: none;
-                                    }
-                                    .discover-card-info{
-                                        padding: 20px 16px;
-                                        border-radius: 8px;
-                                        position: relative;
-                                        top: -20px;
-                                        .card-title{
-                                            margin-bottom: 4px;
-                                        }
-                                        hr{
-                                            margin: 16px 0;
-                                        }
-                                        .icon-with-numbers{
-                                            li{
-                                                &:last-child{
-                                                    margin-bottom: 16px;
-                                                }
-                                            }   
-                                        }
+                        .select-lists{
+                            min-width: fit-content;
+                            .input-box-section{
+                                max-width: 100%;
+                            }
+                            .article-section{
+                                gap: 16px;
+                                padding-left:0;
+                                padding-right: 0;
+                                overflow-x: auto;
+                                .card-slider{
+                                    width: 100%;
+                                    .discover-card{
                                         .card-button{
-                                            display: block;
-                                            margin-top: 10px;
+                                            display: none;
+                                        }
+                                        .discover-card-info{
+                                            padding: 20px 16px;
+                                            border-radius: 8px;
+                                            position: relative;
+                                            top: -20px;
+                                            .card-title{
+                                                margin-bottom: 4px;
+                                            }
+                                            hr{
+                                                margin: 16px 0;
+                                            }
+                                            .icon-with-numbers{
+                                                li{
+                                                    &:last-child{
+                                                        margin-bottom: 16px;
+                                                    }
+                                                }   
+                                            }
+                                            .card-button{
+                                                display: block;
+                                                margin-top: 10px;
+                                            }
                                         }
                                     }
                                 }
                             }
                         }
+                        
                     }
                 }
             }

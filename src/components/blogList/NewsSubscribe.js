@@ -63,6 +63,7 @@ const NewsSubscribe = () => {
                         }
                         .orange-btn{
                             width: 100%;
+                            margin-top: 16px;
                         }
                     }
                 }
