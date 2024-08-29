@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { LightGreenBtn, OrangeBtn } from "../components/Button";
 import CustomRadioSelect from "../components/selectRadioDropdown";
 import NewsSubscribe from "../components/blogList/NewsSubscribe";
+import useScreenSize from "../components/UseScreenSize";
+import { FaMap } from "react-icons/fa";
+import { FaListUl } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const LandscapeList = () => {
@@ -26,6 +29,16 @@ const LandscapeList = () => {
         window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+
+    // screensize
+    const screenSize = useScreenSize().width;
+
+    // toggle map
+    const [isToggled, setIsToggled] = useState(false);
+    const toggleClick = () => {
+        setIsToggled(!isToggled);
+    }
 
     const data = [
         { 
@@ -153,10 +166,24 @@ const LandscapeList = () => {
                             gap: 24px 16px;
                             margin-top: 18px;
                             .card-slider{
+                                background-color: white;
                                 max-width: 414px;
                                 box-shadow: 3px 3px 20px 0px rgba(0, 0, 0, 0.07);
                                 border-radius: 8px;
                                 .discover-card{
+                                    position: relative;
+                                    .tag{
+                                        left: 18px;
+                                        top: 18px;
+                                        color: #6EA44C;
+                                        line-height: 30px;
+                                        padding: 2px 16px;
+                                        height: 33px;
+                                        background-color: #DDEDD0;
+                                        border-radius: 25px;
+                                        font-weight: bold;
+                                        z-index: 9;
+                                    }
                                     .card-img-btn{
                                         position: relative;
                                         .card-img{
@@ -280,17 +307,25 @@ const LandscapeList = () => {
                             }
                         }
                         .select-lists{
-                            min-width: fit-content;
+                            min-width: 100%;
+                            margin: 0 -20px;
                             .input-box-section{
                                 max-width: 100%;
+                                padding: 0 20px;
+                                .map-list-btn{
+                                    margin: 15px auto 0;
+                                    div{
+                                        gap: 10px;
+                                    }
+                                }
                             }
                             .article-section{
                                 gap: 16px;
                                 padding-left:0;
                                 padding-right: 0;
-                                overflow-x: auto;
                                 .card-slider{
-                                    width: 100%;
+                                    max-width: 49%;
+                                    margin: 0 20px;
                                     .discover-card{
                                         .card-button{
                                             display: none;
@@ -319,10 +354,56 @@ const LandscapeList = () => {
                                             }
                                         }
                                     }
+                                    &:last-child{
+                                        margin-bottom: 18px;
+                                    }
                                 }
                             }
                         }
+                        .bg-green{
+                            background-color: #004D37;
+                        }
                         
+                    }
+                    .peru-map{
+                        background-color: #004D37;
+                        position: relative;
+                        right: 0;
+                        padding: 30px 0;
+                        text-align: center;
+                        width: 477px;
+                        margin: 0 auto;
+                    }
+                    .hidden{
+                        display: none;
+                    }
+                }
+            }
+            @media (max-width: 840px) {
+                .landscape-herobox{
+                    .left-side-content{
+                        .select-lists{
+                            .article-section{
+                                .card-slider{
+                                    max-width: 100%;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @media (max-width: 720px) {
+                .landscape-herobox{
+                    .peru-map {
+                        img{
+                            position: relative;
+                            left: -50px;
+                        }
+                        .center-two-location{
+                            left: 150px;
+                            bottom: 315px;
+                        }
                     }
                 }
             }
@@ -419,21 +500,47 @@ const LandscapeList = () => {
                             <img src="../images/blog-title-line-d.svg" class="w-auto absolute border-img" alt=""/>
                         </div>
                         <p className="text-white">More than carbon offsets and tree planting alone, Regenera supports living landscapes management led by the people who know their lands best. We join forces with Guardian communities and other local stakeholders interested in taking care of a natural landscape, to preserve it and prosper together. As the network of stakeholders involved in the protection of a landscape grows, the chances that it will remain healthy and generate social, environmental, and economic benefits increases. We call this our landscape approach.</p>
-                        <div className="select-lists">
+                        <div className={isToggled ? "select-lists bg-green" : "select-lists"}>
                             {/* select box section */}
                             <div className="input-box-section">
-                                <label className="text-white">Select and go to a Landscape:</label>
+                                <label className="text-white hide-tab">Select and go to a Landscape:</label>
                                 <CustomRadioSelect
                                     classname="form-control"
                                     optionsList = {optionsList}
                                 />
+                                {screenSize < 980 && (
+                                    <LightGreenBtn onClick={toggleClick} className="map-list-btn flex">
+                                        {isToggled ?  <div className="flex items-center map-text">List <FaListUl /></div> :  <div className="flex items-center map-text">Map <FaMap /></div>}
+                                    </LightGreenBtn>
+                                )}
                             </div>
                             {/* card listing */}
                             <div className="article-section flex flex-wrap items-start justify-space-between">
+                                {/* peru map */}
+                                <div className={isToggled ? "peru-map show-tab" : "peru-map show-tab hidden"}>
+                                    <img src="../images/peru-map.svg" alt="peru map"/>
+                                    <Link to="#" className="top-one-location">
+                                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
+                                    </Link>
+                                    <Link to="#" className="active center-two-location">
+                                        <img src="../images/icons/orange-location-pin.svg" alt="selected location"/>
+                                    </Link>
+                                    <Link to="#" className="bottom-three-location">
+                                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
+                                    </Link>
+                                    <Link to="#" className="bottom-four-location">
+                                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
+                                    </Link>
+                                    <Link to="#" className="bottom-five-location">
+                                        <img src="../images/icons/location-pin.svg" alt="unselected location"/>
+                                    </Link>
+                                </div>    
+                                {/* peru map ends */}
                                 {data.map((item) => {
                                     return(
-                                        <div className="card-slider">
+                                        <div className={isToggled ? "card-slider hidden" : "card-slider"}>
                                             <div className="discover-card w-full">
+                                                <div className="tag absolute">NEW!</div>
                                                 <div className="card-img-btn">
                                                     <div className="card-img">
                                                         <picture>
@@ -471,6 +578,7 @@ const LandscapeList = () => {
                                         </div>
                                     )
                                 })}
+                                
                                 <div className="card-slider">
                                     <div className="propose-box">
                                         <h4 className="small-title">Do you want to propose your landscape to Regenera?</h4>
