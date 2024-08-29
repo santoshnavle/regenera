@@ -44,7 +44,7 @@ const CustomRadioSelect = ({optionsList, classname}) => {
         position: absolute;
         left: 0;
         right: 0;
-        z-index: 2;
+        z-index: 990;
         li{
             line-height: 180%;
             font-size: 16px;
