@@ -184,7 +184,6 @@ const Mission = () => {
                         </div>
                         <div className="green-info">100% dedicated to living landscapes</div>
                     </div>
-                    
                 </div>
             </PositiveImpact>
         </>

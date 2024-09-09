@@ -120,6 +120,11 @@ h1, h2, h3, .card-title{
   width: 100%;
 }
 
+.h-full{
+  height: 100%;
+  width: auto;
+}
+
 .text-center{
   text-align: center;
 }
