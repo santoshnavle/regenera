@@ -20,6 +20,7 @@ import SignDocuments from "./pages/SignDocuments";
 import CreatingSign from "./pages/CreatingSign";
 import ThankYouGuardian from "./pages/ThankYouGuardian";
 import LandscapeList from "./pages/LandscapeListing";
+import LandscapeDetail from "./pages/LandscapeDetail";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
@@ -78,6 +79,7 @@ const App = () =>{
             <Route path="/creating-sign" element={<CreatingSign/>}/>
             <Route path="/thankyou-guardian"element={<ThankYouGuardian/>}/>
             <Route path="/landscape-list" element={<LandscapeList/>}/>
+            <Route path="/landscape-detail" element={<LandscapeDetail/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>
