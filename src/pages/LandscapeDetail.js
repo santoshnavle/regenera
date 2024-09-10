@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BecomeMember from "../components/blogDetail/BecomePartner";
 import { Link } from "react-router-dom";
 import { OrangeBtn, LightGreenBtn } from "../components/Button";
+import { MdEmail } from "react-icons/md";
 
 const LandscapeDetail = () => {
 
@@ -131,7 +132,6 @@ const LandscapeDetail = () => {
                         }
                     }
                 }
-                
             }
         }
         @media (max-width: ${({ theme }) => theme.media.mobile}) {
@@ -331,21 +331,36 @@ const LandscapeDetail = () => {
                 }
             }
         }
-        @media (max-width:${({ theme }) => theme.media.tab}) {
-            padding: 20px 24px;
+        @media (max-width: 1300px) {
             .three-cols-box{
-                flex-wrap: wrap;
                 .map-box{
-                    width: 100%;
                     .img-box{
                         .landscape-map{
                             width: 100%;
                         }
                     }
+                }  
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.tab}) {
+            padding: 20px 24px;
+            .three-cols-box{
+                flex-wrap: wrap;
+                .map-box{
+                    max-width: 100%;
+                    width: 100%;
+                    .img-box{
+                        .landscape-map{
+                            width: 100%;
+                            min-height: auto;
+                            height: 400px;
+                        }
+                    }
                 }
                 .species-activities{
-                    min-width: 100%;
                     gap: 20px;
+                    width: 47%;
+                    flex: 1 1 auto;
                     .three-col-box{
                     background-color: white;
                     box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
@@ -367,6 +382,7 @@ const LandscapeDetail = () => {
                     .three-col-imgs{
                             margin-top: 16px;
                             gap: 8px;
+                            justify-content: space-between;
                             .img-text-box{
                                 img{
                                     border-radius: 10px;
@@ -388,6 +404,56 @@ const LandscapeDetail = () => {
                     }
                     .bg-lightgreen{
                         background-color: #DDEDD0;
+                    }
+                }
+                .network-lists{
+                    width: 47%;
+                    flex: 1 1 auto;
+                }
+                .recent-actions{
+                    h6{
+                        font-size: 16px;
+                        line-height: 25px;
+                        margin-bottom: 0;
+                    }
+                }
+                .propose-box{
+                    background-color: #EFE7DA;
+                    border-radius: 8px;
+                    padding: 12px 20px;
+                    .green-link{
+                        margin-top: 8px;
+                        gap: 8px;
+                        line-height: 28px;
+                    }
+                }
+            }
+        }
+        @media (max-width:${({ theme }) => theme.media.mobile}) {
+            .three-cols-box{
+                .map-box{
+                    .img-box{
+                        .landscape-map{
+                            height: 422px;
+                        }
+                    }
+                }
+                .species-activities{
+                    min-width: auto;
+                    gap: 12px;
+                    .three-col-box{
+                        border-radius: 20px;
+                        .three-col-imgs{
+                            justify-content: center;
+                            .img-text-box{
+                                width: 93px;
+                                img{
+                                    border-radius: 10px;
+                                    width: 93px;
+                                    height: 129px;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -430,6 +496,8 @@ const LandscapeDetail = () => {
             .box-partners {
                 flex-wrap: wrap;
                 .content-box-partner{
+                    width: 100%;
+                    max-width: 100%;
                     .action-btn{
                         margin-top: 20px;
                     }
@@ -437,6 +505,8 @@ const LandscapeDetail = () => {
                 .partner-logos-box {
                     padding: 20px;
                     margin-top: 40px;
+                    max-width: 100%;
+                    width: 100%;
                     .group-logos{
                         gap: 10px;
                         .img-box{
@@ -444,9 +514,9 @@ const LandscapeDetail = () => {
                         }
                     }
                     .partner-tag{
-                        width: 115px;
+                        width: 113px;
                         right: -10px;
-                        top: -85px;
+                        top: -70px;
                         bottom: auto;
                     }
                     .green-text{
@@ -628,6 +698,15 @@ const LandscapeDetail = () => {
                             </div> 
                         </div>
                     </div>
+                    <div className="show-mobile">
+                        <div className="propose-box">
+                            <h4 className="small">Do you have a question about our landscapes?</h4>
+                            <Link to="#" className="green-link flex items-center">
+                                <MdEmail className="link-icon"/>
+                                <span>Send us a message</span>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
            </ThreeColLandscape>
 
@@ -660,18 +739,21 @@ const LandscapeDetail = () => {
                     </div>
                 </div>
            </ThanksOrganisation>
-            <BecomeMember
-                title="Do you have a question about our landscapes? " 
-                linkto="#"
-                btnText= "Send us an email"
-            />
+           <div className="hide-tab">
+                <BecomeMember
+                    title="Do you have a question about our landscapes? " 
+                    linkto="#"
+                    btnText= "Send us an email"
+                />
+           </div>
+            
             <LandscapeNav>
                 <div className="group-next-prev flex justify-space-between">
                     <LightGreenBtn className="back-next-btn">
-                        <Link to="#">Back to Landscapes</Link>
+                        <Link to="#"><span className="hide-mobile">Back to</span> <span className="hide-desk">All</span> Landscapes</Link>
                     </LightGreenBtn>
                     <LightGreenBtn className="back-next-btn">
-                        <Link to="#">View next Landscape</Link>
+                        <Link to="#"><span className="hide-mobile">View</span> Next <span className="hide-mobile">Landscape</span></Link>
                     </LightGreenBtn>
                 </div>
             </LandscapeNav>
