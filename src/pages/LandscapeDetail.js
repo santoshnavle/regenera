@@ -496,6 +496,8 @@ const LandscapeDetail = () => {
             .box-partners {
                 flex-wrap: wrap;
                 .content-box-partner{
+                    width: 100%;
+                    max-width: 100%;
                     .action-btn{
                         margin-top: 20px;
                     }
@@ -503,6 +505,8 @@ const LandscapeDetail = () => {
                 .partner-logos-box {
                     padding: 20px;
                     margin-top: 40px;
+                    max-width: 100%;
+                    width: 100%;
                     .group-logos{
                         gap: 10px;
                         .img-box{
@@ -746,10 +750,10 @@ const LandscapeDetail = () => {
             <LandscapeNav>
                 <div className="group-next-prev flex justify-space-between">
                     <LightGreenBtn className="back-next-btn">
-                        <Link to="#">Back to Landscapes</Link>
+                        <Link to="#"><span className="hide-mobile">Back to</span> <span className="hide-desk">All</span> Landscapes</Link>
                     </LightGreenBtn>
                     <LightGreenBtn className="back-next-btn">
-                        <Link to="#">View next Landscape</Link>
+                        <Link to="#"><span className="hide-mobile">View</span> Next <span className="hide-mobile">Landscape</span></Link>
                     </LightGreenBtn>
                 </div>
             </LandscapeNav>

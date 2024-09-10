@@ -551,6 +551,9 @@ button.disabled{
     }
   }
 }
+.hide-desk{
+  display: none;
+}
 .show-mobile{
   display: none;
 }
@@ -569,6 +572,9 @@ button.disabled{
 
 //1023px
 @media (max-width:${({ theme }) => theme.media.tab}) {
+  .hide-desk{
+    display: inline-block;
+  }
   .hide-tab{
     display: none;
   }
