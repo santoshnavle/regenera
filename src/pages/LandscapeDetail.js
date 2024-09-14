@@ -100,6 +100,14 @@ const LandscapeDetail = () => {
             }
         }
 
+        @media (max-width: 1200px) {
+            .hero-landscape{
+                .hero-content-box{
+                    margin-top: -40px;
+                }
+             }
+        }
+
         @media (max-width: ${({ theme }) => theme.media.tab}) {
             .hero-landscape{
                 padding: 66px 0 0;
@@ -138,6 +146,7 @@ const LandscapeDetail = () => {
             .hero-landscape{
                 padding: 66px 0 0;
                 .hero-content-box{
+                    margin-top: -40px;
                     .two-col-content{
                         flex-wrap: wrap;
                         .list-icons{
@@ -353,7 +362,6 @@ const LandscapeDetail = () => {
                         .landscape-map{
                             width: 100%;
                             min-height: auto;
-                            height: 400px;
                         }
                     }
                 }
@@ -382,7 +390,7 @@ const LandscapeDetail = () => {
                     .three-col-imgs{
                             margin-top: 16px;
                             gap: 8px;
-                            justify-content: space-between;
+                            justify-content: center;
                             .img-text-box{
                                 img{
                                     border-radius: 10px;
@@ -440,8 +448,10 @@ const LandscapeDetail = () => {
                 }
                 .species-activities{
                     min-width: auto;
+                    width: auto;
                     gap: 12px;
                     .three-col-box{
+                        padding: 24px 20px;
                         border-radius: 20px;
                         .three-col-imgs{
                             justify-content: center;
@@ -453,6 +463,18 @@ const LandscapeDetail = () => {
                                     height: 129px;
                                 }
                             }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 375px) {
+            .three-cols-box{
+                .species-activities{
+                    .three-col-box{
+                        .three-col-imgs{
+                            flex-wrap: wrap;
+                            gap: 20px;
                         }
                     }
                 }
