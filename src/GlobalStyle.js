@@ -562,6 +562,51 @@ button.disabled{
 }
 /* stepform ends */
 
+/* modalpopup */
+.modal-overlay{
+  background-color: rgba(0, 0, 0, 0.40);
+  z-index: 1001;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.modal-box-class{
+  padding: 50px 43px 50px 50px;
+  background-color: white;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 9999;
+  border-radius: 20px;
+  @media (max-width:${({ theme }) => theme.media.mobile}) {
+    top: auto;
+    bottom: 0;
+    max-height: 98%;
+    transform: translateY(0);
+    transform: translateX(-50%);
+    border-radius: 10px 10px 0 0;
+  }
+}
+.modal-close-btn{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #F8FBF6;
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  right: 17px;
+  top: 17px;
+  color: #004D37;
+  &:hover{
+    border: 1px solid #ccc;
+  }
+}
 /* ===========================================
 /* media queries  
 ======================================= */

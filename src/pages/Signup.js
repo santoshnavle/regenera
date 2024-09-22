@@ -135,7 +135,7 @@ const Signup = () => {
                     </span>
                 </h1>
                 <div className="circle-box absolute">
-                    <img src="https://earthsky.org/upl/2024/05/Otter_Ray-Harrington-Unsplash-scaled-e1714836163715.jpg" alt="nature image"/>
+                    <img src="https://earthsky.org/upl/2024/05/Otter_Ray-Harrington-Unsplash-scaled-e1714836163715.jpg" alt="nature"/>
                 </div>
             </div>
             <div className="form-box mx-auto flex flex-col">
