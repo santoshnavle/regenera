@@ -5,11 +5,19 @@ import { LightGreenBtn, OrangeBtn } from "../components/Button";
 import CustomRadioSelect from "../components/selectRadioDropdown";
 import NewsSubscribe from "../components/blogList/NewsSubscribe";
 import useScreenSize from "../components/UseScreenSize";
+import ModalFormBox from "../components/ModalForm";
 import { FaMap } from "react-icons/fa";
 import { FaListUl } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const LandscapeList = () => {
+
+    // modal popup
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    }
 
     const [isSticky, setIsSticky] = useState(false);
 
@@ -582,7 +590,7 @@ const LandscapeList = () => {
                                 <div className="card-slider">
                                     <div className="propose-box">
                                         <h4 className="small-title">Do you want to propose your landscape to Regenera?</h4>
-                                        <Link to="#" className="green-link flex items-center">
+                                        <Link to="#" onClick={toggleModal} className="green-link flex items-center">
                                             <MdEmail className="link-icon"/>
                                             <span>Send us a message</span>
                                         </Link>
@@ -643,6 +651,12 @@ const LandscapeList = () => {
                 </div>
             </LandscapeGuardians>
             <NewsSubscribe/>
+            {modal && (
+                <ModalFormBox
+                    modalformClass = "modal-box-class"
+                    closeBtn = {toggleModal}
+                />
+            )}
         </LandscapeListSection>
     )
 }
