@@ -6,13 +6,17 @@ import MissionSubmenu from "./submenu/MissionSubmenu";
 import ContactSubmenu from "./submenu/ContactSubmenu";
 import LangSubmenu from "./submenu/LangSubmenu";
 import LoginSubmenu from "./submenu/LoginSubmenu";
-import {CgCloseR } from "react-icons/cg";
+import { FaXmark } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Navbar = () => {
 const [openMenu, setOpenMenu] = useState(false);
-  
 
+const [navMobile, setnavMobile] = useState(true);
+  
+const toggleMobileNav = () => {
+  setnavMobile(!navMobile);
+}
   
   const Nav = styled.nav`
     .navbar-list{
@@ -90,8 +94,11 @@ const [openMenu, setOpenMenu] = useState(false);
 
     @media (max-width: ${({ theme }) => theme.media.tab}) {
       .mobile-navbar-btn {
+        position: relative;
         display: inline-block;
-        z-index: 999;
+        z-index: 9999;
+        width: 35px;
+        text-align: right;
         border: ${({ theme }) => theme.colors.black};
 
         .mobile-nav-icon {
@@ -104,7 +111,7 @@ const [openMenu, setOpenMenu] = useState(false);
       .navbar-list {
         width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         gap: 0;
@@ -114,8 +121,6 @@ const [openMenu, setOpenMenu] = useState(false);
         flex-direction: column;
         text-align: center;
         transform: translateX(100%);
-        visibility: hidden;
-        opacity: 0;
         padding-top: 65px;
         overflow-y: auto;
 
@@ -146,13 +151,21 @@ const [openMenu, setOpenMenu] = useState(false);
           }
         }
       }
-
+      .mobile-menu{
+        .logo-section {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 9999;
+          background-color: white;
+          padding: 10px 20px;
+        }
+      }
+      .navbar-list-mobile{
+        transform: translateX(0);
+      }
       .active .mobile-nav-icon {
-        display: none;
         font-size: 2.2rem;
-        position: absolute;
-        top: 20px;
-        right: 20px;
         color: ${({ theme }) => theme.colors.black};
         z-index: 9999;
       }
@@ -160,11 +173,7 @@ const [openMenu, setOpenMenu] = useState(false);
       .active .close-outline {
         display: inline-block;
       }
-
       .active .navbar-list {
-        visibility: visible;
-        opacity: 1;
-        transform: translateX(0);
         z-index: 999;
       }
     }
@@ -204,7 +213,6 @@ const [openMenu, setOpenMenu] = useState(false);
                   Contact <IoIosArrowDown/>
                   <ContactSubmenu/>    
               </NavLink>
-                    
             </li>
           </ul>
           <ul className="navbar-menu nav-right flex items-center">
@@ -227,18 +235,66 @@ const [openMenu, setOpenMenu] = useState(false);
             </li>
           </ul>
         </div>
+        {/* mobile nav */}
+        {!navMobile && (
+        <div className="mobile-menu">
+          <div className="logo-section w-full bg-white">
+            <img src="./images/logo-regenera.png" alt="logo" className="logo" />
+          </div>
+          <div className="navbar-list navbar-list-mobile flex justify-space-between items-center">
+            <ul className="navbar-menu nav-left flex items-center">
+              <li className="mission-nav">
+                <NavLink
+                  className="navbar-link h3" to="#">
+                    Join the mission <IoIosArrowDown/>
+                    <MissionSubmenu/>  
+                </NavLink>     
+              </li>
+              <li>
+                <NavLink
+                  className="navbar-link" 
+                  onClick={() => setOpenMenu(false)} 
+                  to="/about"> 
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="navbar-link"
+                  onClick={() => setOpenMenu(false)}
+                  to="/blog">
+                  Blog
+                </NavLink>
+              </li>
+              <li className="contact-nav">
+                <NavLink
+                  className="navbar-link" to="">
+                    Contact <IoIosArrowDown/>
+                    <ContactSubmenu/>    
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </div>
+        )}
+
         {/* //nav icon */}
-        <div className="mobile-navbar-btn">
-          <img src="./images/icons/mobile-nav.svg" alt="mobile-nav"
-            name="menu-outline"
-            className="mobile-nav-icon"
-            onClick={() => setOpenMenu(true)}
-          />
-          <CgCloseR
-            name="close-outline"
-            className="close-outline mobile-nav-icon"
-            onClick={() => setOpenMenu(false)}
-          />
+        <div onClick={toggleMobileNav} className="mobile-navbar-btn">
+          {navMobile && (
+            <img src="./images/icons/mobile-nav.svg" alt="mobile-nav"
+              name="menu-outline"
+              className="mobile-nav-icon"
+              onClick={() => setOpenMenu(true)}
+            />
+          )}
+          
+          {!navMobile && (
+            <FaXmark
+              name="close-outline"
+              className="close-outline mobile-nav-icon"
+              onClick={() => setOpenMenu(false)}
+            />
+          )}
         </div>
       </div>
     </Nav>

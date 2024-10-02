@@ -629,7 +629,7 @@ button.disabled{
   .grid-two-column, .grid-three-column, .grid-four-column{
     grid-template-columns: 1fr;
   }
-  h1, h2, h3, .card-title{
+  h1, .h1, h2, .h2, h3, .h3, .card-title{
     font-size: 28px;
     line-height: 38px;
   }
