@@ -24,8 +24,7 @@ const BecomeMember = ({title, linkto, btnText, paraText}) => {
                 width: auto;
                 max-width: 288px;
                 margin: 0 auto;
-            }
-            
+            } 
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
             .green-box{

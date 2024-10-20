@@ -21,6 +21,7 @@ import CreatingSign from "./pages/CreatingSign";
 import ThankYouGuardian from "./pages/ThankYouGuardian";
 import LandscapeList from "./pages/LandscapeListing";
 import LandscapeDetail from "./pages/LandscapeDetail";
+import KnowledgeCenter from "./pages/KnowledgeCenter";
 import TeamUp from "./pages/TeamUp";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -82,6 +83,7 @@ const App = () =>{
             <Route path="/landscape-list" element={<LandscapeList/>}/>
             <Route path="/landscape-detail" element={<LandscapeDetail/>}/>
             <Route path="/team-up" element={<TeamUp/>}/>
+            <Route path="/knowledge-center" element={<KnowledgeCenter/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>
