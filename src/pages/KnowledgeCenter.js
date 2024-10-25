@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import AccordionSection from "../components/Accordion/Accordion";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaFileDownload } from "react-icons/fa";
+import { IoIosArrowBack } from "react-icons/io";
 import { OrangeBtn, LightGreenBtn } from "../components/Button";
 import styled from "styled-components";
 
@@ -86,6 +87,17 @@ const KnowledgeCenter = () => {
             .left-faq{
                 flex: 1 0 auto;
                 max-width: 413px;
+                .bread-crumb-mobile{
+                    margin: 20px 0 8px;
+                    a{
+                        color: #004D37;
+                        gap: 5px;
+                        font-weight: 600;
+                    }
+                    .arrow-back, .back-btn{
+                        color: #6EA44C;
+                    }   
+                }
                 .title-list-box{
                     margin-top: 60px;
                     .title-box{
@@ -117,9 +129,9 @@ const KnowledgeCenter = () => {
                             }
                         }
                     }
-                    &:first-child{
-                        margin-top: 0;
-                    }
+                }
+                .mt-0{
+                    margin-top: 0;
                 }
             }
             .right-faq{
@@ -197,10 +209,9 @@ const KnowledgeCenter = () => {
     
     const MostRead = styled.section`
         background-color: #EFE7DA;
-        padding: 80px 0;
         .read-wrap{
+            padding: 80px 4.8rem;
             max-width: 1280px;
-            padding: 0 4.8rem;
             gap: 0 120px;
             .title-box{
                 max-width: 417px;
@@ -279,9 +290,15 @@ const KnowledgeCenter = () => {
             <FaqFlow>
                 <div className="faq-wrap flex mx-auto">
                     <div className="left-faq w-full">
-                        <div className="title-list-box">
+                        <div className="bread-crumb-mobile show-tab">
+                            <Link className="back-btn flex items-center" to="#"><IoIosArrowBack className="arrow-back"/> Back</Link>
+                        </div>
+                        <div className="title-list-box mt-0">
                             <div className="title-box">
                                 <h2>Information per topic</h2>
+                            </div>
+                            <div className="bread-crumb-mobile show-tab">
+                                <Link to="#" className="flex items-center"><IoIosArrowBack className="arrow-back"/> Account & billing </Link>
                             </div>
                             <div className="listing-box">
                                 <ul className="listing-ul">
@@ -401,7 +418,7 @@ const KnowledgeCenter = () => {
                 </div>
             </FaqFlow>
             <MostRead>
-                <div className="read-wrap flex">
+                <div className="read-wrap mx-auto flex">
                     <div className="title-box w-full">
                         <h3>Most read</h3>
                     </div>
