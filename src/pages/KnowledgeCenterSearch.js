@@ -2,7 +2,6 @@ import React from "react";
 import HeroSectionBlog from "../components/HeroSectionBlog";
 import { Link } from "react-router-dom";
 import AccordionSection from "../components/Accordion/Accordion";
-import { IoIosArrowForward } from "react-icons/io";
 import { FaFileDownload } from "react-icons/fa";
 import { IoIosArrowBack } from "react-icons/io";
 import { OrangeBtn, LightGreenBtn } from "../components/Button";
@@ -84,20 +83,29 @@ const KnowledgeCenter = () => {
             max-width: 1280px;
             padding: 100px 4.8rem;
             gap: 0 120px;
+            .bread-crumb-mobile{
+                margin: 20px 0 8px;
+                a{
+                    color: #6EA44C;
+                    gap: 5px;
+                    font-weight: 600;
+                }  
+            }
+            .result-count{
+                padding-top: 8px;
+                padding-bottom: 20px;
+            }
+            .no-result{
+                max-width: 600px;
+                padding: 90px 0;
+                h3{
+                    font-weight: bold;
+                    color: #cecece;
+                }
+            }
             .left-faq{
                 flex: 1 0 auto;
                 max-width: 413px;
-                .bread-crumb-mobile{
-                    margin: 20px 0 8px;
-                    a{
-                        color: #004D37;
-                        gap: 5px;
-                        font-weight: 600;
-                    }
-                    .arrow-back, .back-btn{
-                        color: #6EA44C;
-                    }   
-                }
                 .title-list-box{
                     margin-top: 60px;
                     .title-box{
@@ -135,7 +143,6 @@ const KnowledgeCenter = () => {
                 }
             }
             .right-faq{
-                max-width: 625px;
                 .title-list-box{
                     margin-top: 50px;
                     .title-box{
@@ -288,68 +295,21 @@ const KnowledgeCenter = () => {
                 Image={"../images/blog-title-line-d.svg"}
             />
             <FaqFlow>
-                <div className="faq-wrap flex mx-auto">
-                    <div className="left-faq w-full">
-                        <div className="bread-crumb-mobile show-tab">
-                            <Link className="back-btn flex items-center" to="#"><IoIosArrowBack className="arrow-back"/> Back</Link>
-                        </div>
-                        <div className="title-list-box mt-0">
-                            <div className="title-box">
-                                <h2>Information per topic</h2>
-                            </div>
-                            <div className="bread-crumb-mobile show-tab">
-                                <Link to="#" className="flex items-center"><IoIosArrowBack className="arrow-back"/> Account & billing </Link>
-                            </div>
-                            <div className="listing-box">
-                                <ul className="listing-ul">
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Nature & climate <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Regenera & services <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Account & billing <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Roles & contracts <IoIosArrowForward /></Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div className="title-list-box">
-                            <div className="title-box">
-                                <h3>Information per role</h3>
-                            </div>
-                            <div className="listing-box">
-                                <ul className="listing-ul">
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Organisations <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Private guardians <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Indigenous communities <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Individuals & families <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Land managers <IoIosArrowForward /></Link>
-                                    </li>
-                                    <li>
-                                        <Link to="#" className="flex items-center justify-space-between small-title">Press & students <IoIosArrowForward /></Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                <div className="faq-wrap mx-auto">
+                    <div className="bread-crumb-mobile show-tab">
+                        <Link to="#" className="flex items-center"><IoIosArrowBack className="arrow-back"/> Back </Link>
+                    </div>
+                    <div className="title-box">
+                        <h2>Results for “carbon footprint”</h2>
+                    </div>
+                   
+                    <div className="result-count">7 results</div>
+                    <div className="no-result mx-auto text-center">
+                        <h3>There we're no results. Please try different words or go back to view our topis.</h3>
                     </div>
                     <div className="right-faq w-full">
                         <div className="title-list-box">
                             <div className="title-box">
-                                <h3>Nature & climate</h3>
                                 <div className="small-title">Carbon offsetting</div>
                             </div>
                             <div className="listing-box">
