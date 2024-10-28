@@ -23,6 +23,7 @@ import LandscapeList from "./pages/LandscapeListing";
 import LandscapeDetail from "./pages/LandscapeDetail";
 import KnowledgeCenter from "./pages/KnowledgeCenter";
 import TeamUp from "./pages/TeamUp";
+import Sitemap from "./pages/Sitemap";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "styled-components";
@@ -84,6 +85,7 @@ const App = () =>{
             <Route path="/landscape-detail" element={<LandscapeDetail/>}/>
             <Route path="/team-up" element={<TeamUp/>}/>
             <Route path="/knowledge-center" element={<KnowledgeCenter/>}/>
+            <Route path="/sitemap" element={<Sitemap/>}/>
           </Routes>
           <Footer/>
         </BrowserRouter>
