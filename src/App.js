@@ -22,6 +22,7 @@ import ThankYouGuardian from "./pages/ThankYouGuardian";
 import LandscapeList from "./pages/LandscapeListing";
 import LandscapeDetail from "./pages/LandscapeDetail";
 import KnowledgeCenter from "./pages/KnowledgeCenter";
+import KnowledgeCenterSearch from "./pages/KnowledgeCenterSearch";
 import TeamUp from "./pages/TeamUp";
 import Sitemap from "./pages/Sitemap";
 import Header from "./components/Header";
@@ -85,6 +86,7 @@ const App = () =>{
             <Route path="/landscape-detail" element={<LandscapeDetail/>}/>
             <Route path="/team-up" element={<TeamUp/>}/>
             <Route path="/knowledge-center" element={<KnowledgeCenter/>}/>
+            <Route path="/knowledge-center-search-result" element={<KnowledgeCenterSearch/>}/>
             <Route path="/sitemap" element={<Sitemap/>}/>
           </Routes>
           <Footer/>
