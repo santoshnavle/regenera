@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 import { LightGreenBtn } from "./Button";
 import MissionSubmenu from "./submenu/MissionSubmenu";
@@ -57,15 +57,13 @@ const toggleMobileNav = () => {
         .navbar-link {
           &:link,
           &:visited {
-            display: inline-block;
             text-decoration: none;
             font-size: 16px;
             padding: 8px 0;
             font-weight: bold;
             color: ${({ theme }) => theme.colors.title_green};
             transition: color 0.3s linear;
-            display: flex;
-            align-items: center;
+            display: block;
             gap: 3px;
           }
 
@@ -130,18 +128,21 @@ const toggleMobileNav = () => {
           gap: 0px;
           li {
             width: 100%;
-            padding: 20px 0;
+            padding: 25px 0;
             &:hover,
             &:active {
-              background-color: ${({ theme }) => theme.colors.bgnavlink_hover};
               padding: 20px 0;
             }
-            a{
-              display: block !important;
+            .navbar-link{
+              display: block;
             }
             .submenu{
               position: relative;
-              top: 20px;
+              box-shadow: none;
+              top: 0;
+              left: 0;
+              font-size: 16px;
+              line-height: 1.3;
               ul {
                 li{
                   padding: 0;
@@ -159,11 +160,60 @@ const toggleMobileNav = () => {
           z-index: 9999;
           background-color: white;
           padding: 10px 20px;
+          box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
+        }
+        .navbar-list-mobile{
+          transform: translateX(0);
+          .navbar-menu{
+            padding-top: 20px;
+            .navbar-link{
+              .drop-icon{
+                position: relative;
+                top: 3px;
+              }
+              font-size: 25px;
+              &:hover, &:active{
+                color:#6EA44C;
+                .drop-icon{
+                  transform: rotate(-180deg);
+                  color: #6EA44C;
+                }
+              }
+            }
+          }
+          .signup-lang{
+            position: absolute;
+            bottom: 0;
+            padding: 33px 20px;
+            width: 100%;
+            border-top: 2px solid #F6F6F6;
+            .signinbox{
+             gap: 10px 0;
+             max-width: 145px;
+             margin: 0 auto;
+            }
+            .language-select{
+              padding-top: 25px;
+              gap: 8px;
+              .lang-link{
+                font-size: 14px;
+              }
+              .active{
+                font-weight: bold;
+              }
+            }
+            .login-link-box{
+              font-size: 16px;
+              line-height: 29px;
+              .login-link{
+                font-weight: bold;
+                color: #004D37;
+              }
+            }
+          }
         }
       }
-      .navbar-list-mobile{
-        transform: translateX(0);
-      }
+      
       .active .mobile-nav-icon {
         font-size: 2.2rem;
         color: ${({ theme }) => theme.colors.black};
@@ -245,8 +295,8 @@ const toggleMobileNav = () => {
             <ul className="navbar-menu nav-left flex items-center">
               <li className="mission-nav">
                 <NavLink
-                  className="navbar-link h3" to="#">
-                    Join the mission <IoIosArrowDown/>
+                  className="navbar-link" to="#">
+                    Join the mission <IoIosArrowDown className="drop-icon"/>
                     <MissionSubmenu/>  
                 </NavLink>     
               </li>
@@ -269,11 +319,24 @@ const toggleMobileNav = () => {
               <li className="contact-nav">
                 <NavLink
                   className="navbar-link" to="">
-                    Contact <IoIosArrowDown/>
+                    Contact <IoIosArrowDown className="drop-icon"/>
                     <ContactSubmenu/>    
                 </NavLink>
               </li>
             </ul>
+            <div className="signup-lang">
+              <div className="signinbox flex flex-col">
+                <LightGreenBtn className="signup-btn"><Link to="#">Sign up</Link></LightGreenBtn>
+                <span className="login-link-box">
+                  Or <Link tp="#" className="login-link">log in</Link>
+                </span>
+              </div>
+              <div className="language-select flex items-center justify-center">
+                <Link to="#" className="english-lang lang-link active">English</Link> / 
+                <Link to="#" className="spanish-lang lang-link">Spanish</Link>
+
+              </div>
+            </div>
           </div>
         </div>
         )}

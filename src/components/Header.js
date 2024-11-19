@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import Navbar from "./Navbar";
 import styled from "styled-components";
+import useScreenSize from "./UseScreenSize";
 
 const Header = () => {
 
@@ -28,15 +29,18 @@ const Header = () => {
       background-color: white;
     }
   `
+  const screenSize = useScreenSize().width;
 
   const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
+      if (screenSize > 1024) {
+          if (window.scrollY > 0) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
       }
     };
 
@@ -45,8 +49,8 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-  
+  }, [screenSize]);
+
   return (
     <MainHeader className={`nav-header flex justify-space-between items-center ${isSticky ? 'sticky' : ''}`}>
       <NavLink to="/">
