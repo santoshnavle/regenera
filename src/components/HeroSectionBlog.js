@@ -64,6 +64,7 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
     `
     const SearchBox = styled.div`
         max-width: 630px;
+        width: 100%;
         left: 50%;
         transform: translateX(-50%);
         bottom: 60px;
@@ -105,7 +106,7 @@ const HeroSectionBlog = ({title, subtitle, ImageMobile, Image}) => {
                     <div className="subtitle mx-auto">{subtitle}</div>
                 </div>
             </Center>
-            <SearchBox className="mx-auto w-full flex absolute">
+            <SearchBox className="mx-auto flex absolute">
                 <input type="text" className="form-control w-full" placeholder="Search..." aria-label="blog search" aria-describedby="blog search"/>
                 <LightGreenBtn className="search-btn absolute" onClick={btnClick} type="submit">Search</LightGreenBtn>
             </SearchBox>
