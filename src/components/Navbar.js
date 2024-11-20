@@ -12,7 +12,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const Navbar = () => {
 const [openMenu, setOpenMenu] = useState(false);
 
-const [navMobile, setnavMobile] = useState(true);
+const [navMobile, setnavMobile] = useState(false);
   
 const toggleMobileNav = () => {
   setnavMobile(!navMobile);
@@ -197,6 +197,7 @@ const toggleMobileNav = () => {
               gap: 8px;
               .lang-link{
                 font-size: 14px;
+                color: #424A46;
               }
               .active{
                 font-weight: bold;
@@ -286,10 +287,12 @@ const toggleMobileNav = () => {
           </ul>
         </div>
         {/* mobile nav */}
-        {!navMobile && (
+        {navMobile && (
         <div className="mobile-menu">
           <div className="logo-section w-full bg-white">
-            <img src="./images/logo-regenera.png" alt="logo" className="logo" />
+            <Link to="/">
+              <img src="./images/logo-regenera.png" alt="logo" className="logo" />
+            </Link>
           </div>
           <div className="navbar-list navbar-list-mobile flex justify-space-between items-center">
             <ul className="navbar-menu nav-left flex items-center">
@@ -328,12 +331,12 @@ const toggleMobileNav = () => {
               <div className="signinbox flex flex-col">
                 <LightGreenBtn className="signup-btn"><Link to="#">Sign up</Link></LightGreenBtn>
                 <span className="login-link-box">
-                  Or <Link tp="#" className="login-link">log in</Link>
+                  Or <Link to="#"  onClick={() => setnavMobile(false)} className="login-link">log in</Link>
                 </span>
               </div>
               <div className="language-select flex items-center justify-center">
-                <Link to="#" className="english-lang lang-link active">English</Link> / 
-                <Link to="#" className="spanish-lang lang-link">Spanish</Link>
+                <Link to="#"  onClick={() => setnavMobile(false)} className="english-lang lang-link active">English</Link> / 
+                <Link to="#" onClick={() => setnavMobile(false)} className="spanish-lang lang-link">Spanish</Link>
 
               </div>
             </div>
@@ -343,7 +346,7 @@ const toggleMobileNav = () => {
 
         {/* //nav icon */}
         <div onClick={toggleMobileNav} className="mobile-navbar-btn">
-          {navMobile && (
+          {!navMobile && (
             <img src="./images/icons/mobile-nav.svg" alt="mobile-nav"
               name="menu-outline"
               className="mobile-nav-icon"
@@ -351,11 +354,11 @@ const toggleMobileNav = () => {
             />
           )}
           
-          {!navMobile && (
+          {navMobile && (
             <FaXmark
               name="close-outline"
               className="close-outline mobile-nav-icon"
-              onClick={() => setOpenMenu(false)}
+              onClick={() => setnavMobile(false)}
             />
           )}
         </div>
