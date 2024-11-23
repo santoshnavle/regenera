@@ -12,7 +12,7 @@ const AccordionSection = ({question, answer}) => {
             cursor: pointer;
             padding: 20px 32px;
             font-size: 19px;
-            border-radius: 25px;
+            border-radius: 36px;
             font-weight: 500;
             box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
             .icon{
@@ -23,16 +23,23 @@ const AccordionSection = ({question, answer}) => {
             }
         }
         .show-accordion{
-            border-radius: 25px 25px 0 0;
+            border-radius: 36px 36px 0 0;
         }
         .accordion-content{
-            border-radius: 0 0 25px 25px;
+            border-radius: 0 0 36px 36px;
             background-color: white;
             padding: 20px 25px 30px;
-            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 2px 10px 15px rgba(0, 0, 0, 0.05);
+            top: -3px;
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
-            
+            .accordion-head{
+                padding: 10px 20px;
+                font-size: 17px;
+            }
+            .accordion-content{
+                padding: 10px 15px 20px;
+            }
         }
     `
     return (

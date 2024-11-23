@@ -48,6 +48,7 @@ const HeroSection = ({title, titleline, titleafter, titleclass, paratext, paracl
         }
         @media (max-width:${({ theme }) => theme.media.tab}){
             max-width: 100%;
+            width: 100%;
             padding: 0 20px;
             .title-box{
                 margin-bottom: 12px;

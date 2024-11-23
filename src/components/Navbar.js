@@ -39,7 +39,7 @@ const toggleMobileNav = () => {
           box-shadow: 2px 4px 15px 0px rgba(0, 0, 0, 0.05);
           right: -10px;
           border: 1px solid #fefefe;
-          z-index: 2;
+          z-index: 101;
           border-radius: 8px;
           li{
             a{
