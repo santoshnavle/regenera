@@ -126,13 +126,11 @@ const toggleMobileNav = () => {
           flex-direction: column;
           width: 100%;
           gap: 0px;
+          overflow-y: auto;
+          padding-bottom: 210px;
           li {
             width: 100%;
-            padding: 25px 0;
-            &:hover,
-            &:active {
-              padding: 20px 0;
-            }
+            padding: 20px 0;
             .navbar-link{
               display: block;
             }
@@ -182,6 +180,8 @@ const toggleMobileNav = () => {
             }
           }
           .signup-lang{
+            background-color: white;
+            z-index: 2;
             position: absolute;
             bottom: 0;
             padding: 33px 20px;
