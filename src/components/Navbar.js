@@ -6,6 +6,7 @@ import MissionSubmenu from "./submenu/MissionSubmenu";
 import ContactSubmenu from "./submenu/ContactSubmenu";
 import LangSubmenu from "./submenu/LangSubmenu";
 import LoginSubmenu from "./submenu/LoginSubmenu";
+import AccordionSection from "../components/Accordion/Accordion";
 import { FaXmark } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -46,6 +47,7 @@ const toggleMobileNav = () => {
               padding: 10px 20px;
               display: block;
               white-space: nowrap;
+              font-weight: bold;
               color: ${({ theme }) => theme.colors.title_green};
               &:hover  {
                   background-color: ${({ theme }) => theme.colors.bgnavlink_hover};
@@ -63,7 +65,8 @@ const toggleMobileNav = () => {
             font-weight: bold;
             color: ${({ theme }) => theme.colors.title_green};
             transition: color 0.3s linear;
-            display: block;
+            display: flex;
+            align-items: center;
             gap: 3px;
           }
 
@@ -126,19 +129,18 @@ const toggleMobileNav = () => {
           flex-direction: column;
           width: 100%;
           gap: 0px;
+          overflow-y: auto;
+          padding-bottom: 210px;
           li {
             width: 100%;
-            padding: 25px 0;
-            &:hover,
-            &:active {
-              padding: 20px 0;
-            }
+            padding: 20px 0;
             .navbar-link{
               display: block;
             }
             .submenu{
               position: relative;
               box-shadow: none;
+              display: block;
               top: 0;
               left: 0;
               font-size: 16px;
@@ -166,7 +168,11 @@ const toggleMobileNav = () => {
           transform: translateX(0);
           .navbar-menu{
             padding-top: 20px;
-            .navbar-link{
+            .navbar-link, .accordion-head{
+              justify-content: center;
+              gap: 15px; 
+              font-weight: bold;
+              box-shadow: none;
               .drop-icon{
                 position: relative;
                 top: 3px;
@@ -179,9 +185,42 @@ const toggleMobileNav = () => {
                   color: #6EA44C;
                 }
               }
+              .icon{
+                font-size: 26px;
+                line-height: 1.2;
+                top: 5px;
+                position: relative;
+                svg{
+                  transition: all 0.3s ease;
+                -webkit-transition: all 0.3s ease 0s;
+                -moz-transition: all 0.3s ease 0s;
+                -o-transition: all 0.3s ease 0s;
+                }
+              }
+              .plus-minus{
+                display: none;
+              }
+            }
+            .show-accordion{
+              color:#6EA44C;
+              .drop-icon{
+                transform: rotate(-180deg);
+                color: #6EA44C;
+              }
+              .icon{
+                svg{
+                    transform: rotate(-180deg);
+                }
+              }
+            }
+            .accordion-content{
+              padding: 0; 
+              box-shadow: none;
             }
           }
           .signup-lang{
+            background-color: white;
+            z-index: 999;
             position: absolute;
             bottom: 0;
             padding: 33px 20px;
@@ -212,6 +251,7 @@ const toggleMobileNav = () => {
               }
             }
           }
+
         }
       }
       
@@ -297,11 +337,11 @@ const toggleMobileNav = () => {
           <div className="navbar-list navbar-list-mobile flex justify-space-between items-center">
             <ul className="navbar-menu nav-left flex items-center">
               <li className="mission-nav">
-                <NavLink
-                  className="navbar-link" to="#">
-                    Join the mission <IoIosArrowDown className="drop-icon"/>
-                    <MissionSubmenu/>  
-                </NavLink>     
+                <AccordionSection
+                    question="Join the mission"
+                    answer={<MissionSubmenu/> }
+                    arrow = {<IoIosArrowDown/>}
+                /> 
               </li>
               <li>
                 <NavLink
@@ -320,11 +360,11 @@ const toggleMobileNav = () => {
                 </NavLink>
               </li>
               <li className="contact-nav">
-                <NavLink
-                  className="navbar-link" to="">
-                    Contact <IoIosArrowDown className="drop-icon"/>
-                    <ContactSubmenu/>    
-                </NavLink>
+                <AccordionSection
+                    question="Contact"
+                    answer={<ContactSubmenu/>}
+                    arrow = {<IoIosArrowDown/>}
+                /> 
               </li>
             </ul>
             <div className="signup-lang">
