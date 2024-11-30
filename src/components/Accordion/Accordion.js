@@ -47,7 +47,7 @@ const AccordionSection = ({question, answer, arrow}) => {
         <Accordion>
             <div onClick={()=>setShow(!show)} className={show ? "accordion-head show-accordion flex justify-space-between items-center" : "accordion-head flex justify-space-between items-center"}>
                 {question}
-                {{arrow} ? <span className="icon smooth"> <IoIosArrowDown/> </span> : <span className="icon"> {show ? "-" : "+"} </span>}
+                <span className="icon smooth"> {arrow} <span className="plus-minus"> {show ? "-" : "+"} </span> </span>
             </div>
             {show && 
                 <div className={show? "accordion-content fade-in" : "accordion-content fade-out"}>

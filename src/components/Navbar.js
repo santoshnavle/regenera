@@ -65,7 +65,8 @@ const toggleMobileNav = () => {
             font-weight: bold;
             color: ${({ theme }) => theme.colors.title_green};
             transition: color 0.3s linear;
-            display: block;
+            display: flex;
+            align-items: center;
             gap: 3px;
           }
 
@@ -195,6 +196,9 @@ const toggleMobileNav = () => {
                 -moz-transition: all 0.3s ease 0s;
                 -o-transition: all 0.3s ease 0s;
                 }
+              }
+              .plus-minus{
+                display: none;
               }
             }
             .show-accordion{
@@ -336,7 +340,7 @@ const toggleMobileNav = () => {
                 <AccordionSection
                     question="Join the mission"
                     answer={<MissionSubmenu/> }
-                    arrow = {IoIosArrowDown}
+                    arrow = {<IoIosArrowDown/>}
                 /> 
               </li>
               <li>
@@ -359,7 +363,7 @@ const toggleMobileNav = () => {
                 <AccordionSection
                     question="Contact"
                     answer={<ContactSubmenu/>}
-                    arrow = {IoIosArrowDown}
+                    arrow = {<IoIosArrowDown/>}
                 /> 
               </li>
             </ul>
