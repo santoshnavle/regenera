@@ -6,7 +6,7 @@ const MissionSubmenu = () => {
         <div className="submenu">
             <ul>
                 <li>
-                    <Link to="#">As an organisation</Link>
+                    <Link to="/about">As an organisation</Link>
                 </li>
                 <li>
                     <Link to="#">As a person</Link>
