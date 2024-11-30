@@ -309,6 +309,31 @@ li {
   to {top: 0px;}
 }
 
+.fade-in {
+  animation: fade-in 1s;
+}
+
+.fade-out {
+  animation: fade-out 2s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 100;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 /* stepform  starts*/
 .input-box-section label{
