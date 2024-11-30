@@ -16,6 +16,7 @@ const ContactSubmenu = () => {
                 color: ${({ theme }) => theme.colors.title_green};
                 padding: 10px 20px;
                 display: block;
+                font-weight: bold;
                 &:hover  {
                   background-color: ${({ theme }) => theme.colors.bgnavlink_hover};
                   ${({ theme }) => theme.colors.title_green};

@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
+import { IoIosArrowDown } from "react-icons/io";
 
-const AccordionSection = ({question, answer}) => {
+const AccordionSection = ({question, answer, arrow}) => {
 
 
     const [show, setShow] = useState(false);
@@ -46,7 +47,7 @@ const AccordionSection = ({question, answer}) => {
         <Accordion>
             <div onClick={()=>setShow(!show)} className={show ? "accordion-head show-accordion flex justify-space-between items-center" : "accordion-head flex justify-space-between items-center"}>
                 {question}
-                <span className="icon">{show ? "-" : "+"}</span>
+                {{arrow} ? <span className="icon"> <IoIosArrowDown/> </span> : <span className="icon"> {show ? "-" : "+"} </span>}
             </div>
             {show && 
                 <div className="accordion-content">
